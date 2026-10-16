@@ -1390,16 +1390,12 @@ code {
   z-index: 1;
 }
 
-.closing-mark {
-  width: 76px;
-  height: 76px;
-  border-radius: 22px;
-  background: var(--amber);
-  color: var(--forest);
-  display: grid;
-  place-items: center;
+.closing-icon {
+  display: block;
+  width: auto;
+  height: 84px;
   margin: 0 auto 28px;
-  font: 800 46px var(--display);
+  filter: drop-shadow(0 0 18px rgba(221, 161, 94, 0.3));
 }
 
 .closing h2 {
