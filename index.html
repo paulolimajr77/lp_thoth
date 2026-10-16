@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#283618">
+  <meta name="description" content="Thoth CRM — sistema vivo de vendas para atender, vender e acompanhar clientes em WhatsApp, Instagram e Facebook.">
+  <title>Thoth CRM — Sistema Operacional de Vendas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header" id="topo">
+    <div class="container nav">
+      <a class="brand" href="#topo" aria-label="Thoth CRM">
+        <img src="assets/thoth-logo.png" alt="Thoth CRM">
+      </a>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#agentes-ia">Agentes de IA</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#comparativo">Por que Thoth</a>
+        <a href="#planos">Planos</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="text-button" href="manual.html">Guia prático <span>↗</span></a>
+        <a class="btn btn-sm btn-amber" href="#teste">Teste grátis <span>→</span></a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-grid">
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pulse-dot"></span> Sistema Operacional de Vendas</div>
+          <h1>Todo cliente respondido na hora. <em>Toda venda acompanhada até o fim.</em></h1>
+          <p class="hero-lede">O Thoth CRM transforma conversas em uma operação de vendas viva: vários números de WhatsApp, Instagram e Facebook, agentes de IA, funis, agenda, propostas, follow-ups e métricas — em um só lugar.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#teste">Começar teste grátis de 14 dias <span>→</span></a>
+            <a class="btn btn-ghost" href="manual.html">Guia prático da operação <span>↗</span></a>
+          </div>
+          <div class="trust-row">
+            <span><b>✓</b> 14 dias grátis, sem assinatura</span>
+            <span><b>✓</b> IA passa para uma pessoa</span>
+            <span><b>✓</b> Dados separados por empresa</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal delay-1" id="demonstracao">
+          <div class="visual-glow" aria-hidden="true"></div>
+          <div class="app-window hero-window">
+            <img 
+              src="img/21-inbox-conversa-ia.webp" 
+              alt="Thoth CRM — Painel de atendimento ao vivo com inteligência artificial e WhatsApp integrado" 
+              class="hero-screen-img" 
+              width="1920" 
+              height="1080" 
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene section-pad">
+      <div class="container scene-grid">
+        <div class="scene-clock-wrap reveal" id="relogio">
+          <svg class="scene-clock-svg" viewBox="0 0 320 320" width="320" height="320" aria-label="Relógio marcando 23:40">
+            <defs>
+              <radialGradient id="clockDialGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="85%" stop-color="#fdfbf5"/>
+                <stop offset="100%" stop-color="#f1ebe0"/>
+              </radialGradient>
+              <filter id="clockShadow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#283618" flood-opacity="0.08"/>
+              </filter>
+            </defs>
+            <!-- Dial base -->
+            <circle cx="160" cy="160" r="148" fill="url(#clockDialGrad)" stroke="rgba(40,54,24,0.14)" stroke-width="1.5" filter="url(#clockShadow)"/>
+            <circle cx="160" cy="160" r="130" fill="none" stroke="rgba(96,108,56,0.22)" stroke-width="1" stroke-dasharray="3 4"/>
+            
+            <!-- Ticks de horas -->
+            <!-- 12h -->
+            <line x1="160" y1="22" x2="160" y2="38" stroke="#283618" stroke-width="3" stroke-linecap="round"/>
+            <!-- 1h -->
+            <line x1="160" y1="22" x2="160" y2="34" stroke="#606c38" stroke-width="1.5" stroke-linecap="round" transform="rotate(30 160 160)"/>
+            <!-- 2h -->
+            <line x1="160" y1="22" x2="160" y2="34" stroke="#606c38" stroke-width="1.5" stroke-linecap="round" transform="rotate(60 160 160)"/>
+            <!-- 3h -->
+            <line x1="160" y1="22" x2="160" y2="38" stroke="#283618" stroke-width="3" stroke-linecap="round" transform="rotate(90 160 160)"/>
+            <!-- 4h -->
+            <line x1="160" y1="22" x2="160" y2="34" stroke="#606c38" stroke-width="1.5" stroke-linecap="round" transform="rotate(120 160 160)"/>
+            <!-- 5h -->
+            <line x1="160" y1="22" x2="160" y2="34" stroke="#606c38" stroke-width="1.5" stroke-linecap="round" transform="rotate(150 160 160)"/>
+            <!-- 6h -->
+            <line x1="160" y1="22" x2="160" y2="38" stroke="#283618" stroke-width="3" stroke-linecap="round" transform="rotate(180 160 160)"/>
+            <!-- 7h -->
+            <line x1="160" y1="22" x2="160" y2="34" stroke="#606c38" stroke-width="1.5" stroke-linecap="round" transform="rotate(210 160 160)"/>
+            <!-- 8h -->
+            <line x1="160" y1="22" x2="160" y2="38" stroke="#283618" stroke-width="3" stroke-linecap="round" transform="rotate(240 160 160)"/>
+            <!-- 9h -->
+            <line x1="160" y1="22" x2="160" y2="38" stroke="#283618" stroke-width="3" stroke-linecap="round" transform="rotate(270 160 160)"/>
+            <!-- 10h -->
+            <line x1="160" y1="22" x2="160" y2="34" stroke="#606c38" stroke-width="1.5" stroke-linecap="round" transform="rotate(300 160 160)"/>
+            <!-- 11h -->
+            <line x1="160" y1="22" x2="160" y2="34" stroke="#606c38" stroke-width="1.5" stroke-linecap="round" transform="rotate(330 160 160)"/>
+            
+            <!-- Ponteiro das horas (23h40 = 350 deg) -->
+            <line class="hand hand-hour" x1="160" y1="160" x2="160" y2="92" stroke="#283618" stroke-width="4.5" stroke-linecap="round"/>
+            <!-- Ponteiro dos minutos (40 min = 240 deg) -->
+            <line class="hand hand-min" x1="160" y1="160" x2="160" y2="60" stroke="#bc6c25" stroke-width="3" stroke-linecap="round"/>
+            <!-- Centro do relógio -->
+            <circle cx="160" cy="160" r="7.5" fill="#dda15e" stroke="#283618" stroke-width="2"/>
+            <circle cx="160" cy="160" r="3" fill="#1c2813"/>
+
+            <!-- Badge digital no mostrador -->
+            <g class="clock-badge"><rect x="96" y="196" width="128" height="38" rx="10" fill="#ffffff" stroke="rgba(40,54,24,0.12)" stroke-width="1"/>
+            <text x="160" y="222" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="21" font-weight="800" fill="#283618" letter-spacing="-0.04em">23:40</text>
+            <text x="160" y="254" text-anchor="middle" font-family="'DM Mono', monospace" font-size="8.5" font-weight="600" fill="#606c38" letter-spacing="0.14em">UMA MENSAGEM CHEGA</text></g>
+          </svg>
+        </div>
+        <div class="scene-copy reveal delay-1">
+          <span class="section-kicker">A cena que muda a venda</span>
+          <h2>Às 23h40, o cliente não quer esperar até amanhã.</h2>
+          <p>Sem sistema, ele espera. E amanhã pode ser tarde. Com o Thoth, a conversa recebe a resposta certa, o negócio entra no funil e, se o cliente sumir, o sistema pode retomar no momento definido.</p>
+          <div class="scene-flow"><span>mensagem</span><i>→</i><span>resposta</span><i>→</i><span>funil</span><i>→</i><span>follow-up</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem section-pad" id="como-funciona">
+      <div class="container">
+        <div class="section-heading narrow reveal"><span class="section-kicker">Quando a operação cresce</span><h2>O problema não é receber mensagens. <em>É não perder o que acontece depois.</em></h2></div>
+        <div class="problem-grid">
+          <article class="problem-card reveal"><h3>Resposta atrasada</h3><p>O cliente pergunta, a equipe demora e o contato esfria.</p></article>
+          <article class="problem-card reveal delay-1"><h3>Equipe atropelada</h3><p>Ninguém sabe quem atende quem, em qual canal ou em qual etapa.</p></article>
+          <article class="problem-card reveal delay-2"><h3>IA sem controle</h3><p>Uma resposta errada de preço, horário ou promessa custa confiança.</p></article>
+          <article class="problem-card reveal"><h3>Marketing no escuro</h3><p>Você investe em anúncio, mas não consegue ligar clique, conversa e venda.</p></article>
+          <article class="problem-card reveal delay-1"><h3>Follow-up esquecido</h3><p>O lead some e ninguém percebe até a oportunidade desaparecer.</p></article>
+          <article class="problem-card reveal delay-2"><h3>Ferramentas espalhadas</h3><p>Conversa, planilha, agenda, proposta e histórico vivem em lugares diferentes.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="thoth-intro section-pad dark-section">
+      <div class="container intro-grid">
+        <div class="intro-orbit reveal"><div class="orbit-ring"></div><div class="orbit-core">t</div><span class="orbit-tag tag-1">ATENDER</span><span class="orbit-tag tag-2">VENDER</span><span class="orbit-tag tag-3">ACOMPANHAR</span></div>
+        <div class="intro-copy reveal delay-1"><span class="section-kicker light">Conheça o Thoth CRM</span><h2>Não é mais um chatbot. É o sistema que <em>opera a venda.</em></h2><p>O Thoth reúne canais, pessoas, IA, funis, agenda, propostas, automações e métricas em uma operação contínua.</p><div class="quote-line"><span></span><strong>Conversa entra. Contexto fica. Venda avança.</strong></div></div>
+      </div>
+    </section>
+
+    <section class="army-section" id="agentes-ia">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Vários agentes de IA</span>
+          <h2>A IA do Thoth não só responde: <br><em>Ela opera o sistema.</em></h2>
+          <p>Você pode ter quantos agentes quiser: um para vendas, um para suporte, um para agendamento. Cada um com a sua voz, as suas regras e os funis em que pode mexer.</p>
+        </div>
+        <div class="army-wrap reveal">
+          <div class="army-stage"><div class="army-zoom"><img class="army-img" src="assets/exercito.webp" alt="Agentes de IA do Thoth CRM operando vendas, atendimento e suporte" width="1672" height="941" loading="lazy" decoding="async"><i class="army-glow" style="--x:40.43%;--y:18.60%;--s:17.94%;--d:-0s"></i><i class="army-glow" style="--x:52.63%;--y:52.07%;--s:20.33%;--d:-1.6s"></i><i class="army-glow" style="--x:52.93%;--y:69.08%;--s:10.77%;--d:-0.8s"></i><i class="army-glow" style="--x:20.99%;--y:38.47%;--s:13.16%;--d:-2.6s"></i><i class="army-glow" style="--x:4.07%;--y:41.23%;--s:11.96%;--d:-3.4s"></i><i class="army-glow" style="--x:78.83%;--y:41.23%;--s:13.16%;--d:-4.2s"></i><i class="army-glow" style="--x:96.41%;--y:44.10%;--s:11.96%;--d:-5.0s"></i><i class="army-sweep"></i></div></div>
+        </div>
+        <ul class="army-legend reveal">
+          <li><b>Recepção</b><span>Recebe, identifica o assunto e abre o atendimento.</span></li>
+          <li><b>Comercial</b><span>Qualifica, apresenta preço e conduz o negócio no funil.</span></li>
+          <li><b>Atendimento</b><span>Tira dúvidas e agenda horário na própria conversa.</span></li>
+          <li><b>Suporte</b><span>Resolve o que for possível e passa para uma pessoa com resumo.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="flow-section section-pad" id="fluxo">
+      <div class="container">
+        <div class="section-heading reveal"><span class="section-kicker">O caminho de cada mensagem</span><h2>Da primeira mensagem ao follow-up, <em>sem ninguém esquecer.</em></h2><p>Exemplo de uma conversa de clínica. O caminho é o mesmo em qualquer negócio.</p></div>
+        <ol class="flow" id="flow">
+          <span class="flow-line" aria-hidden="true"><span class="flow-line-fill"></span></span>
+          <li class="flow-step">
+            <div class="flow-node"><svg viewBox="0 0 44 44" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="draw" pathLength="1" d="M7 9h30a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H21l-9 8v-8H7a3 3 0 0 1-3-3V12a3 3 0 0 1 3-3z"/><path class="draw" pathLength="1" d="M13 18h18M13 24h11"/></svg></div>
+            <small>1 · RECEPÇÃO</small><h3>Mensagem chega</h3>
+            <div class="flow-demo"><span class="bubble in">Oi! Quanto custa o clareamento?</span></div>
+            <p>O agente de recepção recebe pelo canal e identifica o assunto.</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-node"><svg viewBox="0 0 44 44" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="draw" pathLength="1" x="11" y="11" width="22" height="22" rx="4"/><path class="draw" pathLength="1" d="M17 4v7M27 4v7M17 33v7M27 33v7M4 17h7M4 27h7M33 17h7M33 27h7"/><circle class="draw" pathLength="1" cx="22" cy="22" r="4"/></svg></div>
+            <small>2 · PROCESSAMENTO</small><h3>Agente entende</h3>
+            <div class="flow-demo"><span class="chip">histórico</span><span class="chip">base de conhecimento</span><span class="chip">regras e preços</span></div>
+            <p>Cruza o histórico da conversa com a base e as regras da empresa.</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-node"><svg viewBox="0 0 44 44" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="draw" pathLength="1" d="M5 22 40 6 28 40l-7-14z"/><path class="draw" pathLength="1" d="M40 6 21 26"/></svg></div>
+            <small>3 · RESPOSTA</small><h3>Responde na hora</h3>
+            <div class="flow-demo"><span class="bubble out">Oi, Carla! O clareamento começa com uma avaliação gratuita.</span><span class="check">✓ checagens antes de enviar</span></div>
+            <p>A resposta passa por checagens de regra, preço e horário antes de sair.</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-node"><svg viewBox="0 0 44 44" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="draw" pathLength="1" d="M5 8h34L26 24v12l-8 4V24z"/></svg></div>
+            <small>4 · FUNIL</small><h3>Negócio categorizado</h3>
+            <div class="flow-demo"><span class="chip stage">Novo contato</span><span class="chip stage">Já respondi</span><span class="chip stage">Entendendo o caso</span></div>
+            <p>O agente preenche a ficha e move o negócio para a etapa certa.</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-node"><svg viewBox="0 0 44 44" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="draw" pathLength="1" d="M37 22a15 15 0 1 1-4.5-10.7"/><path class="draw" pathLength="1" d="M37 6v9h-9"/><path class="draw" pathLength="1" d="M22 14v8l5 3"/></svg></div>
+            <small>5 · FOLLOW-UP</small><h3>Retoma se sumir</h3>
+            <div class="flow-demo"><span class="chip warn">1 dia sem resposta</span><span class="bubble out">Oi, Carla! Quer que eu reserve um horário?</span></div>
+            <p>Se o cliente some, o fluxo retoma dentro das regras e dos horários.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="feature-section section-pad" id="recursos">
+      <div class="container">
+        <div class="section-heading reveal"><span class="section-kicker">O sistema vivo</span><h2>Uma operação que continua trabalhando <em>depois do primeiro “oi”.</em></h2><p>Os recursos abaixo são organizados como módulos de uma mesma operação, não como ferramentas isoladas.</p></div>
+        <div class="feature-tabs reveal">
+          <div class="feature-nav" role="tablist" aria-label="Recursos do Thoth CRM" aria-orientation="vertical">
+            <button class="feature-tab active" data-feature="canais" role="tab" id="tab-canais" aria-controls="panel-canais" aria-selected="true" tabindex="0">Canais & Inbox</button>
+            <button class="feature-tab" data-feature="ia" role="tab" id="tab-ia" aria-controls="panel-ia" aria-selected="false" tabindex="-1">Agentes de IA</button>
+            <button class="feature-tab" data-feature="freio" role="tab" id="tab-freio" aria-controls="panel-freio" aria-selected="false" tabindex="-1">IA com freio</button>
+            <button class="feature-tab" data-feature="follow" role="tab" id="tab-follow" aria-controls="panel-follow" aria-selected="false" tabindex="-1">Follow-ups</button>
+            <button class="feature-tab" data-feature="funil" role="tab" id="tab-funil" aria-controls="panel-funil" aria-selected="false" tabindex="-1">Funis & dados</button>
+            <button class="feature-tab" data-feature="agenda" role="tab" id="tab-agenda" aria-controls="panel-agenda" aria-selected="false" tabindex="-1">Agenda & propostas</button>
+            <button class="feature-tab" data-feature="ads" role="tab" id="tab-ads" aria-controls="panel-ads" aria-selected="false" tabindex="-1">Ads & origem</button>
+            <button class="feature-tab" data-feature="integracoes" role="tab" id="tab-integracoes" aria-controls="panel-integracoes" aria-selected="false" tabindex="-1">Integrações</button>
+          </div>
+          <div class="feature-stage">
+            <div class="feature-panel active" data-panel="canais" role="tabpanel" id="panel-canais" aria-labelledby="tab-canais">
+              <div class="panel-copy"><h3>Vários canais, vários números. Uma tela.</h3><p>WhatsApp, API oficial, Datafy, Instagram e Facebook chegam ao mesmo Inbox. A equipe visualiza conversa, cliente e negócio em tempo real.</p><ul><li>Vários números no mesmo lugar</li><li>Áudio convertido em texto</li><li>Fila, Radar e transferência de conversa</li><li>Uso no celular como aplicativo</li></ul></div>
+              <div class="feature-real-media crop-left"><img src="img/20-inbox-lista.webp" alt="Caixa de entrada real do Thoth CRM" loading="lazy"></div>
+            </div>
+            <div class="feature-panel" data-panel="ia" role="tabpanel" id="panel-ia" aria-labelledby="tab-ia">
+              <div class="panel-copy"><h3>Vários agentes. Cada um no seu papel.</h3><p>Um agente pode vender, outro agendar, outro dar suporte. O roteador escolhe pelo assunto ou pelo número e a IA também pode operar o CRM.</p><ul><li>Histórico + base de conhecimento</li><li>Preenche ficha, move negócio e agenda</li><li>Teste antes de publicar</li><li>Skills e memória da operação</li></ul></div>
+              <div class="feature-real-media"><img src="img/21-inbox-conversa-ia.webp" alt="Conversa com agente de IA no Thoth CRM" loading="lazy"></div>
+            </div>
+            <div class="feature-panel" data-panel="freio" role="tabpanel" id="panel-freio" aria-labelledby="tab-freio">
+              <div class="panel-copy"><h3>IA com freio. Automação com responsabilidade.</h3><p>Antes de enviar, a operação pode checar regras, preço, hora e endereço. Quando precisa, a conversa passa para uma pessoa com contexto.</p><ul><li>Sete checagens antes do envio</li><li>Segundo verificador de IA</li><li>Resumo na passagem para humano</li><li>Teto de gasto e chave geral</li></ul></div>
+              <div class="feature-real-media"><img src="img/24-cartao-passagem.webp" alt="Cartão de passagem da IA com resumo completo" loading="lazy"></div>
+            </div>
+            <div class="feature-panel" data-panel="follow" role="tabpanel" id="panel-follow" aria-labelledby="tab-follow">
+              <div class="panel-copy"><h3>Follow-up que não depende da memória da equipe.</h3><p>Crie fluxos visuais de retomada por silêncio, etapa, lead novo ou caso aberto. O sistema sabe quando falar e quando parar.</p><ul><li>Editor visual em fluxograma</li><li>Horário próprio por agente</li><li>Pausar, adiar, pular e auditar</li><li>Move card e aplica etiqueta</li></ul></div>
+              <div class="feature-real-media"><img src="img/150-followup-modelos.webp" alt="Modelos de retomadas e follow-ups automáticos" loading="lazy"></div>
+            </div>
+            <div class="feature-panel" data-panel="funil" role="tabpanel" id="panel-funil" aria-labelledby="tab-funil">
+              <div class="panel-copy"><h3>O funil se adapta ao seu negócio.</h3><p>Crie quantos funis quiser, com etapas, vocabulário, regras e até 50 campos por funil. A IA pode preencher o que descobre.</p><ul><li>Até 50 campos em 11 tipos</li><li>Probabilidade e previsão</li><li>Motivos de ganho e perda</li><li>Tempo parado e “esfriando”</li></ul></div>
+              <div class="feature-real-media"><img src="img/117-funil-quadro.webp" alt="Quadro Kanban de funis com etapas e valores" loading="lazy"></div>
+            </div>
+            <div class="feature-panel" data-panel="agenda" role="tabpanel" id="panel-agenda" aria-labelledby="tab-agenda">
+              <div class="panel-copy"><h3>Agenda, propostas e dinheiro no mesmo lugar.</h3><p>Google Agenda, Meet, lembretes, presença, propostas comerciais com IA, PDF no WhatsApp e recursos financeiros conforme o módulo.</p><ul><li>IA marca horário na conversa</li><li>Proposta revisável antes do envio</li><li>PDF enviado no próprio WhatsApp</li><li>Nuvemshop para lojas</li></ul></div>
+              <div class="feature-real-media crop-agenda-wrap"><img class="crop-agenda" src="img/125-agenda-com-horarios.webp" alt="Agenda semanal integrada no Thoth CRM" loading="lazy"></div>
+            </div>
+            <div class="feature-panel" data-panel="ads" role="tabpanel" id="panel-ads" aria-labelledby="tab-ads">
+              <div class="panel-copy"><h3>Do anúncio ao caixa, com origem.</h3><p>Google Ads e Meta podem receber o resultado das etapas do funil. Links de WhatsApp rastreáveis ligam campanha, conversa e venda.</p><ul><li>Origem de Google e Meta</li><li>Valor da venda de volta para Ads</li><li>Histórico e diagnóstico de envios</li><li>Links rastreáveis e formulários</li></ul></div>
+              <div class="feature-real-media"><img src="img/48-campanhas.webp" alt="Campanhas de tráfego e anúncios vinculados" loading="lazy"></div>
+            </div>
+            <div class="feature-panel" data-panel="integracoes" role="tabpanel" id="panel-integracoes" aria-labelledby="tab-integracoes">
+              <div class="panel-copy"><h3>Conecte o que já existe na sua operação.</h3><p>API, MCP, webhooks, n8n e automações permitem que o Thoth converse com sistemas, formulários, ERPs e agentes externos.</p><ul><li>API e MCP</li><li>Webhooks assinados</li><li>n8n, Zapier e formulários</li><li>Google, e-mail e avisos de equipe</li></ul></div>
+              <div class="feature-real-media"><img src="img/155-prospeccao-busca.webp" alt="Prospecção ativa B2B e integrações" loading="lazy"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="gallery section-pad" id="por-dentro">
+      <div class="container">
+        <div class="section-heading reveal"><span class="section-kicker">Veja por dentro</span><h2>Telas reais, <em>não promessas.</em></h2><p>Capturas do sistema funcionando. Clique em uma imagem para ampliar.</p></div>
+        <div class="gallery-grid">
+          <button class="shot reveal" data-shot="img/117-funil-quadro.webp" data-title="Funil em quadro" data-desc="Etapas, valores e tempo sem resposta em cada negócio."><i class="frame"><img src="img/117-funil-quadro.webp" alt="Quadro de funil com etapas, valores e responsável" loading="lazy" decoding="async"></i><span><b>Funil em quadro</b><small>Etapas, valor e tempo sem resposta</small></span></button>
+          <button class="shot reveal delay-1" data-shot="img/24-cartao-passagem.webp" data-title="Passagem para uma pessoa" data-desc="Quando a IA passa a conversa, a equipe recebe o resumo do que já foi tentado."><i class="frame"><img src="img/24-cartao-passagem.webp" alt="Cartão com o resumo da IA ao passar a conversa para uma pessoa" loading="lazy" decoding="async"></i><span><b>Passagem para uma pessoa</b><small>Resumo do que a IA já tentou</small></span></button>
+          <button class="shot reveal" data-shot="img/125-agenda-com-horarios.webp" data-title="Agenda" data-desc="Horários publicados e agendamento direto na conversa."><i class="frame"><img class="crop-agenda" src="img/125-agenda-com-horarios.webp" alt="Agenda semanal com horários disponíveis" loading="lazy" decoding="async"></i><span><b>Agenda</b><small>Horários e confirmação na conversa</small></span></button>
+          <button class="shot reveal delay-1" data-shot="img/150-followup-modelos.webp" data-title="Follow-ups prontos" data-desc="Modelos de retomada com texto pronto, gatilho e duração."><i class="frame"><img src="img/150-followup-modelos.webp" alt="Modelos prontos de follow-up com gatilho e duração" loading="lazy" decoding="async"></i><span><b>Follow-ups prontos</b><small>Gatilho, mensagens e duração</small></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison section-pad" id="comparativo">
+      <div class="container">
+        <div class="section-heading reveal"><span class="section-kicker">A diferença</span><h2>Por que não é <em>mais um chatbot?</em></h2></div>
+        <div class="compare-table reveal">
+          <div class="compare-row header"><span>Chatbot comum</span><strong>Thoth CRM</strong></div>
+          <div class="compare-row"><span>Um robô para tudo</span><strong>Vários agentes, escolhidos por assunto ou número</strong></div>
+          <div class="compare-row"><span>Responde e termina</span><strong>Opera o CRM: ficha, etapa, agenda e histórico</strong></div>
+          <div class="compare-row"><span>Inventa quando não sabe</span><strong>Regras + checagens + verificador antes do envio</strong></div>
+          <div class="compare-row"><span>Esquece o cliente que sumiu</span><strong>Follow-ups automáticos com gatilhos e horários</strong></div>
+          <div class="compare-row"><span>Você paga anúncio no escuro</span><strong>Origem e venda conectadas ao Google Ads e Meta</strong></div>
+          <div class="compare-row"><span>Funil fixo</span><strong>Quantos funis quiser, com seus campos e regras</strong></div>
+          <div class="compare-row"><span>Ferramenta isolada</span><strong>API, MCP, webhooks e automações</strong></div>
+          <div class="compare-row"><span>Você instala e se vira</span><strong>A gente hospeda, configura e acompanha</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="segments section-pad dark-section">
+      <div class="container">
+        <div class="section-heading reveal"><span class="section-kicker light">Feito para operações diferentes</span><h2>O funil muda. <em>A lógica continua.</em></h2></div>
+        <div class="segment-grid">
+          <article class="segment-card reveal"><span class="segment-icon">+</span><h3>Clínicas & consultórios</h3><p>Retomadas para consulta, exame e falta, agenda com Google e bloqueios opcionais para promessas clínicas.</p><a href="#recursos">Ver recursos →</a></article>
+          <article class="segment-card reveal delay-1"><span class="segment-icon">⌂</span><h3>Imobiliárias</h3><p>Funil por imóvel, agenda de visitas, anúncios rastreados e prospecção ativa.</p><a href="#recursos">Ver recursos →</a></article>
+          <article class="segment-card reveal delay-2"><span class="segment-icon">□</span><h3>Lojas & e-commerce</h3><p>Produtos com fotos e preço, integração com Nuvemshop e pós-venda automático.</p><a href="#recursos">Ver recursos →</a></article>
+          <article class="segment-card reveal"><span class="segment-icon">↗</span><h3>Serviços & agências</h3><p>Propostas em PDF pelo WhatsApp, múltiplos clientes e relatórios por canal.</p><a href="#recursos">Ver recursos →</a></article>
+          <article class="segment-card reveal delay-1"><span class="segment-icon">◇</span><h3>Cursos & infoprodutores</h3><p>Formulários, campanhas, anúncios rastreados e retomada de leads que abandonaram.</p><a href="#recursos">Ver recursos →</a></article>
+          <article class="segment-card reveal delay-2"><span class="segment-icon">§</span><h3>Escritórios</h3><p>Contratos, parcelas e honorários, conforme o módulo opcional contratado.</p><a href="#recursos">Ver recursos →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="setup section-pad" id="como-comecar">
+      <div class="container setup-grid">
+        <div class="setup-copy reveal"><span class="section-kicker">Sem projeto interminável</span><h2>Você não compra uma ferramenta. <em>Você coloca uma operação de vendas de pé.</em></h2><p>A implantação começa entendendo o seu negócio e termina com a equipe usando o sistema.</p><button class="guide-link" data-guide>Ver guia de primeiros passos <span>↗</span></button></div>
+        <div class="steps reveal delay-1">
+          <article><b>01</b><div><small>ENTENDIMENTO</small><h3>A gente conversa</h3><p>Mapeamos como sua empresa recebe, atende e acompanha clientes.</p></div></article>
+          <article><b>02</b><div><small>CONFIGURAÇÃO</small><h3>Criamos sua operação</h3><p>Conectamos canais, marca, funil, agentes, retomadas e base de conhecimento.</p></div></article>
+          <article><b>03</b><div><small>ATIVAÇÃO</small><h3>Você começa a vender</h3><p>A equipe atende e, se quiser, a gente acompanha os números.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing section-pad" id="planos">
+      <div class="container">
+        <div class="trial-banner reveal"><b>14 dias de teste grátis</b><span>Sem assinatura. Você usa a sua própria chave de API de IA durante o teste.</span><a href="#teste">Começar o teste →</a></div>
+        <div class="section-heading reveal"><span class="section-kicker">Planos</span><h2>Comece pelo nível de operação que <em>faz sentido hoje.</em></h2><p>Todos partem da mesma base. O que muda é quanto da implantação e acompanhamento fica com você ou com a nossa equipe.</p></div>
+        <div class="pricing-grid">
+          <article class="price-card reveal"><div class="price-top"><span class="price-label">ACESSO</span></div><h3>Sua empresa pronta no sistema.</h3><p class="price-desc">Você configura. Nós hospedamos e mantemos a base.</p><ul><li>Sistema hospedado e atualizado</li><li>WhatsApp conectado e testado</li><li>Sua marca no sistema</li><li>Guia de primeiros passos</li><li>Até 3 atendentes</li></ul><div class="price"><small>para começar</small><strong>R$ 497</strong><span>+ R$ 297/mês</span></div><a class="btn btn-outline" href="#teste">Testar 14 dias grátis</a></article>
+          <article class="price-card featured reveal delay-1"><div class="popular">RECOMENDADO</div><div class="price-top"><span class="price-label">PRONTO PARA VENDER</span></div><h3>A gente configura tudo com os dados do seu negócio.</h3><p class="price-desc">Para começar com a operação estruturada e testada.</p><ul><li>Tudo do plano Acesso</li><li>Funil do seu tipo de negócio</li><li>Agentes de IA + roteamento</li><li>Base com preços, regras e FAQs</li><li>Retomadas, horários e responsáveis</li><li>Importação de contatos e leads</li><li>Teste com conversas reais + treinamento</li><li>7 dias de ajustes</li><li>Até 5 atendentes</li></ul><div class="price"><small>para começar</small><strong>R$ 2.497</strong><span>+ R$ 397/mês</span></div><a class="btn btn-primary" href="#teste">Testar 14 dias grátis <span>→</span></a></article>
+          <article class="price-card reveal delay-2"><div class="price-top"><span class="price-label">ACOMPANHADO</span></div><h3>Pronto e acompanhado pelos números.</h3><p class="price-desc">Para quem quer revisar a operação com base no que acontece de verdade.</p><ul><li>Tudo do Pronto para vender</li><li>Relatório mensal de origem e perdas</li><li>Revisão dos agentes e da base</li><li>Reunião mensal de decisão</li><li>Até 5 atendentes</li><li>Até 2 números de WhatsApp</li></ul><div class="price"><small>para começar</small><strong>R$ 2.497</strong><span>+ R$ 1.097/mês</span></div><a class="btn btn-outline" href="#teste">Testar 14 dias grátis</a></article>
+        </div>
+        <div class="pricing-note reveal"><strong>Valores de referência em reais (Brasil).</strong> Os preços ainda não são definitivos e os valores para o mercado europeu (€) estão em definição. Após o teste, contrato de 6 meses. IA, número oficial do WhatsApp, chave do Google e da Meta Ads e e-mail são cobrados à parte, direto do fornecedor.</div>
+      </div>
+    </section>
+
+    <section class="faq section-pad">
+      <div class="container faq-grid">
+        <div class="faq-intro reveal"><span class="section-kicker">Perguntas frequentes</span><h2>Antes de colocar a operação para rodar.</h2><p>Algumas respostas importantes antes de decidir.</p><a class="guide-link" href="manual.html">Ver guia prático <span>↗</span></a></div>
+        <div class="faq-list reveal delay-1">
+          <details open><summary>Como funciona o teste grátis?</summary><p>São 14 dias para usar o Thoth sem assinatura. Para a IA responder, você conecta a sua própria chave de API de IA, cobrada direto pelo fornecedor. Se quiser seguir, escolhemos o plano juntos.</p></details>
+          <details><summary>Os preços são definitivos? E na Europa?</summary><p>Os valores da página são de referência para o Brasil. Os preços podem mudar e os valores para o mercado europeu, em euros, ainda estão sendo definidos. Fale com a gente para confirmar o valor atual.</p></details>
+          <details><summary>O que eu pago?</summary><p>A implantação, uma vez, e a mensalidade da empresa no sistema. A mensalidade cobre hospedagem, atualizações e suporte conforme o plano. IA, número oficial do WhatsApp e e-mail são cobrados à parte.</p></details>
+          <details><summary>Posso ter mais de um número e mais de um agente?</summary><p>Sim. Você conecta vários números e cria quantos agentes quiser; o roteador decide quem atende cada conversa.</p></details>
+          <details><summary>Atende Instagram e Facebook?</summary><p>Sim. As mensagens chegam no mesmo Inbox, com atendimento humano e IA. Outras redes podem ficar vinculadas à conta, mas ainda não recebem mensagens no atendimento.</p></details>
+          <details><summary>A IA responde sozinha o tempo todo?</summary><p>Só se você quiser. Você pode pausar e devolver a IA pelo celular com <code>#off</code> e <code>#on</code>, e ela chama uma pessoa quando precisa.</p></details>
+          <details><summary>Meu WhatsApp pode ser bloqueado?</summary><p>Existe risco em qualquer conexão não oficial. O Thoth usa ritmo, horários e modo de teste para reduzir o risco e também aceita o número da API oficial.</p></details>
+          <details><summary>E se a IA errar?</summary><p>Cada resposta pode passar por checagens antes de sair, com teto de gasto e registro. No plano Acompanhado, a operação pode ser revisada com base nas conversas reais.</p></details>
+          <details><summary>Conecta com meu sistema?</summary><p>Sim, por API, MCP, webhook e automações. Se o seu sistema tem um jeito de receber ou enviar dados, existe uma rota de integração.</p></details>
+          <details><summary>Onde ficam meus dados?</summary><p>Os dados da sua empresa ficam separados dos de qualquer outra. Os detalhes de infraestrutura e backup devem ser confirmados no momento da contratação.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="fechamento">
+      <div class="container closing-inner reveal">
+        <span class="closing-mark">t</span>
+        <span class="section-kicker light">O próximo passo é simples</span>
+        <h2>Pare de perder cliente por demora.</h2>
+        <p>Teste o Thoth por 14 dias, sem assinatura, com o tipo de operação que você tem hoje.</p>
+        <form class="trial-form" id="teste" novalidate>
+          <label>Seu nome<input name="nome" type="text" autocomplete="name" required placeholder="Como devemos te chamar"></label>
+          <label>WhatsApp<input name="whats" type="tel" autocomplete="tel" required placeholder="+55 11 91234-5678"></label>
+          <label>Tipo de negócio<select name="negocio" required><option value="">Escolha</option><option>Clínica ou consultório</option><option>Imobiliária</option><option>Loja ou e-commerce</option><option>Serviços ou agência</option><option>Cursos e infoprodutos</option><option>Escritório</option><option>Outro</option></select></label>
+          <label>Mercado<select name="mercado" required><option>Brasil</option><option>Portugal</option><option>Outro país da Europa</option><option>Outro</option></select></label>
+          <button class="btn btn-amber btn-large" type="submit">Quero testar por 14 dias <span>→</span></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <small class="form-note">Usamos estes dados só para falar sobre o seu teste. O teste usa a sua chave de API de IA.</small>
+        </form>
+        <div class="closing-actions"><a class="btn btn-darkghost btn-large" href="manual.html">Entender a operação <span>↗</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><div><img src="assets/thoth-logo.png" alt="Thoth CRM"><p>Sistema Operacional de Vendas.</p></div><div class="footer-links"><a href="manual.html">Guia Prático (Manual)</a><a href="#recursos">Recursos</a><a href="#planos">Planos</a><a href="#como-funciona">Como funciona</a><a href="#topo">Voltar ao topo ↑</a></div><small>© 2026 Thoth CRM. Todos os direitos reservados.</small></div></footer>
+
+  <a class="floating-guide" href="#teste" aria-label="Começar teste grátis de 14 dias"><span>✦</span><div><small>14 DIAS GRÁTIS</small><strong>Começar o teste</strong></div><b>→</b></a>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lbTitle">
+    <button class="lb-close" aria-label="Fechar imagem" data-lb-close>×</button>
+    <img alt="" id="lbImg">
+    <p><b id="lbTitle"></b> <span id="lbDesc"></span></p>
+  </dialog>
+
+  <div class="guide-overlay" id="guideOverlay" aria-hidden="true">
+    <div class="guide-panel" role="dialog" aria-modal="true" aria-labelledby="guideTitle">
+      <button class="guide-close" data-guide-close aria-label="Fechar">×</button>
+      <div class="guide-header"><span class="guide-icon">✦</span><div><small>GUIA PRÁTICO</small><h2 id="guideTitle">Como o Thoth entra na operação</h2></div></div>
+      <p class="guide-lede">Uma visão rápida da sequência recomendada para colocar o sistema em uso.</p>
+      <div class="guide-steps">
+        <article><b>01</b><div><small>PRIMEIRO ACESSO</small><h3>Crie a empresa</h3><p>Defina sua empresa, marca e equipe. O Thoth parte da estrutura do seu negócio.</p></div></article>
+        <article><b>02</b><div><small>CANAIS</small><h3>Conecte o atendimento</h3><p>WhatsApp e, se desejar, Instagram e Facebook. Os canais passam a alimentar o mesmo Inbox.</p></div></article>
+        <article><b>03</b><div><small>OPERAÇÃO</small><h3>Monte o funil</h3><p>Escolha etapas, campos, responsáveis, etiquetas e regras que façam sentido para a venda.</p></div></article>
+        <article><b>04</b><div><small>IA</small><h3>Crie e teste os agentes</h3><p>Defina voz, regras, conhecimento e quais partes do CRM cada agente pode operar.</p></div></article>
+        <article><b>05</b><div><small>AUTOMAÇÃO</small><h3>Ligue as retomadas</h3><p>Configure follow-ups, horários e gatilhos. Tudo nasce pausado e pode ser revisado antes de agir.</p></div></article>
+        <article><b>06</b><div><small>GESTÃO</small><h3>Acompanhe o que aconteceu</h3><p>Use funil, origem, tempo de resposta, perdas, custo de IA e faturamento para decidir o próximo ajuste.</p></div></article>
+      </div>
+      <div class="guide-footer"><span>Baseado no manual prático do Thoth CRM</span><a href="manual.html" class="btn btn-amber">Abrir Manual Completo (30 Capítulos) ↗</a></div>
+    </div>
+  </div>
+
+  <script>
+    /* Preencha para o formulario do teste gratis abrir o contato. Exemplo: whatsapp: '5511912345678' (so digitos, com pais). */
+    window.THOTH_CONTACT = { whatsapp: '5515988263583', email: 'suporte@thothcrm.com.br' };
+  </script>
+  <script src="js/gsap.min.js" defer></script>
+  <script src="js/ScrollTrigger.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

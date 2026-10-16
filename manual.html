@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#283618">
+  <title>Manual do Thoth CRM — Guia Prático da Operação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   Design System Oficial do Thoth CRM — Manual Prático
+   ========================================================================== */
+:root {
+  --bg: #fcf9f2;
+  --surface: #ffffff;
+  --surface-alt: #f7f3e8;
+  --ink: #1c2713;
+  --muted: #4f5847;
+  --line: rgba(40, 54, 24, 0.12);
+  --forest: #283618;
+  --forest-dark: #1b2610;
+  --sage: #606c38;
+  --amber: #dda15e;
+  --amber-hover: #e6ac6d;
+  --bronze: #bc6c25;
+  --cream: #fefae0;
+  --accent: #283618;
+  --accent-soft: #ebf2e7;
+  --chip: #f3efe4;
+  --warn: #bc6c25;
+  --warn-soft: #fcf4e8;
+  --err: #b8352d;
+  --err-soft: #fdeceb;
+  --ex: #2c6b3a;
+  --ex-soft: #edf5ed;
+  --f-display: 'Plus Jakarta Sans', sans-serif;
+  --f-body: 'Inter', sans-serif;
+  --f-mono: 'DM Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 var(--f-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header Oficial do Thoth CRM */
+.manual-header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: rgba(254, 250, 224, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+
+.manual-nav-inner {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.manual-brand img {
+  width: 148px;
+  height: auto;
+  display: block;
+}
+
+.manual-pill {
+  font: 600 11px var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: rgba(40, 54, 24, 0.07);
+  padding: 5px 12px;
+  border-radius: 99px;
+  border: 1px solid rgba(40, 54, 24, 0.1);
+}
+
+.manual-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.manual-links a {
+  color: var(--forest);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.manual-links a:hover {
+  color: var(--bronze);
+}
+
+.manual-cta {
+  background: var(--amber);
+  color: var(--forest-dark) !important;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 9px;
+  border: 1px solid #d39551;
+  box-shadow: 0 4px 14px rgba(221, 161, 94, 0.28);
+  transition: all 0.2s ease;
+}
+
+.manual-cta:hover {
+  background: var(--amber-hover);
+  transform: translateY(-1px);
+}
+
+.wrap {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--f-display);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--forest-dark);
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 14px;
+  color: var(--forest);
+}
+
+p {
+  margin: 0;
+  color: var(--ink);
+}
+
+a {
+  color: var(--forest);
+}
+
+:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+header.top {
+  padding-block: 46px 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.eyebrow {
+  font: 600 11px var(--f-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 0 2px rgba(221, 161, 94, 0.25);
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 2px rgba(221, 161, 94, 0.25); }
+  50% { transform: scale(1.25); box-shadow: 0 0 0 5px rgba(221, 161, 94, 0); }
+}
+
+.lede {
+  max-width: 72ch;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.limites {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 0.94rem;
+  color: var(--muted);
+  max-width: 82ch;
+  box-shadow: 0 4px 16px rgba(40, 54, 24, 0.03);
+}
+
+.limites summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.limites ul {
+  margin-top: 10px;
+}
+
+/* Busca Integrada no Menu Lateral */
+.toc-search-wrap {
+  margin-bottom: 14px;
+}
+
+.toc-search-wrap .search {
+  display: block;
+  width: 100%;
+}
+
+.toc-search-wrap input {
+  width: 100%;
+  box-sizing: border-box;
+  font: 0.9rem var(--f-body);
+  padding: 10px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  transition: all 0.18s ease;
+}
+
+.toc-search-wrap input:focus {
+  border-color: var(--forest);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(40, 54, 24, 0.12);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 295px minmax(0, 1fr);
+  gap: 38px;
+  padding-top: 10px;
+}
+
+@media (max-width: 960px) {
+  .layout { 
+    grid-template-columns: minmax(0, 1fr); 
+    padding-top: 10px;
+  }
+  .toc {
+    position: relative;
+    top: 0;
+    max-height: none;
+    padding-right: 0;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 18px;
+  }
+  .manual-links { display: none; }
+}
+
+.toc {
+  position: sticky;
+  top: 86px;
+  align-self: start;
+  max-height: calc(100vh - 105px);
+  overflow-y: auto;
+  font-size: 0.9rem;
+  padding-right: 12px;
+}
+
+.toc::-webkit-scrollbar {
+  width: 5px;
+}
+
+.toc::-webkit-scrollbar-thumb {
+  background: rgba(40, 54, 24, 0.15);
+  border-radius: 99px;
+}
+
+.toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.toc-eyebrow {
+  font: 700 0.72rem var(--f-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.toc-pill {
+  font: 600 0.7rem var(--f-mono);
+  background: var(--accent-soft);
+  color: var(--forest);
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid rgba(40, 54, 24, 0.1);
+}
+
+.toc-tree {
+  display: grid;
+  gap: 12px;
+}
+
+.toc-group {
+  border: none;
+  border-bottom: 1px solid var(--line);
+  background: none;
+  overflow: visible;
+}
+
+.toc-group:last-child {
+  border-bottom: none;
+}
+
+.toc-group.active {
+  border-bottom-color: var(--line);
+}
+
+.toc-group-btn {
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 4px;
+  cursor: pointer;
+  font: 600 0.88rem var(--f-display);
+  color: var(--forest-dark);
+  transition: color 0.15s ease;
+}
+
+.toc-group.active .toc-group-btn {
+  color: var(--forest);
+  font-weight: 700;
+}
+
+.toc-group-btn:hover {
+  color: var(--forest);
+}
+
+.toc-group-title {
+  display: flex;
+  align-items: center;
+}
+
+.toc-group-count {
+  font: 600 0.7rem var(--f-mono);
+  color: var(--muted);
+}
+
+.toc-group.active .toc-group-count {
+  color: var(--forest);
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 8px;
+  display: grid;
+  gap: 2px;
+}
+
+.toc-item a {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 5px 4px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.84rem;
+  line-height: 1.35;
+  transition: color 0.14s ease;
+}
+
+.toc-item a:hover {
+  color: var(--forest);
+}
+
+.toc-item a.active {
+  color: var(--forest-dark);
+  font-weight: 700;
+}
+
+.toc-num {
+  font: 600 0.7rem var(--f-mono);
+  color: var(--sage);
+  flex-shrink: 0;
+}
+
+.toc-item a.active .toc-num {
+  color: var(--forest);
+}
+
+/* Realce suave quando chamado por âncora */
+@keyframes cap-anchor-glow {
+  0% {
+    box-shadow: 0 0 0 4px var(--amber), 0 20px 45px rgba(221, 161, 94, 0.28);
+    border-color: var(--amber);
+    transform: translateY(-2px);
+  }
+  60% {
+    box-shadow: 0 0 0 4px var(--amber), 0 20px 45px rgba(221, 161, 94, 0.28);
+    border-color: var(--amber);
+  }
+  100% {
+    box-shadow: 0 10px 30px rgba(40, 54, 24, 0.03);
+    border-color: var(--line);
+    transform: none;
+  }
+}
+
+.cap-highlight {
+  animation: cap-anchor-glow 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+
+
+main {
+  display: grid;
+  gap: 26px;
+  min-width: 0;
+}
+
+.trilha-intro {
+  display: grid;
+  gap: 10px;
+  max-width: 82ch;
+  padding: 22px 0 18px;
+  border-top: 2px solid var(--forest);
+}
+
+.trilha-intro h2 {
+  font-size: 1.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trilha-intro .quem {
+  color: #4a5440;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.cap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px 28px 32px;
+  display: grid;
+  gap: 18px;
+  scroll-margin-top: 88px;
+  min-width: 0;
+  box-shadow: 0 10px 30px rgba(40, 54, 24, 0.03);
+}
+
+.cap-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+
+.cap p, .cap li {
+  max-width: 72ch;
+  line-height: 1.7;
+}
+
+.papel {
+  font: 600 0.72rem/1 var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--forest);
+  border: 1px solid rgba(40, 54, 24, 0.1);
+  white-space: nowrap;
+}
+
+.onde {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  font-size: 0.94rem;
+  color: var(--muted);
+}
+
+.path {
+  font: 600 0.82rem var(--f-mono);
+  background: var(--chip);
+  color: var(--forest-dark);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+ol.passos {
+  margin: 0;
+  padding-left: 1.4em;
+  display: grid;
+  gap: 10px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2em;
+  display: grid;
+  gap: 6px;
+}
+
+.btn {
+  font-weight: 700;
+  border-bottom: 2px solid var(--amber);
+  white-space: nowrap;
+  color: var(--forest);
+}
+
+kbd {
+  font: 600 0.82rem var(--f-mono);
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 2px 7px;
+  background: var(--surface-alt);
+  color: var(--forest);
+}
+
+code, pre {
+  font-family: var(--f-mono);
+  font-size: 0.88rem;
+}
+
+code {
+  background: var(--chip);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--forest-dark);
+}
+
+.cmd {
+  position: relative;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  overflow-x: auto;
+}
+
+.cmd pre {
+  margin: 0;
+  white-space: pre;
+}
+
+.cmd button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font: 600 0.75rem var(--f-display);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--forest);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cmd button:hover {
+  background: var(--forest);
+  color: var(--cream);
+}
+
+.aviso {
+  background: var(--warn-soft);
+  border: 1px solid rgba(188, 108, 37, 0.2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.aviso strong {
+  color: var(--warn);
+}
+
+.dica {
+  padding-left: 14px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.exemplo {
+  background: var(--ex-soft);
+  border: 1px solid rgba(44, 107, 58, 0.18);
+  border-radius: 10px;
+  padding: 14px 16px;
+  position: relative;
+}
+
+.exemplo .tag {
+  display: block;
+  font: 600 0.72rem var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ex);
+  margin-bottom: 4px;
+}
+
+.erro {
+  background: var(--err-soft);
+  border: 1px solid rgba(184, 53, 45, 0.18);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.erro .tag {
+  font: 600 0.72rem var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--err);
+}
+
+.erro .ve {
+  font-weight: 700;
+  color: #7d1c16;
+}
+
+.tabela {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.94rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th {
+  font: 600 0.75rem var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: var(--surface-alt);
+}
+
+.ordem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.92rem;
+}
+
+.ordem span {
+  background: var(--accent-soft);
+  color: var(--forest);
+  border: 1px solid rgba(40, 54, 24, 0.12);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 600;
+}
+
+.ordem i {
+  color: var(--amber);
+  font-style: normal;
+  font-weight: 700;
+}
+
+figure.fig {
+  margin: 10px 0;
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  background: rgba(40, 54, 24, 0.02);
+  border-radius: 12px;
+}
+
+figure.fig img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: zoom-in;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(40, 54, 24, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+figure.fig img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(40, 54, 24, 0.12);
+}
+
+figure.fig.small img {
+  max-width: 760px;
+}
+
+figure.fig figcaption {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.vazio {
+  color: var(--muted);
+  padding: 40px 0;
+  text-align: center;
+}
+
+dl.gloss {
+  display: grid;
+  grid-template-columns: minmax(130px, 220px) minmax(0, 1fr);
+  gap: 10px 20px;
+  margin: 0;
+}
+
+dl.gloss dt {
+  font-weight: 700;
+  color: var(--forest);
+}
+
+dl.gloss dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+@media (max-width: 520px) {
+  dl.gloss { grid-template-columns: minmax(0, 1fr); }
+  dl.gloss dd { margin-bottom: 10px; }
+  .cap { padding: 20px 16px; }
+}
+
+footer {
+  margin-top: 50px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  max-width: 76ch;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+
+.lb {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 29, 16, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  overflow: auto;
+  display: none;
+  padding: 24px;
+  cursor: zoom-out;
+}
+
+.lb.on {
+  display: block;
+}
+
+.lb img {
+  display: block;
+  margin: 0 auto;
+  width: min(100%, 1600px);
+  height: auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.lb.full img {
+  width: auto;
+  max-width: none;
+}
+
+.lb .dica2 {
+  position: sticky;
+  top: 0;
+  color: var(--cream);
+  font: 600 0.88rem var(--f-body);
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Barra de Navegação Oficial Thoth CRM -->
+  <header class="manual-header">
+    <div class="manual-nav-inner">
+      <a class="manual-brand" href="index.html" aria-label="Thoth CRM">
+        <img src="assets/thoth-logo.png" alt="Thoth CRM">
+      </a>
+      <span class="manual-pill">Guia Prático da Operação</span>
+      <div class="manual-links">
+        <a href="index.html">← Página de vendas</a>
+        <a href="index.html#recursos">Recursos</a>
+        <a href="index.html#planos" class="manual-cta">Ver planos ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <header class="top">
+      <span class="eyebrow"><span class="dot"></span> Manual de uso oficial · Thoth CRM</span>
+      <h1>Como o Thoth CRM entra na operação</h1>
+      <p class="lede">O passo a passo prático para colocar o sistema em uso no dia a dia, com as telas reais, exemplos operacionais e resolução rápida do que fazer em cada situação.</p>
+      <details class="limites">
+        <summary>Sobre este manual e telas reais</summary>
+        <p>As telas e fluxos documentados mostram o sistema real em funcionamento com uma empresa modelo, exemplificando o atendimento ao vivo, roteamento de agentes, gestão de funis e automações.</p>
+      </details>
+    <div class="layout">
+      <nav class="toc" aria-label="Navegação do Manual">
+        <div class="toc-search-wrap">
+          <label class="search" for="busca">
+            <span hidden>Buscar no manual</span>
+            <input id="busca" type="search" placeholder="Buscar no manual (ex: assumir, erro…)" autocomplete="off">
+          </label>
+        </div>
+        <div class="toc-header">
+          <span class="toc-eyebrow">SUMÁRIO DA OPERAÇÃO</span>
+          <span class="toc-pill">5 Trilhas</span>
+        </div>
+        <div class="toc-tree" id="toc"></div>
+      </nav>
+      <main id="conteudo">
+<section data-trilha="inicio"><div class="trilha-intro"><h2>Primeiro acesso</h2><p class="quem">Você recebeu o endereço, o e-mail e a senha. Este é o passo a passo da configuração inicial da sua empresa, tela por tela.</p></div></section>
+<article class="cap" data-trilha="inicio" id="i-onboarding"><div class="cap-head"><h3>Primeiro acesso: os 6 passos</h3><span class="papel">Admin</span></div><p>Abra o endereço que você recebeu e entre com o e-mail e a senha de acesso. A configuração abaixo leva uns 10 minutos.</p><figure class="fig small"><img loading="lazy" src="img/01-login.webp" alt="Tela de entrada." data-zoom><figcaption>Tela de entrada.</figcaption></figure><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">"Email ou senha incorretos."</p><p><strong>Por que acontece:</strong> Algum dos dois está errado.</p><p><strong>O que fazer:</strong> Confira maiúsculas e espaços. Use "Esqueci minha senha".</p></div><figure class="fig small"><img loading="lazy" src="img/02-login-senha-errada.webp" alt="O aviso de senha errada." data-zoom><figcaption>O aviso de senha errada.</figcaption></figure><h4>Passo 1 · Seu negócio</h4><p>Nome, o que a empresa faz (uma linha basta) e onde atende (define o fuso e o horário). Aceite os termos para continuar.</p><figure class="fig small"><img loading="lazy" src="img/04-onb-1-negocio.webp" alt="Passo 1." data-zoom><figcaption>Passo 1.</figcaption></figure><h4>Passo 2 · O telefone dele</h4><p>Escolha como o número é conectado: WhatsApp no celular (QR), conta oficial da Meta ou provedor parceiro. Dá para pular e conectar depois.</p><figure class="fig small"><img loading="lazy" src="img/05-onb-2-whatsapp.webp" alt="Passo 2." data-zoom><figcaption>Passo 2.</figcaption></figure><h4>Passo 3 · Treinar</h4><p>Cole a chave de IA, dê um nome ao funcionário, escolha o jeito de falar (Próximo e caloroso, Objetivo e cordial ou Curto e prático) e escreva as regras da casa. Nada disso é definitivo.</p><figure class="fig"><img loading="lazy" src="img/08-onb-3-treinar.webp" alt="Passo 3." data-zoom><figcaption>Passo 3.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/10-onb-apos-criar.webp" alt="Sem chave confirmada o agente é criado como rascunho, com o aviso em amarelo." data-zoom><figcaption>Sem chave confirmada o agente é criado como rascunho, com o aviso em amarelo.</figcaption></figure><h4>Passo 4 · Onde ele organiza</h4><p>O quadro do funil, com as colunas sugeridas.</p><h4>Passo 5 · Ver ele atender</h4><p>Um ensaio de conversa. Com o agente em rascunho, aparece "Rascunho não responde mensagem, então não há o que ensaiar" e você pode continuar.</p><figure class="fig small"><img loading="lazy" src="img/12-onb-5-testar.webp" alt="Passo 5 com o agente em rascunho." data-zoom><figcaption>Passo 5 com o agente em rascunho.</figcaption></figure><h4>Passo 6 · Quem trabalha com ele</h4><p>Convide a equipe (veja o capítulo de Equipe na trilha do gestor).</p><figure class="fig small"><img loading="lazy" src="img/13-onb-6-equipe.webp" alt="Passo 6." data-zoom><figcaption>Passo 6.</figcaption></figure><figure class="fig"><img loading="lazy" src="img/15-onb-pronto.webp" alt="A tela final resume o que ficou pronto e o que foi pulado." data-zoom><figcaption>A tela final resume o que ficou pronto e o que foi pulado.</figcaption></figure></article>
+<article class="cap" data-trilha="inicio" id="i-cliente"><div class="cap-head"><h3>Depois do primeiro acesso: a ordem certa</h3><span class="papel">Admin</span></div><p>Depois do primeiro acesso, siga a ordem da trilha do gestor: conexão, chave, funil, conhecimento, agente, teste, publicação, follow-ups e roteador.</p></article>
+<section data-trilha="atendente"><div class="trilha-intro"><h2>Trilha do atendente</h2><p class="quem">Para quem conversa com os clientes todo dia. Cada capítulo é uma situação real: o que fazer, com a imagem da tela, um exemplo e o que fazer se algo der errado.</p></div></section>
+<article class="cap" data-trilha="atendente" id="a-comecar"><div class="cap-head"><h3>Começar o dia: o que você vê na tela</h3><span class="papel">Todos</span></div><div class="onde">Onde: <span class="path">Atendimento</span> › <span class="path">Inbox</span></div><figure class="fig"><img loading="lazy" src="img/20-inbox-lista.webp" alt="A caixa de conversas (Inbox). Nomes e conversas deste manual são inventados." data-zoom><figcaption>A caixa de conversas (Inbox). Nomes e conversas deste manual são inventados.</figcaption></figure><p>O menu fica à esquerda, em grupos: <strong>Atendimento</strong> (Inbox, Radar, Agenda, Respostas rápidas), <strong>CRM</strong> (Funis, Contatos, Tarefas), <strong>Agente de IA</strong>, <strong>Canais</strong>, <strong>Análise</strong> e, no rodapé, <strong>Configurações</strong>. Você só vê as telas que o seu papel permite.</p><p>Na Inbox, as abas no alto separam as conversas. O número ao lado de cada aba é a quantidade:</p><div class="tabela"><table><tr><th>Aba</th><th>O que mostra</th></tr><tr><td>Fila</td><td>Clientes esperando alguém da equipe. Cada um mostra "Aguardando há…" e a posição (1º, 2º…).</td></tr><tr><td>Minhas</td><td>As conversas que estão com você.</td></tr><tr><td>Todas</td><td>Todas as conversas abertas.</td></tr><tr><td>Fechadas, Arquivadas</td><td>Conversas encerradas ou guardadas.</td></tr></table></div><p>O campo <strong>Busca</strong> procura por nome, telefone ou texto da última mensagem. Também dá para filtrar por <strong>Não lidos</strong>, <strong>Grupos</strong>, por tag e por número de WhatsApp.</p><p class="dica"><strong>Dica.</strong> Para achar qualquer tela do sistema, aperte <kbd>Ctrl</kbd> + <kbd>K</kbd> (no Mac, <kbd>⌘</kbd> + <kbd>K</kbd>) e digite o nome, por exemplo "agenda".</p></article>
+<article class="cap" data-trilha="atendente" id="a-ia-atendendo"><div class="cap-head"><h3>Quando a IA está atendendo o cliente</h3><span class="papel">Atendente+</span></div><div class="onde">Onde: <span class="path">Atendimento</span> › <span class="path">Inbox</span></div><figure class="fig"><img loading="lazy" src="img/21-inbox-conversa-ia.webp" alt="Conversa em que a IA (a Sofia) responde sozinha. No alto aparece &quot;Sem responsável&quot; e o botão Assumir." data-zoom><figcaption>Conversa em que a IA (a Sofia) responde sozinha. No alto aparece "Sem responsável" e o botão Assumir.</figcaption></figure><p>Quando a IA está no comando, você não precisa fazer nada. Abra a conversa só para acompanhar. As mensagens dela aparecem em verde, com a marca <strong>IA</strong>.</p><p>Vale assumir a conversa quando:</p><ul><li>o cliente pedir para falar com uma pessoa;</li><li>o assunto for sensível (dor, reclamação, dinheiro);</li><li>a IA responder algo errado ou ficar repetindo a mesma resposta.</li></ul><div class="aviso"><strong>Atenção</strong><p>O selo no topo da conversa diz quem manda: "Automático atendendo" ou o nome de uma pessoa. Leia o selo antes de escrever. Se você escrever enquanto a IA está no comando, as duas podem responder ao mesmo tempo.</p></div></article>
+<article class="cap" data-trilha="atendente" id="a-passagem"><div class="cap-head"><h3>A IA passou a conversa para você</h3><span class="papel">Atendente+</span></div><div class="onde">Onde: <span class="path">Agente de IA</span> › <span class="path">Casos</span> e <span class="path">Atendimento</span> › <span class="path">Inbox</span></div><p>A IA passa a conversa quando o cliente pede uma pessoa ou quando ela esbarra em algo que só um humano resolve. Você é avisado em três lugares ao mesmo tempo: o número vermelho em <strong>Casos</strong>, o sininho no alto e um alerta na Central de avisos.</p><figure class="fig"><img loading="lazy" src="img/37-alertas.webp" alt="Central de avisos: &quot;Handoff humano solicitado — assumir a conversa&quot;. Use Abrir conversa." data-zoom><figcaption>Central de avisos: "Handoff humano solicitado — assumir a conversa". Use Abrir conversa.</figcaption></figure><figure class="fig"><img loading="lazy" src="img/36-casos.webp" alt="Casos: a IA abre um caso quando trava e continua conversando com o cliente enquanto espera você." data-zoom><figcaption>Casos: a IA abre um caso quando trava e continua conversando com o cliente enquanto espera você.</figcaption></figure><p>Ao abrir a conversa, o primeiro cartão explica tudo:</p><figure class="fig"><img loading="lazy" src="img/24-cartao-passagem.webp" alt="O cartão &quot;Por que a IA passou para você&quot;: o que o cliente quer, o que a IA já tentou e as últimas palavras dele." data-zoom><figcaption>O cartão "Por que a IA passou para você": o que o cliente quer, o que a IA já tentou e as últimas palavras dele.</figcaption></figure><ol class="passos"><li>Leia o cartão de cima a baixo. O <strong>resumo da IA</strong> pode errar, então confira as últimas palavras do cliente.</li><li>Veja se o cartão diz que o cliente <strong>já foi avisado</strong> de que uma pessoa vai assumir. Se disser que <em>não foi avisado</em>, ele está esperando sem saber: comece pedindo desculpa pela espera.</li><li>Clique em <span class="btn">Assumir</span> (ou <span class="btn">Assumir e responder</span> no cartão).</li><li>Responda. Quando terminar, feche a conversa ou devolva ao automático (veja o capítulo seguinte).</li></ol><div class="exemplo"><span class="tag">Exemplo</span>Marina escreveu: "Fiz a extração ontem, piorou e o rosto inchou. Quero falar com alguém da clínica." A IA parou, abriu o caso "Dor e inchaço depois da extração" e passou para a equipe. O cartão mostrava: <em>O cliente quer falar com alguém da clínica sobre dor e inchaço</em>; <em>A IA já tentou: perguntou se ela segue a receita</em>.</div></article>
+<article class="cap" data-trilha="atendente" id="a-assumir"><div class="cap-head"><h3>Assumir, responder e deixar uma anotação</h3><span class="papel">Atendente+</span></div><div class="onde">Onde: <span class="path">Atendimento</span> › <span class="path">Inbox</span></div><figure class="fig"><img loading="lazy" src="img/100-assumiu.webp" alt="Depois de Assumir: aparece o seu nome como responsável e o aviso &quot;Automático pausado para este cliente&quot;." data-zoom><figcaption>Depois de Assumir: aparece o seu nome como responsável e o aviso "Automático pausado para este cliente".</figcaption></figure><ol class="passos"><li>Clique em <span class="btn">Assumir</span>. O nome de quem assumiu aparece no alto, e a IA para de responder esse cliente.</li><li>Clique na caixa <strong>Escreva uma mensagem…</strong> e digite.</li><li><kbd>Enter</kbd> envia. <kbd>Shift</kbd> + <kbd>Enter</kbd> pula de linha.</li></ol><figure class="fig"><img loading="lazy" src="img/101-digitando.webp" alt="Escrevendo a resposta ao cliente." data-zoom><figcaption>Escrevendo a resposta ao cliente.</figcaption></figure><p>Para deixar um recado que <strong>só a equipe vê</strong>, troque de <strong>Responder</strong> para <strong>Nota interna</strong>. A nota fica num cartão amarelo, escrito "só o time vê", e o cliente nunca recebe.</p><figure class="fig"><img loading="lazy" src="img/104-nota-salva.webp" alt="A mensagem enviada (verde) e a nota interna (amarela) na mesma conversa." data-zoom><figcaption>A mensagem enviada (verde) e a nota interna (amarela) na mesma conversa.</figcaption></figure><div class="exemplo"><span class="tag">Exemplo de nota</span>Nota interna: "Paciente com inchaço 24h após extração do 38. Avaliar hoje às 16h com a Dra. Paula."</div><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">A mensagem fica com o relógio ou "na fila" e não chega ao cliente.</p><p><strong>Por que acontece:</strong> O WhatsApp da clínica está desconectado. Nos testes, a mensagem ficou na fila quando o número não estava realmente conectado.</p><p><strong>O que fazer:</strong> Vá em <span class="path">Canais</span> › <span class="path">Conexões</span> e veja se o número aparece como conectado. Se não aparecer, use <span class="btn">Reconectar</span>. Não reenvie várias vezes: quando o número voltar, o que está na fila sai.</p></div></article>
+<article class="cap" data-trilha="atendente" id="a-devolver"><div class="cap-head"><h3>Devolver ao automático, transferir, lembrar e fechar</h3><span class="papel">Atendente+</span></div><div class="onde">Onde: <span class="path">Atendimento</span> › <span class="path">Inbox</span></div><p>Depois de assumir, a barra do alto mostra estes botões:</p><div class="tabela"><table><tr><th>Botão</th><th>O que faz</th></tr><tr><td><span class="btn">Devolver ao automático</span></td><td>A IA volta a atender esse cliente. Use quando o assunto delicado acabou.</td></tr><tr><td><span class="btn">Pausar o automático</span></td><td>A IA para nesta conversa, mas ninguém "vira dono". (Aparece quando a IA está no comando.)</td></tr><tr><td><span class="btn">Transferir</span></td><td>Passa a conversa para outra pessoa da equipe. A troca é imediata e fica no histórico.</td></tr><tr><td><span class="btn">Lembrar</span></td><td>Esconde a conversa e ela volta sozinha à lista em 1, 3 ou 24 horas.</td></tr><tr><td><span class="btn">Fechar</span></td><td>Encerra o atendimento. Se o cliente escrever de novo, a conversa reabre.</td></tr><tr><td><span class="btn">Arquivar</span></td><td>Guarda a conversa fora da lista.</td></tr></table></div><figure class="fig small"><img loading="lazy" src="img/105-lembrar-menu.webp" alt="Lembrar: escolha em quanto tempo a conversa deve voltar." data-zoom><figcaption>Lembrar: escolha em quanto tempo a conversa deve voltar.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/106-transferir.webp" alt="Transferir: escolha a pessoa e, se quiser, escreva o motivo." data-zoom><figcaption>Transferir: escolha a pessoa e, se quiser, escreva o motivo.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/107-fechar-confirma.webp" alt="Fechar pede uma confirmação." data-zoom><figcaption>Fechar pede uma confirmação.</figcaption></figure><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">Transferir conversa: "Nenhum outro atendente disponível nesta organização."</p><p><strong>Por que acontece:</strong> Só existe uma pessoa cadastrada na equipe, ou as outras estão indisponíveis.</p><p><strong>O que fazer:</strong> Convide mais pessoas em <span class="path">Configurações</span> › <span class="path">Equipe</span> (veja a trilha do gestor).</p></div><div class="aviso"><strong>Atenção</strong><p>Feche ou devolva ao automático quando terminar. Se você assumir e esquecer, o cliente fica sem a IA e sem você.</p></div></article>
+<article class="cap" data-trilha="atendente" id="a-agenda"><div class="cap-head"><h3>Marcar um horário para o cliente</h3><span class="papel">Atendente+</span></div><div class="onde">Onde: <span class="path">Atendimento</span> › <span class="path">Agenda</span></div><p>A Agenda mostra o que está marcado, com quem e quem atende, seu e da equipe. Para marcar:</p><figure class="fig"><img loading="lazy" src="img/125-agenda-com-horarios.webp" alt="A Agenda em visão de semana. Compromissos aparecem como blocos coloridos." data-zoom><figcaption>A Agenda em visão de semana. Compromissos aparecem como blocos coloridos.</figcaption></figure><ol class="passos"><li>Clique em <span class="btn">Novo agendamento</span>.</li><li>Em <strong>Quem será atendido</strong>, digite o nome e escolha o cliente da lista.</li><li>Escolha o <strong>tipo</strong>: Atendimento, Consulta ou Reunião (cada um tem duração, aqui 30 minutos).</li><li>Se quiser, preencha e-mail do convidado, endereço e uma observação (a observação aparece na descrição do compromisso).</li><li>No calendário, clique no dia. Só aparecem os dias e horários livres.</li><li>Clique no horário e depois em <span class="btn">Confirmar</span>.</li></ol><figure class="fig small"><img loading="lazy" src="img/126-agendar-busca-cliente.webp" alt="Digite o nome para achar o cliente." data-zoom><figcaption>Digite o nome para achar o cliente.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/128-agendar-horarios-do-dia.webp" alt="O dia escolhido mostra a lista de horários livres. Horários já ocupados não aparecem." data-zoom><figcaption>O dia escolhido mostra a lista de horários livres. Horários já ocupados não aparecem.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/129-agendar-confirmar.webp" alt="A confirmação repete o dia e a hora antes de gravar." data-zoom><figcaption>A confirmação repete o dia e a hora antes de gravar.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/130-agendamento-criado.webp" alt="Pronto: &quot;Marcado.&quot; e o aviso &quot;Agendamento criado.&quot;" data-zoom><figcaption>Pronto: "Marcado." e o aviso "Agendamento criado."</figcaption></figure><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">No calendário: "Você ainda não publicou seus horários de atendimento. Sem eles ninguém escolhe horário — nem você, nem o agente." Nenhum dia fica disponível.</p><p><strong>Por que acontece:</strong> A Agenda só oferece horários dentro da jornada que cada pessoa publica. Numa instalação nova ninguém publicou ainda.</p><p><strong>O que fazer:</strong> Publique os horários em <span class="path">Configurações</span> › <span class="path">Equipe</span> › <span class="path">Atendimento</span> (passo a passo no capítulo "Horários de atendimento", na trilha do gestor). Este é um dos passos que mais trava o primeiro uso.</p></div><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">Faixa no alto da Agenda: "Sincronizar com o Google ainda não está disponível."</p><p><strong>Por que acontece:</strong> O aplicativo do Google não foi cadastrado nesta instalação.</p><p><strong>O que fazer:</strong> Tudo continua funcionando, só não troca compromissos com o Google. Peça ao suporte do Thoth CRM para ativar a conexão com o Google.</p></div></article>
+<article class="cap" data-trilha="atendente" id="a-tarefas"><div class="cap-head"><h3>Tarefas e Radar: nada fica esquecido</h3><span class="papel">Todos</span></div><div class="onde">Onde: <span class="path">CRM</span> › <span class="path">Tarefas</span> e <span class="path">Atendimento</span> › <span class="path">Radar</span></div><p><strong>Tarefas</strong> é a lista do que ficou combinado, com prazo. O que venceu aparece em <strong>Atrasadas</strong>.</p><figure class="fig"><img loading="lazy" src="img/32-tarefas.webp" alt="Tarefas: atrasadas em cima, as da semana embaixo." data-zoom><figcaption>Tarefas: atrasadas em cima, as da semana embaixo.</figcaption></figure><ol class="passos"><li>Clique em <span class="btn">Nova tarefa</span>.</li><li>Escreva o que fazer. Exemplo: "Ligar para a Carla e confirmar o horário de sábado".</li><li>Defina prazo, horário, prioridade (Baixa, Média, Alta, Urgente) e situação.</li><li>Clique em <span class="btn">Salvar</span>. Quando terminar, marque a tarefa como concluída.</li></ol><figure class="fig small"><img loading="lazy" src="img/110-tarefa-nova.webp" alt="Formulário de nova tarefa." data-zoom><figcaption>Formulário de nova tarefa.</figcaption></figure><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">"Escreva um título para a tarefa."</p><p><strong>Por que acontece:</strong> O primeiro campo é obrigatório.</p><p><strong>O que fazer:</strong> Preencha o campo "O que precisa ser feito" e salve de novo.</p></div><figure class="fig small"><img loading="lazy" src="img/111-tarefa-erro-titulo.webp" alt="O aviso aparece em vermelho dentro do formulário." data-zoom><figcaption>O aviso aparece em vermelho dentro do formulário.</figcaption></figure><h4>Radar: quem está esfriando</h4><p>O Radar mostra conversas abertas que pararam. Olhe pelo menos uma vez por dia.</p><figure class="fig"><img loading="lazy" src="img/30-radar.webp" alt="Radar de risco: um cliente &quot;Crítico&quot; e outro &quot;Em voo&quot;." data-zoom><figcaption>Radar de risco: um cliente "Crítico" e outro "Em voo".</figcaption></figure><div class="tabela"><table><tr><th>Selo</th><th>O que quer dizer</th><th>O que fazer</th></tr><tr><td>Crítico</td><td>Parado há dias e sem próximo passo marcado.</td><td>Assuma ou mande uma mensagem hoje.</td></tr><tr><td>Em risco</td><td>Começando a esfriar.</td><td>Mande uma mensagem hoje.</td></tr><tr><td>Em voo</td><td>Já tem retorno ou compromisso marcado.</td><td>Só acompanhe.</td></tr></table></div></article>
+<article class="cap" data-trilha="atendente" id="a-funil"><div class="cap-head"><h3>Funis: acompanhar a venda</h3><span class="papel">Todos</span></div><div class="onde">Onde: <span class="path">CRM</span> › <span class="path">Funis</span></div><figure class="fig"><img loading="lazy" src="img/117-funil-quadro.webp" alt="O quadro do funil &quot;Agendamentos&quot;: cada coluna é uma etapa e cada cartão é um cliente." data-zoom><figcaption>O quadro do funil "Agendamentos": cada coluna é uma etapa e cada cartão é um cliente.</figcaption></figure><ol class="passos"><li>Abra o funil pelo nome, na tela <span class="path">CRM</span> › <span class="path">Funis</span>.</li><li>Arraste o cartão para a coluna seguinte quando a venda avançar.</li><li>Para criar um cartão, clique em <span class="btn">Novo Lead</span>.</li><li>Dentro do cartão há o botão para abrir a conversa no Inbox.</li></ol><p>No alto do quadro há filtros: busca por título, <strong>Responsável</strong>, <strong>Status</strong>, <strong>Tag</strong> e <strong>Apenas atrasados</strong>.</p><p class="dica"><strong>Dica.</strong> A IA também move cartões sozinha, se o gestor liberou. Se um cartão mudou de coluna e ninguém da equipe mexeu, foi ela.</p></article>
+<article class="cap" data-trilha="atendente" id="a-contatos"><div class="cap-head"><h3>Contatos: cadastrar, achar e (com cuidado) excluir</h3><span class="papel">Atendente+</span></div><div class="onde">Onde: <span class="path">CRM</span> › <span class="path">Contatos</span></div><figure class="fig"><img loading="lazy" src="img/34-contatos.webp" alt="A lista de contatos, com busca, filtro por tag e importação de planilha." data-zoom><figcaption>A lista de contatos, com busca, filtro por tag e importação de planilha.</figcaption></figure><ol class="passos"><li>Clique em <span class="btn">Novo contato</span>.</li><li>Preencha <strong>nome</strong> e pelo menos <strong>telefone</strong> (com +55 e DDD) ou <strong>e-mail</strong>.</li><li>CPF e tags são opcionais. Tags se separam por vírgula (exemplo: vip, recompra).</li><li>Clique em <span class="btn">Criar contato</span>.</li></ol><figure class="fig small"><img loading="lazy" src="img/114-contato-novo.webp" alt="Formulário de novo contato." data-zoom><figcaption>Formulário de novo contato.</figcaption></figure><div class="aviso"><strong>Cuidado conhecido</strong><p>Nos testes, clicar em "Criar contato" com tudo em branco criou um contato chamado "Sem nome", sem telefone e sem e-mail, e mostrou "Contato criado", apesar de a tela pedir pelo menos um identificador. Preencha sempre telefone ou e-mail. Se criar um vazio sem querer, exclua-o na lixeira da lista.</p></div><figure class="fig small"><img loading="lazy" src="img/115-contato-erro.webp" alt="O contato vazio aparece na lista como &quot;Sem nome&quot;." data-zoom><figcaption>O contato vazio aparece na lista como "Sem nome".</figcaption></figure><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">Ao excluir: "Não foi possível excluir: o contato ainda tem registros vinculados."</p><p><strong>Por que acontece:</strong> O contato tem compromisso na Agenda. O sistema não apaga compromissos junto com o contato, de propósito. Nada foi apagado: as conversas continuam lá.</p><p><strong>O que fazer:</strong> Abra a Agenda, cancele ou apague o compromisso desse contato e tente excluir de novo.</p></div><figure class="fig small"><img loading="lazy" src="img/91-excluir-erro.webp" alt="O aviso aparece no canto, por cima da janela de confirmação." data-zoom><figcaption>O aviso aparece no canto, por cima da janela de confirmação.</figcaption></figure></article>
+<article class="cap" data-trilha="atendente" id="a-rapidas"><div class="cap-head"><h3>Respostas rápidas</h3><span class="papel">Atendente+</span></div><div class="onde">Onde: <span class="path">Atendimento</span> › <span class="path">Respostas rápidas</span></div><figure class="fig"><img loading="lazy" src="img/35-respostas-rapidas.webp" alt="Modelos de resposta: &quot;Compartilhado&quot; vale para a equipe; &quot;Pessoal&quot; só para você." data-zoom><figcaption>Modelos de resposta: "Compartilhado" vale para a equipe; "Pessoal" só para você.</figcaption></figure><ol class="passos"><li>Clique em <span class="btn">Novo template</span>.</li><li>Dê um título (exemplo: "Endereço") e escreva a mensagem.</li><li>Use <code>{{primeiro_nome}}</code> ou <code>{{nome}}</code>: o sistema troca pelo nome do cliente na hora de enviar.</li><li>Se quiser, crie um atalho curto e ligue <strong>Compartilhar com a equipe</strong>.</li></ol><figure class="fig small"><img loading="lazy" src="img/116-template-novo.webp" alt="Formulário do novo modelo." data-zoom><figcaption>Formulário do novo modelo.</figcaption></figure><div class="exemplo"><span class="tag">Mensagem de exemplo</span>Oi {{primeiro_nome}}, tudo bem? Aqui é da Clínica Sorriso. Como posso ajudar?</div></article>
+<article class="cap" data-trilha="atendente" id="a-atalhos"><div class="cap-head"><h3>Atalhos de teclado do Inbox</h3><span class="papel">Atendente+</span></div><div class="onde">Onde: <span class="path">Atendimento</span> › <span class="path">Inbox</span></div><div class="tabela"><table><tr><th>Tecla</th><th>O que faz</th></tr><tr><td><kbd>j</kbd> / <kbd>k</kbd></td><td>Próxima conversa / conversa anterior</td></tr><tr><td><kbd>r</kbd></td><td>Vai para a caixa de resposta</td></tr><tr><td><kbd>a</kbd></td><td>Assumir a conversa</td></tr><tr><td><kbd>e</kbd></td><td>Fechar a conversa (pede confirmação)</td></tr><tr><td><kbd>?</kbd></td><td>Mostra todos os atalhos</td></tr><tr><td><kbd>Ctrl</kbd> + <kbd>K</kbd></td><td>Busca de telas em qualquer lugar</td></tr></table></div></article>
+<section data-trilha="gestor"><div class="trilha-intro"><h2>Trilha do gestor</h2><p class="quem">Para gerentes e administradores. Tudo da trilha do atendente vale para você também. Aqui: ligar a IA na ordem certa, equipe, campanhas, prospecção, relatórios e configurações.</p></div></section>
+<article class="cap" data-trilha="gestor" id="g-mapa"><div class="cap-head"><h3>A ordem certa para ligar a IA</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Agente de IA</span></div><p>Cada peça depende da anterior. Fazer fora de ordem é a causa número um de "a IA não responde".</p><div class="ordem"><span>1 Conexões</span><i>→</i><span>2 Chaves de IA</span><i>→</i><span>3 Funil</span><i>→</i><span>4 Conhecimento</span><i>→</i><span>5 Agente</span><i>→</i><span>6 Testar</span><i>→</i><span>7 Publicar</span><i>→</i><span>8 Liberar o público</span></div><figure class="fig"><img loading="lazy" src="img/62-ia-hub.webp" alt="O painel &quot;Agente de IA&quot; reúne tudo: montar o agente, ensinar e acompanhar." data-zoom><figcaption>O painel "Agente de IA" reúne tudo: montar o agente, ensinar e acompanhar.</figcaption></figure><p>Os capítulos seguintes seguem essa ordem. Se a IA não responde, vá direto para o próximo capítulo.</p></article>
+<article class="cap" data-trilha="gestor" id="g-nao-responde"><div class="cap-head"><h3>A IA não responde. Por quê?</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Canais</span> › <span class="path">Conexões</span></div><p>Confira nesta ordem. Quase sempre é uma destas oito causas.</p><div class="tabela"><table><tr><th>#</th><th>Confira</th><th>Onde</th><th>Sinal de problema</th></tr><tr><td>1</td><td>O número está conectado?</td><td><span class="path">Canais</span> › <span class="path">Conexões</span></td><td>Status diferente de conectado, ou "Conectando…".</td></tr><tr><td>2</td><td>A IA está liberada para esse número?</td><td><span class="path">Canais</span> › <span class="path">Conexões</span> › Configurar acesso da IA</td><td>"IA em modo de teste — Nenhum número autorizado — a IA não responde ninguém nesse canal."</td></tr><tr><td>3</td><td>A chave de IA é válida?</td><td><span class="path">Agente de IA</span> › <span class="path">Credenciais</span></td><td>Cartão com selo vermelho "Inválida".</td></tr><tr><td>4</td><td>O agente está publicado?</td><td><span class="path">Agente de IA</span> › <span class="path">Agentes</span></td><td>Selo "Rascunho" no cartão do agente.</td></tr><tr><td>5</td><td>O agente está pausado?</td><td>Dentro do agente</td><td>Botão "Pausar automático" ligado, ou modo "assistido".</td></tr><tr><td>6</td><td>A conversa está com uma pessoa?</td><td>Inbox</td><td>Selo com o nome de alguém e "Automático pausado".</td></tr><tr><td>7</td><td>Estourou o limite de gasto?</td><td><span class="path">Agente de IA</span> › <span class="path">Uso e orçamento</span></td><td>Limite definido e atingido.</td></tr><tr><td>8</td><td>Deu erro na execução?</td><td><span class="path">Agente de IA</span> › <span class="path">Execuções</span></td><td>Linha vermelha com o motivo.</td></tr></table></div><figure class="fig"><img loading="lazy" src="img/47-conexoes.webp" alt="Conexões: o cartão do número mostra o status e o aviso &quot;IA em modo de teste&quot;." data-zoom><figcaption>Conexões: o cartão do número mostra o status e o aviso "IA em modo de teste".</figcaption></figure><div class="aviso"><strong>Atenção</strong><p>Todo número novo começa em <strong>modo de teste</strong>: a IA não responde ninguém até você autorizar números de teste ou liberar o público. É a causa mais comum de "publiquei e não responde".</p></div></article>
+<article class="cap" data-trilha="gestor" id="g-conexoes"><div class="cap-head"><h3>1. Conectar o WhatsApp</h3><span class="papel">Admin</span></div><div class="onde">Onde: <span class="path">Canais</span> › <span class="path">Conexões</span></div><figure class="fig"><img loading="lazy" src="img/47-conexoes.webp" alt="Tela de Conexões, com as abas: Números por QR, API Oficial (Meta), Provedor parceiro, Telefone, Redes sociais e Chamada de voz." data-zoom><figcaption>Tela de Conexões, com as abas: Números por QR, API Oficial (Meta), Provedor parceiro, Telefone, Redes sociais e Chamada de voz.</figcaption></figure><ol class="passos"><li>Deixe o celular à mão, com o WhatsApp aberto em <strong>Aparelhos conectados</strong>. O QR vale poucos minutos.</li><li>Clique em <span class="btn">Conectar novo WhatsApp</span> e leia o QR com o celular.</li><li>Espere o cartão do número aparecer como conectado.</li><li>Abra <strong>Configurar acesso da IA</strong> e autorize os números de teste (o seu, por exemplo). Só depois libere o público.</li></ol><p>No cartão do número também estão: <strong>Reconectar</strong>, <strong>Proteção de envio</strong> (janela de horário, ritmo e teto diário) e <strong>Grupos</strong> (quais grupos do WhatsApp entram no Inbox).</p><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">"Não consegui falar com o WhatsApp — O serviço de WhatsApp desta instalação não respondeu."</p><p><strong>Por que acontece:</strong> O serviço de WhatsApp não respondeu naquele momento.</p><p><strong>O que fazer:</strong> Clique em "Tentar de novo". Se persistir, avise o suporte do Thoth CRM. Você pode usar "Pular por enquanto" e conectar depois.</p></div><figure class="fig small"><img loading="lazy" src="img/06-onb-2-celular-escolhido.webp" alt="A mensagem de erro como aparece no passo 2 do primeiro acesso." data-zoom><figcaption>A mensagem de erro como aparece no passo 2 do primeiro acesso.</figcaption></figure><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">O QR fica em "Preparando o código…" e não aparece.</p><p><strong>Por que acontece:</strong> O sistema não conseguiu falar com o WhatsApp naquele momento.</p><p><strong>O que fazer:</strong> Espere um minuto e use "Tentar de novo". Se continuar, o problema é de conexão do sistema com o WhatsApp: fale com o suporte do Thoth CRM.</p></div><figure class="fig small"><img loading="lazy" src="img/07-onb-2-qr.webp" alt="O QR ainda sendo preparado." data-zoom><figcaption>O QR ainda sendo preparado.</figcaption></figure></article>
+<article class="cap" data-trilha="gestor" id="g-chaves"><div class="cap-head"><h3>2. A chave da inteligência artificial</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Agente de IA</span> › <span class="path">Credenciais</span></div><figure class="fig"><img loading="lazy" src="img/42-credenciais.webp" alt="Chaves de acesso à IA. O cartão vermelho &quot;Inválida&quot; mostra o que fazer." data-zoom><figcaption>Chaves de acesso à IA. O cartão vermelho "Inválida" mostra o que fazer.</figcaption></figure><ol class="passos"><li>Em <span class="path">Agente de IA</span> › <span class="path">Credenciais</span>, clique em <span class="btn">Adicionar credencial</span>.</li><li>Escolha a empresa (Anthropic, OpenAI, Google, OpenRouter e outras), dê um nome e cole a chave.</li><li>Espere a validação. Sem chave <strong>validada</strong>, nenhum agente publica.</li><li>Em <span class="path">Agente de IA</span> › <span class="path">Provedores</span>, escolha qual inteligência cuida de cada parte (atendimento, roteador, follow-up, áudio).</li></ol><figure class="fig"><img loading="lazy" src="img/43-provedores.webp" alt="Provedores: o &quot;Modelo padrão&quot; vale para tudo que você não ajustou." data-zoom><figcaption>Provedores: o "Modelo padrão" vale para tudo que você não ajustou.</figcaption></figure><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">Cartão da chave com selo "Inválida": "O provedor recusou a chave. Confira se copiou inteira ou gere uma nova."</p><p><strong>Por que acontece:</strong> A chave foi copiada incompleta, com espaço, ou já foi revogada.</p><p><strong>O que fazer:</strong> Copie de novo direto do site da empresa de IA e cole. Use o ícone de lápis para editar e o de setas para validar de novo.</p></div><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">No primeiro acesso: "Não consegui testar o crédito agora. Dá para seguir — mas confira o saldo na conta da empresa de IA antes de confiar nele."</p><p><strong>Por que acontece:</strong> O sistema não conseguiu confirmar a chave naquele momento.</p><p><strong>O que fazer:</strong> Você pode seguir. O agente nasce como rascunho e, quando a chave for confirmada, basta publicar de novo, sem colar outra.</p></div><figure class="fig small"><img loading="lazy" src="img/09-onb-3-chave-errada.webp" alt="O aviso no passo 3 do primeiro acesso." data-zoom><figcaption>O aviso no passo 3 do primeiro acesso.</figcaption></figure><p class="dica"><strong>Dica.</strong> Uma chave da OpenAI ajuda mesmo que você use outra empresa: ela serve para entender áudios e preparar a base de conhecimento.</p></article>
+<article class="cap" data-trilha="gestor" id="g-funil"><div class="cap-head"><h3>3. Montar o funil</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">CRM</span> › <span class="path">Etapas do funil</span></div><figure class="fig"><img loading="lazy" src="img/54-etapas-funil.webp" alt="Etapas do funil: nome, chance de fechamento, ordem e o que a IA faz em cada coluna." data-zoom><figcaption>Etapas do funil: nome, chance de fechamento, ordem e o que a IA faz em cada coluna.</figcaption></figure><ol class="passos"><li>Em <span class="path">CRM</span> › <span class="path">Etapas do funil</span>, crie ou ajuste as colunas na ordem em que o cliente avança.</li><li>Marque uma etapa de <strong>fechamento</strong> (venda ganha) e uma de <strong>perda</strong>. Cada funil precisa das duas.</li><li>Em cada etapa, escolha o que "acontece nesta coluna" para a IA (novo contato, qualificando, negociando…). Coluna sem essa marca, a IA não usa.</li><li>Se quiser, ligue "Avisar a equipe na Central quando um negócio entrar aqui".</li></ol><p>No primeiro acesso o sistema já propõe um quadro pronto para o seu tipo de negócio. Você ajusta depois.</p><figure class="fig small"><img loading="lazy" src="img/11-onb-4-funil.webp" alt="No primeiro acesso: o quadro proposto para clínica, com as colunas editáveis." data-zoom><figcaption>No primeiro acesso: o quadro proposto para clínica, com as colunas editáveis.</figcaption></figure><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">"Não consegui pedir uma sugestão para o seu funcionário agora — seu funcionário ainda não está no ar."</p><p><strong>Por que acontece:</strong> A sugestão de funil vem da IA, e ela ainda não estava publicada.</p><p><strong>O que fazer:</strong> Não trava nada: o sistema já montou um quadro pronto. Ajuste as colunas na mão ou escolha "Prefiro começar de um modelo pronto".</p></div></article>
+<article class="cap" data-trilha="gestor" id="g-conhecimento"><div class="cap-head"><h3>4. Ensinar o negócio para a IA</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Agente de IA</span> › <span class="path">Conhecimento</span> e <span class="path">Agente de IA</span> › <span class="path">Memória</span></div><figure class="fig"><img loading="lazy" src="img/41-conhecimento.webp" alt="&quot;O que o agente sabe&quot;: os materiais que a IA consulta antes de responder." data-zoom><figcaption>"O que o agente sabe": os materiais que a IA consulta antes de responder.</figcaption></figure><ol class="passos"><li>Clique em <span class="btn">Adicionar material</span>.</li><li>Escolha o tipo: <strong>Perguntas e respostas</strong> (FAQ), <strong>Documento</strong> (PDF, texto ou planilha) ou catálogo de produtos.</li><li>Dê um nome ao material e escreva ou cole o conteúdo.</li><li>Clique em <span class="btn">Adicionar ao acervo</span> e espere o material ficar "pronto".</li></ol><figure class="fig small"><img loading="lazy" src="img/151-conhecimento-novo.webp" alt="Adicionando um material de perguntas e respostas." data-zoom><figcaption>Adicionando um material de perguntas e respostas.</figcaption></figure><div class="exemplo"><span class="tag">Formato de FAQ</span>## Pergunta: Vocês fazem avaliação gratuita?
+<br>## Resposta: Sim. A primeira avaliação é gratuita e dura cerca de 30 minutos.</div><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">Faixa laranja: "Falta uma chave de embedding para o agente aprender o seu material."</p><p><strong>Por que acontece:</strong> Para "ler" o material a IA precisa de uma chave da OpenAI, da OpenRouter ou do Google. Sem ela o documento é cadastrado, mas fica esperando.</p><p><strong>O que fazer:</strong> Clique em "Cadastrar a chave aqui" ou vá em <span class="path">Agente de IA</span> › <span class="path">Credenciais</span>.</p></div><h4>Memória: as regras da casa</h4><figure class="fig"><img loading="lazy" src="img/44-memoria.webp" alt="Memória da IA: o texto vale para todos os agentes, e cada versão publicada fica no histórico." data-zoom><figcaption>Memória da IA: o texto vale para todos os agentes, e cada versão publicada fica no histórico.</figcaption></figure><p>Escreva regras curtas ("Nunca prometa desconto sem confirmar", horários, avaliação gratuita) e clique em <strong>Publicar versão</strong>. Vale já no próximo atendimento. A diferença: <strong>Conhecimento</strong> é o que a IA consulta (preços, serviços); <strong>Memória</strong> é o jeito da casa.</p></article>
+<article class="cap" data-trilha="gestor" id="g-agente"><div class="cap-head"><h3>5. Criar, testar e publicar o agente</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Agente de IA</span> › <span class="path">Agentes</span></div><figure class="fig"><img loading="lazy" src="img/38-agentes.webp" alt="Agentes de IA: o cartão mostra o selo &quot;default&quot; e &quot;Rascunho&quot;." data-zoom><figcaption>Agentes de IA: o cartão mostra o selo "default" e "Rascunho".</figcaption></figure><p>Abra o agente com <strong>Editar</strong>. As abas do alto são: <strong>Configuração</strong>, <strong>Teste</strong>, <strong>Capacidades</strong> (mostra o uso dos últimos 30 dias), <strong>Execuções</strong>, <strong>Histórico</strong> e <strong>Propostas</strong>.</p><figure class="fig"><img loading="lazy" src="img/140a-agente-basico.webp" alt="Configuração: nome, as instruções dele, a inteligência que usa e o número que atende." data-zoom><figcaption>Configuração: nome, as instruções dele, a inteligência que usa e o número que atende.</figcaption></figure><ol class="passos"><li><strong>Quem é este agente:</strong> nome e ordem de preferência (se dois agentes podem atender a mesma conversa, vale o maior número).</li><li><strong>As instruções dele:</strong> escreva quem ele é, para quem fala, o que oferece e o que nunca faz (veja o exemplo abaixo).</li><li><strong>A inteligência que ele usa:</strong> escolha a empresa, o modelo e a chave de acesso.</li><li><strong>Por qual número ele atende:</strong> escolha o número conectado.</li><li>Clique em <span class="btn">Salvar rascunho</span>. Só então a aba <strong>Teste</strong> fica disponível.</li><li>Na aba Teste, escreva como se fosse o cliente e veja a resposta. Isso consome crédito da IA.</li><li>Gostou? Clique em <span class="btn">Publicar</span>. Vale no próximo atendimento.</li></ol><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">O botão "Publicar" fica apagado, e aparecem em vermelho: "Escolha o modelo…", "Escolha a chave de acesso…" e "Escolha o número…".</p><p><strong>Por que acontece:</strong> Faltam os três itens obrigatórios. Sem eles o rascunho salva, mas não publica.</p><p><strong>O que fazer:</strong> Preencha os três campos em vermelho e salve o rascunho de novo.</p></div><div class="exemplo"><span class="tag">Exemplo de instruções</span>Você é a Sofia, assistente virtual da Clínica Sorriso. Converse em português, com mensagens curtas e uma pergunta por vez. Primeiro entenda o que o paciente precisa (limpeza, clareamento, implante, aparelho) e só depois ofereça a avaliação gratuita. Quando o paciente pedir uma pessoa, relatar dor forte ou inchaço, passe para a equipe.</div><h4>O que o agente pode fazer</h4><figure class="fig"><img loading="lazy" src="img/140b-agente-capacidades.webp" alt="As capacidades vêm em pacotes: Atender e responder, Vender e mover o funil, Não perder o cliente, Passar para um humano, Organizar a operação, Aprender e evoluir." data-zoom><figcaption>As capacidades vêm em pacotes: Atender e responder, Vender e mover o funil, Não perder o cliente, Passar para um humano, Organizar a operação, Aprender e evoluir.</figcaption></figure><p>Ligue só o que o agente precisa. Dentro de cada pacote, as ações mais delicadas (as caixas com aviso vermelho, como "Desmarcar um compromisso" ou "Encerrar o negócio como ganho ou perdido") <strong>não vêm ligadas</strong>: você liga uma a uma. <strong>Aplicar tags</strong> fica nos pacotes "Atender e responder" e "Organizar a operação".</p><figure class="fig"><img loading="lazy" src="img/140c-agente-quando.webp" alt="Mais abaixo: quando ele entra em ação, quando chama uma pessoa (palavras como &quot;falar com humano&quot;, &quot;atendente&quot;, &quot;pessoa real&quot;) e os comandos pelo celular." data-zoom><figcaption>Mais abaixo: quando ele entra em ação, quando chama uma pessoa (palavras como "falar com humano", "atendente", "pessoa real") e os comandos pelo celular.</figcaption></figure><p class="dica"><strong>Dica.</strong> Toda alteração cria uma <strong>versão nova</strong>. A versão publicada nunca muda, e o botão de reverter volta para a anterior em segundos.</p></article>
+<article class="cap" data-trilha="gestor" id="g-followups"><div class="cap-head"><h3>6. Follow-ups: retomar quem sumiu</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Agente de IA</span> › <span class="path">Follow-ups</span></div><figure class="fig"><img loading="lazy" src="img/39-followups.webp" alt="Follow-ups: abas &quot;Fluxos&quot; e &quot;Fila&quot;. Vazio no começo." data-zoom><figcaption>Follow-ups: abas "Fluxos" e "Fila". Vazio no começo.</figcaption></figure><ol class="passos"><li>Clique em <span class="btn">Começar de um modelo</span> (caminho mais curto).</li><li>Escolha um modelo pronto e clique em <span class="btn">Instalar</span>. Instalar <strong>não manda mensagem</strong>: o fluxo nasce como rascunho.</li><li>Leia os textos e ajuste para a voz da sua clínica.</li><li>Clique em <span class="btn">Publicar</span>.</li><li>Por último, ligue o fluxo no agente, no campo de follow-ups que ele arma.</li></ol><figure class="fig"><img loading="lazy" src="img/150-followup-modelos.webp" alt="Os modelos prontos: consulta, exame, cirurgia e falta." data-zoom><figcaption>Os modelos prontos: consulta, exame, cirurgia e falta.</figcaption></figure><div class="aviso"><strong>Atenção</strong><p>São <strong>dois</strong> passos, publicar o fluxo <em>e</em> ligá-lo no agente. Só o primeiro deixa o fluxo vivo na lista e morto no motor. Se esquecer, o sistema abre um aviso em Alertas dentro de cerca de uma hora (comportamento descrito na documentação do produto, não reproduzido aqui).</p></div></article>
+<article class="cap" data-trilha="gestor" id="g-roteador"><div class="cap-head"><h3>7. Roteador: vários agentes no mesmo número</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Agente de IA</span> › <span class="path">Roteadores</span></div><figure class="fig"><img loading="lazy" src="img/40-roteadores.webp" alt="Roteadores: só é preciso quando há dois ou mais agentes no mesmo número." data-zoom><figcaption>Roteadores: só é preciso quando há dois ou mais agentes no mesmo número.</figcaption></figure><ol class="passos"><li>Clique em <span class="btn">Novo roteador</span>, dê um nome e escolha o número de WhatsApp.</li><li>Crie as <strong>intenções</strong>. Exemplo: "quer agendar" vai para o agente de agenda.</li><li>Descreva cada intenção do jeito que o cliente fala e dê frases de exemplo.</li><li>Escolha o <strong>agente de fallback</strong>, que atende quando nenhuma intenção serve.</li><li>Ative o roteador.</li></ol><figure class="fig small"><img loading="lazy" src="img/152-roteador-novo.webp" alt="Novo roteador: só um roteador pode ficar ativo por número." data-zoom><figcaption>Novo roteador: só um roteador pode ficar ativo por número.</figcaption></figure></article>
+<article class="cap" data-trilha="gestor" id="g-horarios"><div class="cap-head"><h3>Horários de atendimento (para a Agenda funcionar)</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Configurações</span> › <span class="path">Equipe</span> › <span class="path">Atendimento</span></div><p>Sem horários publicados, ninguém consegue marcar nada na Agenda, nem a IA. Cada pessoa da equipe que atende precisa ter os seus.</p><figure class="fig"><img loading="lazy" src="img/120-horarios.webp" alt="Equipe › Atendimento: cada linha mostra o horário da pessoa. &quot;Não publicado&quot; é o problema." data-zoom><figcaption>Equipe › Atendimento: cada linha mostra o horário da pessoa. "Não publicado" é o problema.</figcaption></figure><ol class="passos"><li>Vá em <span class="path">Configurações</span> › <span class="path">Equipe</span> › <span class="path">Atendimento</span>.</li><li>Na linha da pessoa, clique no ícone de relógio.</li><li>Confira o fuso horário (por exemplo, São Paulo).</li><li>Clique em <span class="btn">Adicionar janela</span> uma vez para cada dia: escolha o dia da semana e o início e o fim (exemplo: Seg 08:00 às 18:00).</li><li>Clique em <span class="btn">Salvar</span>.</li></ol><figure class="fig small"><img loading="lazy" src="img/123-horarios-semana.webp" alt="Uma janela por dia, de segunda a sexta." data-zoom><figcaption>Uma janela por dia, de segunda a sexta.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/124-horarios-publicado.webp" alt="Depois de salvar aparece &quot;Atendente atualizado&quot; e o horário na linha da pessoa." data-zoom><figcaption>Depois de salvar aparece "Atendente atualizado" e o horário na linha da pessoa.</figcaption></figure><p class="dica"><strong>Dica.</strong> Quer pausar a agenda de alguém? Tire as janelas ou use o botão "Disponível" da linha.</p></article>
+<article class="cap" data-trilha="gestor" id="g-equipe"><div class="cap-head"><h3>Equipe e distribuição dos clientes</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Configurações</span> › <span class="path">Equipe</span> e <span class="path">Configurações</span> › <span class="path">Distribuição de atendimento</span></div><figure class="fig"><img loading="lazy" src="img/50-equipe.webp" alt="Equipe: membros e o convite de novas pessoas." data-zoom><figcaption>Equipe: membros e o convite de novas pessoas.</figcaption></figure><ol class="passos"><li>Clique em <span class="btn">Convidar membros</span>.</li><li>Digite até 20 e-mails, um por linha, e escolha o papel (leitura, atendente, gerente ou administrador).</li><li>O "Perfil de interface" decide quais áreas aparecem no menu. As permissões continuam sendo as do papel.</li><li>Clique em <span class="btn">Enviar convites</span>.</li></ol><figure class="fig small"><img loading="lazy" src="img/153-convidar.webp" alt="Convidar membros." data-zoom><figcaption>Convidar membros.</figcaption></figure><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">"Esta instalação ainda não envia e-mail. Você recebe um link para cada pessoa e manda por onde quiser."</p><p><strong>Por que acontece:</strong> O envio de e-mail ainda não foi configurado no sistema.</p><p><strong>O que fazer:</strong> Copie o link de cada convite (botão "Copiar link") e mande pelo WhatsApp. Quem abrir o link entra na empresa.</p></div><figure class="fig small"><img loading="lazy" src="img/14-onb-6-link-convite.webp" alt="O link de convite aparece na própria tela." data-zoom><figcaption>O link de convite aparece na própria tela.</figcaption></figure><h4>Quem recebe cada cliente novo</h4><figure class="fig"><img loading="lazy" src="img/51-distribuicao.webp" alt="Distribuição: escolha entre &quot;Cada um pega o que quiser&quot; e &quot;Rodízio automático&quot;, e o que cada atendente enxerga." data-zoom><figcaption>Distribuição: escolha entre "Cada um pega o que quiser" e "Rodízio automático", e o que cada atendente enxerga.</figcaption></figure><div class="tabela"><table><tr><th>Opção</th><th>Como funciona</th></tr><tr><td>Cada um pega o que quiser</td><td>Todo cliente novo cai na fila aberta; quem clicar em Assumir primeiro fica com ele.</td></tr><tr><td>Rodízio automático</td><td>O sistema distribui em sequência entre os atendentes disponíveis.</td></tr><tr><td>Todos veem tudo / Os seus, mais os sem dono / Só os seus</td><td>O que cada atendente enxerga. Gerente e administrador sempre veem tudo.</td></tr></table></div><p>Ali também fica a opção <strong>"Devolver ao agente sozinho depois de um tempo sem resposta da equipe"</strong>: se a pessoa some depois de assumir, a IA volta a atender.</p></article>
+<article class="cap" data-trilha="gestor" id="g-campanhas"><div class="cap-head"><h3>Campanhas: falar com uma lista que você já tem</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">CRM</span> › <span class="path">Campanhas</span></div><figure class="fig"><img loading="lazy" src="img/48-campanhas.webp" alt="Campanhas: vazio no começo." data-zoom><figcaption>Campanhas: vazio no começo.</figcaption></figure><ol class="passos"><li>Clique em <span class="btn">Nova campanha</span> (é um rascunho, nada é enviado).</li><li>Dê um nome e escolha <strong>por qual número</strong> enviar.</li><li>Escolha a <strong>base legal</strong>: <em>Consentimento</em> (as pessoas pediram para receber) ou <em>Interesse legítimo</em> (com a avaliação de legítimo interesse registrada).</li><li>Em <strong>Público</strong>, escolha pelo menos um critério: etiquetas, tempo sem falar, funil e etapa. Use "Ver quantas pessoas" para conferir.</li><li>Escreva a mensagem, mande um teste para você e agende.</li></ol><figure class="fig"><img loading="lazy" src="img/154-campanha-nova.webp" alt="O formulário de nova campanha." data-zoom><figcaption>O formulário de nova campanha.</figcaption></figure><div class="aviso"><strong>Atenção</strong><p>O envio é devagar de propósito, no ritmo e na janela de horário do número (em Conexões › Proteção de envio). Isso protege o número de ser bloqueado pelo WhatsApp. Número recém-conectado precisa de dias de uso leve antes de campanhas grandes.</p></div></article>
+<article class="cap" data-trilha="gestor" id="g-prospeccao"><div class="cap-head"><h3>Prospecção: achar clientes novos</h3><span class="papel">Admin</span></div><div class="onde">Onde: <span class="path">CRM</span> › <span class="path">Prospecção</span></div><p>A prospecção busca empresas na internet (por segmento e cidade) e a IA faz a primeira abordagem, aos poucos. Difere da campanha: aqui as pessoas <strong>não</strong> estão no seu CRM antes.</p><figure class="fig"><img loading="lazy" src="img/49-prospeccao.webp" alt="Prospecção: primeiro a chave da Apify (serviço de busca), depois a busca." data-zoom><figcaption>Prospecção: primeiro a chave da Apify (serviço de busca), depois a busca.</figcaption></figure><ol class="passos"><li>Cole a <strong>chave da Apify</strong> e clique em <span class="btn">Salvar chave</span>. Sem ela o botão "Buscar empresas" não funciona.</li><li>Em <strong>1. Encontrar empresas</strong>, preencha segmento (exemplo: "clínicas de estética"), cidade (exemplo: "Sorocaba, SP"), quantas empresas e o teto de gasto da busca, em dólar.</li><li>Clique em <span class="btn">Buscar empresas</span> e acompanhe em "3. Acompanhar resultados".</li><li>Em <span class="btn">Configurar busca</span>, escolha o <strong>agente publicado</strong>, a conexão de saída, o funil, a etapa inicial e a etapa de qualificados.</li><li>Escreva a oferta e quando considerar o cliente qualificado.</li><li>Defina o ritmo: <strong>Máximo em 24 horas</strong> (de 1 a 50) e <strong>Intervalo mínimo</strong> em minutos (de 5 a 1440).</li><li>Informe a referência da avaliação de legítimo interesse e clique em <span class="btn">Iniciar abordagens com IA</span>.</li></ol><figure class="fig"><img loading="lazy" src="img/155-prospeccao-busca.webp" alt="Configurar a busca e a abordagem." data-zoom><figcaption>Configurar a busca e a abordagem.</figcaption></figure><div class="aviso"><strong>Escolha a etapa certa</strong><p>A etapa de qualificados deve ser uma etapa de <em>interesse confirmado</em> (por exemplo "Qualificado"), não "Respondeu". Quem só respondeu "não tenho interesse" não é qualificado.</p></div><div class="aviso"><strong>Ritmo</strong><p>Depois de iniciar, a oferta e o ritmo ficam <strong>travados</strong> naquela busca. Para mudar, pause e crie outra busca. Pelo código, o rascunho do ritmo fica só na tela: se recarregar a página antes de iniciar, os campos voltam para 10 por dia e 15 minutos. Preencha o ritmo por último e confira a linha "Ritmo:" no cartão depois de iniciar.</p></div><p>Toda primeira mensagem termina com o aviso de que a pessoa pode responder <strong>PARAR</strong>. Ele é obrigatório e não pode ser retirado. Quem pede para parar é bloqueado nas campanhas e na prospecção.</p><p class="dica"><strong>Dica.</strong> Ritmos baixos parecem uso normal e protegem o número. Uma boa partida é 20 abordagens por dia com 20 minutos entre elas. Número novo é segurado pelo sistema, com tetos menores nos primeiros dias.</p></article>
+<article class="cap" data-trilha="gestor" id="g-acompanhar"><div class="cap-head"><h3>Acompanhar a IA depois de ligada</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Agente de IA</span> › <span class="path">Uso e orçamento</span></div><div class="tabela"><table><tr><th>Tela</th><th>Para que serve</th></tr><tr><td><span class="path">Agente de IA</span> › <span class="path">Casos</span></td><td>Atendimentos que a IA conduziu ou passou para a equipe.</td></tr><tr><td><span class="path">Agente de IA</span> › <span class="path">Alertas</span></td><td>O que a IA encontrou e precisa de uma decisão sua ("Central de avisos").</td></tr><tr><td><span class="path">Agente de IA</span> › <span class="path">Execuções</span></td><td>O que a IA fez e, se falhou, por quê.</td></tr><tr><td><span class="path">Agente de IA</span> › <span class="path">Uso e orçamento</span></td><td>Quanto a IA gastou e o teto do mês.</td></tr><tr><td><span class="path">Análise</span> › <span class="path">Desempenho</span></td><td>Funil e desempenho por atendente nos últimos 30 dias.</td></tr><tr><td><span class="path">Análise</span> › <span class="path">Atividades</span></td><td>O que a equipe e os agentes fizeram no período.</td></tr><tr><td><span class="path">Análise</span> › <span class="path">Evolução da IA</span></td><td>Se o agente está melhorando e onde ainda erra.</td></tr></table></div><figure class="fig"><img loading="lazy" src="img/45-uso.webp" alt="Uso de IA: custo, atendimentos com IA, quantos passaram para uma pessoa e tempo de resposta." data-zoom><figcaption>Uso de IA: custo, atendimentos com IA, quantos passaram para uma pessoa e tempo de resposta.</figcaption></figure><figure class="fig"><img loading="lazy" src="img/53-desempenho.webp" alt="Desempenho: conversão, automação e o que cada resultado custou." data-zoom><figcaption>Desempenho: conversão, automação e o que cada resultado custou.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/46-execucoes.webp" alt="Execuções: vazio até o agente atender alguém." data-zoom><figcaption>Execuções: vazio até o agente atender alguém.</figcaption></figure><div class="aviso"><strong>Atenção</strong><p>Em Uso e orçamento aparece "Sem limite definido — a IA não vai parar sozinha por gasto". Defina um teto mensal no primeiro dia, em <strong>Editar limite</strong>.</p></div></article>
+<article class="cap" data-trilha="gestor" id="g-modulos"><div class="cap-head"><h3>Recursos opcionais (exemplo: Propostas)</h3><span class="papel">Admin</span></div><div class="onde">Onde: <span class="path">Configurações</span> › <span class="path">Recursos opcionais</span></div><p>Alguns recursos vêm desligados e são liberados para a sua empresa pelo suporte do Thoth CRM. Depois de liberado, o administrador da empresa liga em <span class="path">Configurações</span> › <span class="path">Recursos opcionais</span>.</p><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">"404 — Página não encontrada" ao abrir Propostas.</p><p><strong>Por que acontece:</strong> O recurso ainda não foi liberado para a sua empresa. Sem isso, a tela não existe nem no menu.</p><p><strong>O que fazer:</strong> Peça ao suporte do Thoth CRM para liberar. Depois, siga os passos abaixo.</p></div><ol class="passos"><li>Vá em <span class="path">Configurações</span> › <span class="path">Propostas</span> e ligue "Ligar propostas comerciais para esta organização".</li><li>Ajuste validade e condições padrão e clique em <span class="btn">Salvar</span>.</li><li>Pronto: a tela <span class="path">CRM</span> › <span class="path">Propostas</span> passa a abrir.</li></ol><figure class="fig small"><img loading="lazy" src="img/74-config-propostas-antes.webp" alt="&quot;Ligar propostas comerciais para esta organização&quot; ainda desligado." data-zoom><figcaption>"Ligar propostas comerciais para esta organização" ainda desligado.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/77-propostas.webp" alt="Depois de ligado, a tela Propostas abre." data-zoom><figcaption>Depois de ligado, a tela Propostas abre.</figcaption></figure><figure class="fig"><img loading="lazy" src="img/76-recursos-depois.webp" alt="Configurações › Recursos opcionais mostra o que está ligado e leva ao ajuste de cada um." data-zoom><figcaption>Configurações › Recursos opcionais mostra o que está ligado e leva ao ajuste de cada um.</figcaption></figure><p>Outros recursos, quando liberados, aparecem assim:</p><figure class="fig small"><img loading="lazy" src="img/157-proposta-nova.webp" alt="Nova proposta: escolha o negócio, dê um título, validade e condições." data-zoom><figcaption>Nova proposta: escolha o negócio, dê um título, validade e condições.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/84-modelos-proposta.webp" alt="Modelos de proposta prontos para personalizar." data-zoom><figcaption>Modelos de proposta prontos para personalizar.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/78-empresas.webp" alt="Empresas (venda para empresas): cadastro por CNPJ." data-zoom><figcaption>Empresas (venda para empresas): cadastro por CNPJ.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/82-honorarios.webp" alt="Honorários (advocacia): contratos e calendário de parcelas." data-zoom><figcaption>Honorários (advocacia): contratos e calendário de parcelas.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/85-faturamento.webp" alt="Faturamento: quanto entrou, por forma de pagamento." data-zoom><figcaption>Faturamento: quanto entrou, por forma de pagamento.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/83-dados-externos.webp" alt="Dados externos: conecta um banco de outro sistema, somente leitura." data-zoom><figcaption>Dados externos: conecta um banco de outro sistema, somente leitura.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/81-fluxos-atendimento.webp" alt="Fluxos de atendimento: perguntas que a IA conduz e guarda na ficha do cliente." data-zoom><figcaption>Fluxos de atendimento: perguntas que a IA conduz e guarda na ficha do cliente.</figcaption></figure></article>
+<article class="cap" data-trilha="gestor" id="g-marca"><div class="cap-head"><h3>Marca da sua empresa</h3><span class="papel">Admin</span></div><ul><li>Em <span class="path">Configurações</span> › <span class="path">Marca</span> você troca o nome, a cor e o logo que a sua equipe vê no menu lateral. Há um logo para o tema claro e outro, opcional, para o tema escuro.</li><li>Deixe o nome em branco para usar o nome padrão do sistema.</li><li>Documentos da LGPD nunca levam a marca: eles nomeiam a sua empresa, que é a responsável legal pelos dados.</li></ul><figure class="fig small"><img loading="lazy" src="img/61-marca.webp" alt="A tela de marca: nome, cor, logo claro e escuro, e a prévia nos dois temas." data-zoom><figcaption>A tela de marca: nome, cor, logo claro e escuro, e a prévia nos dois temas.</figcaption></figure></article>
+<article class="cap" data-trilha="gestor" id="g-config"><div class="cap-head"><h3>Configurações que vale conhecer</h3><span class="papel">Gerente+</span></div><div class="onde">Onde: <span class="path">Configurações</span></div><figure class="fig"><img loading="lazy" src="img/57-config-hub.webp" alt="O painel de Configurações: Sua empresa, Sua conta, Dados e acesso." data-zoom><figcaption>O painel de Configurações: Sua empresa, Sua conta, Dados e acesso.</figcaption></figure><div class="tabela"><table><tr><th>Tela</th><th>Para que serve</th></tr><tr><td>Tipos de agendamento</td><td>O que se pode marcar, quanto dura, quem atende e a confirmação de presença.</td></tr><tr><td>Tags</td><td>As etiquetas da empresa: renomear, juntar ou excluir. Mostra quantos contatos usam cada uma.</td></tr><tr><td>Notificações</td><td>Por onde e sobre o quê você é avisado.</td></tr><tr><td>Marca</td><td>Nome, cor e logo que a empresa mostra dentro do sistema.</td></tr><tr><td>Segurança</td><td>Verificação em duas etapas (opcional) e códigos de recuperação.</td></tr><tr><td>Recursos opcionais</td><td>Tudo que se liga e desliga, com o atalho para ajustar. Comece por aqui quando não achar algo.</td></tr><tr><td>LGPD</td><td>Pedidos de clientes para exportar ou apagar os dados.</td></tr><tr><td>API Tokens, Webhooks</td><td>Ligar o CRM a outros sistemas. Só com ajuda técnica.</td></tr></table></div><figure class="fig small"><img loading="lazy" src="img/59-tags.webp" alt="Tags." data-zoom><figcaption>Tags.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/60-notificacoes.webp" alt="Notificações." data-zoom><figcaption>Notificações.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/61-marca.webp" alt="Marca." data-zoom><figcaption>Marca.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/55-seguranca.webp" alt="Segurança." data-zoom><figcaption>Segurança.</figcaption></figure><figure class="fig small"><img loading="lazy" src="img/156-tipos-agendamento.webp" alt="Tipos de agendamento." data-zoom><figcaption>Tipos de agendamento.</figcaption></figure><div class="erro"><span class="tag">Se aparecer isto</span><p class="ve">Notificações: "Nesta instalação, os avisos só aparecem com o site aberto."</p><p><strong>Por que acontece:</strong> As chaves de aviso com o site fechado ainda não foram ativadas.</p><p><strong>O que fazer:</strong> Peça ao suporte do Thoth CRM para ativar os avisos com o site fechado. Enquanto isso, mantenha o site aberto para receber os avisos.</p></div></article>
+<section data-trilha="erros"><div class="trilha-intro"><h2>Erros e avisos: o que cada um quer dizer</h2><p class="quem">Todas as mensagens abaixo apareceram na tela durante os testes deste manual. Cada uma diz por que acontece e o que fazer.</p></div></section>
+<article class="cap" data-trilha="erros" id="e-0"><div class="cap-head"><h3>Email ou senha incorretos.</h3><span class="papel">Login</span></div><p><strong>Por que acontece:</strong> Senha ou e-mail errado.</p><p><strong>O que fazer:</strong> Confira; use "Esqueci minha senha".</p><figure class="fig small"><img loading="lazy" src="img/02-login-senha-errada.webp" alt="Email ou senha incorretos." data-zoom><figcaption>Email ou senha incorretos.</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-1"><div class="cap-head"><h3>Não consegui falar com o WhatsApp</h3><span class="papel">Conexão do número</span></div><p><strong>Por que acontece:</strong> O serviço de WhatsApp não respondeu.</p><p><strong>O que fazer:</strong> "Tentar de novo"; avisar o suporte do Thoth CRM; pode pular e conectar depois.</p><figure class="fig small"><img loading="lazy" src="img/06-onb-2-celular-escolhido.webp" alt="Não consegui falar com o WhatsApp" data-zoom><figcaption>Não consegui falar com o WhatsApp</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-2"><div class="cap-head"><h3>Preparando o código… (QR não aparece)</h3><span class="papel">Conexão do número</span></div><p><strong>Por que acontece:</strong> O sistema não alcançou o WhatsApp.</p><p><strong>O que fazer:</strong> Esperar, tentar de novo; se continuar, falar com o suporte do Thoth CRM.</p><figure class="fig small"><img loading="lazy" src="img/07-onb-2-qr.webp" alt="Preparando o código… (QR não aparece)" data-zoom><figcaption>Preparando o código… (QR não aparece)</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-3"><div class="cap-head"><h3>Inválida: O provedor recusou a chave</h3><span class="papel">Credenciais de IA</span></div><p><strong>Por que acontece:</strong> Chave incompleta, errada ou revogada.</p><p><strong>O que fazer:</strong> Copiar de novo da empresa de IA; editar e validar.</p><figure class="fig small"><img loading="lazy" src="img/42-credenciais.webp" alt="Inválida: O provedor recusou a chave" data-zoom><figcaption>Inválida: O provedor recusou a chave</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-4"><div class="cap-head"><h3>Não consegui testar o crédito agora</h3><span class="papel">Primeiro acesso</span></div><p><strong>Por que acontece:</strong> Não deu para confirmar a chave.</p><p><strong>O que fazer:</strong> Pode seguir; publique depois que a chave for confirmada.</p><figure class="fig small"><img loading="lazy" src="img/09-onb-3-chave-errada.webp" alt="Não consegui testar o crédito agora" data-zoom><figcaption>Não consegui testar o crédito agora</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-5"><div class="cap-head"><h3>Seu atendente foi criado, mas ficou como rascunho</h3><span class="papel">Primeiro acesso</span></div><p><strong>Por que acontece:</strong> A chave ainda não foi confirmada, então o agente não pode ser publicado.</p><p><strong>O que fazer:</strong> Publique de novo depois de confirmar a chave. Não precisa colar outra.</p><figure class="fig small"><img loading="lazy" src="img/10-onb-apos-criar.webp" alt="Seu atendente foi criado, mas ficou como rascunho" data-zoom><figcaption>Seu atendente foi criado, mas ficou como rascunho</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-6"><div class="cap-head"><h3>Falta uma chave de embedding</h3><span class="papel">Conhecimento</span></div><p><strong>Por que acontece:</strong> Sem chave da OpenAI/OpenRouter/Google o material não é preparado.</p><p><strong>O que fazer:</strong> Cadastrar a chave em Credenciais.</p><figure class="fig small"><img loading="lazy" src="img/41-conhecimento.webp" alt="Falta uma chave de embedding" data-zoom><figcaption>Falta uma chave de embedding</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-7"><div class="cap-head"><h3>Escolha o modelo / a chave / o número (em vermelho, Publicar apagado)</h3><span class="papel">Agente</span></div><p><strong>Por que acontece:</strong> Faltam itens obrigatórios para publicar.</p><p><strong>O que fazer:</strong> Preencher os três e salvar o rascunho.</p><figure class="fig small"><img loading="lazy" src="img/140a-agente-basico.webp" alt="Escolha o modelo / a chave / o número (em vermelho, Publicar apagado)" data-zoom><figcaption>Escolha o modelo / a chave / o número (em vermelho, Publicar apagado)</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-8"><div class="cap-head"><h3>IA em modo de teste: nenhum número autorizado</h3><span class="papel">Conexões</span></div><p><strong>Por que acontece:</strong> Todo número novo começa em teste.</p><p><strong>O que fazer:</strong> Configurar acesso da IA e autorizar números.</p><figure class="fig small"><img loading="lazy" src="img/47-conexoes.webp" alt="IA em modo de teste: nenhum número autorizado" data-zoom><figcaption>IA em modo de teste: nenhum número autorizado</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-9"><div class="cap-head"><h3>Você ainda não publicou seus horários de atendimento</h3><span class="papel">Agenda</span></div><p><strong>Por que acontece:</strong> Ninguém publicou jornada.</p><p><strong>O que fazer:</strong> Equipe › Atendimento › relógio › janelas › Salvar.</p><figure class="fig small"><img loading="lazy" src="img/120-horarios.webp" alt="Você ainda não publicou seus horários de atendimento" data-zoom><figcaption>Você ainda não publicou seus horários de atendimento</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-10"><div class="cap-head"><h3>Sincronizar com o Google ainda não está disponível</h3><span class="papel">Agenda</span></div><p><strong>Por que acontece:</strong> O aplicativo do Google não foi cadastrado.</p><p><strong>O que fazer:</strong> Falar com o suporte do Thoth CRM.</p><figure class="fig small"><img loading="lazy" src="img/125-agenda-com-horarios.webp" alt="Sincronizar com o Google ainda não está disponível" data-zoom><figcaption>Sincronizar com o Google ainda não está disponível</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-11"><div class="cap-head"><h3>Escreva um título para a tarefa.</h3><span class="papel">Tarefas</span></div><p><strong>Por que acontece:</strong> Campo obrigatório vazio.</p><p><strong>O que fazer:</strong> Preencher e salvar.</p><figure class="fig small"><img loading="lazy" src="img/111-tarefa-erro-titulo.webp" alt="Escreva um título para a tarefa." data-zoom><figcaption>Escreva um título para a tarefa.</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-12"><div class="cap-head"><h3>Não foi possível excluir: o contato ainda tem registros vinculados</h3><span class="papel">Contatos</span></div><p><strong>Por que acontece:</strong> O contato tem compromisso na Agenda.</p><p><strong>O que fazer:</strong> Cancelar/apagar o compromisso e excluir de novo.</p><figure class="fig small"><img loading="lazy" src="img/91-excluir-erro.webp" alt="Não foi possível excluir: o contato ainda tem registros vinculados" data-zoom><figcaption>Não foi possível excluir: o contato ainda tem registros vinculados</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-13"><div class="cap-head"><h3>Contato "Sem nome" criado sem querer</h3><span class="papel">Contatos</span></div><p><strong>Por que acontece:</strong> O formulário aceita tudo em branco.</p><p><strong>O que fazer:</strong> Preencher telefone ou e-mail; excluir o vazio.</p><figure class="fig small"><img loading="lazy" src="img/115-contato-erro.webp" alt="Contato &quot;Sem nome&quot; criado sem querer" data-zoom><figcaption>Contato "Sem nome" criado sem querer</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-14"><div class="cap-head"><h3>Esta instalação ainda não envia e-mail</h3><span class="papel">Convite de equipe</span></div><p><strong>Por que acontece:</strong> O envio de e-mail ainda não foi configurado no sistema.</p><p><strong>O que fazer:</strong> Copiar o link do convite e mandar por WhatsApp.</p><figure class="fig small"><img loading="lazy" src="img/14-onb-6-link-convite.webp" alt="Esta instalação ainda não envia e-mail" data-zoom><figcaption>Esta instalação ainda não envia e-mail</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-15"><div class="cap-head"><h3>404 — Página não encontrada (Propostas)</h3><span class="papel">Módulos</span></div><p><strong>Por que acontece:</strong> Recurso ainda não liberado para a sua empresa.</p><p><strong>O que fazer:</strong> Pedir ao suporte do Thoth CRM; depois ligar em Configurações › Propostas.</p><figure class="fig small"><img loading="lazy" src="img/74-config-propostas-antes.webp" alt="404 — Página não encontrada (Propostas)" data-zoom><figcaption>404 — Página não encontrada (Propostas)</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-16"><div class="cap-head"><h3>Nesta instalação, os avisos só aparecem com o site aberto</h3><span class="papel">Notificações</span></div><p><strong>Por que acontece:</strong> Chaves de aviso não geradas.</p><p><strong>O que fazer:</strong> Pedir ao suporte do Thoth CRM para ativar.</p><figure class="fig small"><img loading="lazy" src="img/60-notificacoes.webp" alt="Nesta instalação, os avisos só aparecem com o site aberto" data-zoom><figcaption>Nesta instalação, os avisos só aparecem com o site aberto</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-17"><div class="cap-head"><h3>Mensagem "na fila" que não sai</h3><span class="papel">Inbox</span></div><p><strong>Por que acontece:</strong> O WhatsApp não está realmente conectado.</p><p><strong>O que fazer:</strong> Conexões › Reconectar.</p><figure class="fig small"><img loading="lazy" src="img/102b-mensagem-na-fila.webp" alt="Mensagem &quot;na fila&quot; que não sai" data-zoom><figcaption>Mensagem "na fila" que não sai</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-18"><div class="cap-head"><h3>Sem limite definido: a IA não vai parar sozinha por gasto</h3><span class="papel">Uso de IA</span></div><p><strong>Por que acontece:</strong> Nenhum teto foi definido.</p><p><strong>O que fazer:</strong> Editar limite.</p><figure class="fig small"><img loading="lazy" src="img/45-uso.webp" alt="Sem limite definido: a IA não vai parar sozinha por gasto" data-zoom><figcaption>Sem limite definido: a IA não vai parar sozinha por gasto</figcaption></figure></article>
+<article class="cap" data-trilha="erros" id="e-19"><div class="cap-head"><h3>Não consegui pedir uma sugestão para o seu funcionário</h3><span class="papel">Primeiro acesso (funil)</span></div><p><strong>Por que acontece:</strong> O agente ainda não está no ar.</p><p><strong>O que fazer:</strong> Nada trava: use o quadro pronto.</p><figure class="fig small"><img loading="lazy" src="img/11-onb-4-funil.webp" alt="Não consegui pedir uma sugestão para o seu funcionário" data-zoom><figcaption>Não consegui pedir uma sugestão para o seu funcionário</figcaption></figure></article>
+<section data-trilha="glossario"><div class="trilha-intro"><h2>Glossário</h2><p class="quem">As palavras que aparecem nas telas, traduzidas.</p></div></section>
+<article class="cap" data-trilha="glossario" id="gl"><div class="cap-head"><h3>Palavras do sistema</h3><span class="papel">Todos</span></div><dl class="gloss"><dt>Lead / negócio</dt><dd>Um cliente em potencial, ou uma venda em andamento, dentro do funil.</dd><dt>Funil</dt><dd>O caminho da venda, dividido em etapas (colunas).</dd><dt>Etapa</dt><dd>Uma coluna do funil, como "Consulta marcada".</dd><dt>Inbox</dt><dd>A caixa de conversas do WhatsApp.</dd><dt>Automático</dt><dd>A IA respondendo sozinha.</dd><dt>Assumir</dt><dd>Tirar a conversa da IA e responder você.</dd><dt>Agente</dt><dd>Um atendente de IA, com instruções e um número de WhatsApp.</dd><dt>Prompt / instruções</dt><dd>O texto que diz ao agente como se comportar.</dd><dt>Rascunho / Publicado</dt><dd>Rascunho é a versão em teste. Publicado é a que atende de verdade.</dd><dt>Roteador</dt><dd>Quem decide qual agente responde, quando há mais de um no mesmo número.</dd><dt>Follow-up</dt><dd>A mensagem de retomada para quem parou de responder.</dd><dt>Conhecimento</dt><dd>Os materiais que a IA consulta: preços, serviços, perguntas frequentes.</dd><dt>Memória</dt><dd>As regras da casa que valem para todos os agentes.</dd><dt>Credencial</dt><dd>A chave de acesso à empresa de IA.</dd><dt>Caso / demanda</dt><dd>Um pedido do cliente que precisa de solução, aberto pela IA ou pela equipe.</dd><dt>Alertas / Central de avisos</dt><dd>A lista de avisos que pedem uma decisão de alguém.</dd><dt>Handoff</dt><dd>A passagem da conversa da IA para uma pessoa.</dd><dt>Modo de teste</dt><dd>Fase em que um número novo só conversa com números autorizados.</dd><dt>Tag</dt><dd>Uma etiqueta para agrupar clientes ou conversas.</dd><dt>Campanha</dt><dd>Uma mensagem enviada a uma lista de contatos, aos poucos.</dd><dt>Prospecção</dt><dd>Buscar empresas novas e abordá-las com a IA.</dd><dt>Legítimo interesse</dt><dd>Base da LGPD que permite contatar empresas sem pedido prévio, com uma avaliação escrita.</dd><dt>QR</dt><dd>O quadrado que o celular lê para ligar o WhatsApp ao CRM.</dd><dt>Webhook</dt><dd>Um aviso automático que o CRM manda para outro sistema.</dd><dt>LGPD</dt><dd>A lei que protege os dados pessoais dos seus clientes.</dd></dl></article>
+<p class="vazio" id="vazio" hidden>Nada encontrado. Tente outra palavra, como "assumir", "agenda" ou "backup".</p>
+  </main>
+</div>
+<footer>Para atualizar este manual, peça ao Claude: "atualize o meu manual".</footer>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-label="Imagem ampliada"><div class="dica2">Clique para fechar · clique na imagem para alternar entre ajustar à tela e tamanho real</div><img alt=""></div>
+
+<script>
+(function(){
+  var trilhasMeta = {
+    inicio: { nome: 'Primeiro acesso', num: '01', badge: 'Admin' },
+    atendente: { nome: 'Trilha do Atendente', num: '02', badge: 'Atendente+' },
+    gestor: { nome: 'Trilha do Gestor', num: '03', badge: 'Gerente+' },
+    erros: { nome: 'Erros e Avisos', num: '04', badge: 'Suporte' },
+    glossario: { nome: 'Glossário', num: '05', badge: 'Todos' }
+  };
+
+  var blocks = [].slice.call(document.querySelectorAll('[data-trilha]'));
+  var articles = blocks.filter(function(b){ return b.tagName === 'ARTICLE'; });
+  var busca = document.getElementById('busca');
+  var toc = document.getElementById('toc');
+  var vazio = document.getElementById('vazio');
+  var atual = 'inicio';
+
+  // Catalog chapters by trilha for sequential navigation and counters
+  var chaptersByTrilha = {};
+  Object.keys(trilhasMeta).forEach(function(k){ chaptersByTrilha[k] = []; });
+
+  articles.forEach(function(art){
+    var t = art.getAttribute('data-trilha');
+    if(chaptersByTrilha[t]) {
+      var h3 = art.querySelector('h3');
+      chaptersByTrilha[t].push({
+        id: art.id,
+        title: h3 ? h3.textContent.trim() : art.id,
+        el: art,
+        trilha: t
+      });
+    }
+  });
+
+  // (sequential nav buttons removed)
+
+  // Resolve hash: handles trilha name, or chapter ID
+  function resolveTarget(h) {
+    if(!h) return null;
+    h = h.replace(/^#/, '').trim();
+    if(!h) return null;
+    if(trilhasMeta[h]) return { trilha: h, el: null, isTrilha: true, id: h };
+    var el = document.getElementById(h);
+    if(el) {
+      var tr = el.getAttribute('data-trilha');
+      if(tr && trilhasMeta[tr]) {
+        return { trilha: tr, el: el, isTrilha: false, id: h };
+      }
+    }
+    return null;
+  }
+
+  // Native smooth scroll using scroll-margin-top (88px)
+  function scrollToElement(el) {
+    if(!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    highlightElement(el);
+
+    // Sanity checkpoints to ensure landing on the exact chapter on the very first click
+    setTimeout(function(){
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 120);
+    setTimeout(function(){
+      el.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }, 400);
+  }
+
+  function highlightElement(el) {
+    document.querySelectorAll('.cap-highlight').forEach(function(c){
+      c.classList.remove('cap-highlight');
+    });
+    el.classList.add('cap-highlight');
+    setTimeout(function(){ el.classList.remove('cap-highlight'); }, 2600);
+  }
+
+  function setActiveToc(activeId) {
+    document.querySelectorAll('.toc-item a').forEach(function(a){
+      var href = a.getAttribute('href') || '';
+      var isCurrent = href === ('#' + activeId);
+      a.classList.toggle('active', isCurrent);
+    });
+  }
+
+  function render(targetToScroll) {
+    var q = (busca.value || '').trim().toLowerCase();
+    var matchCount = 0;
+
+    blocks.forEach(function(b){
+      var ok = q ? (b.tagName === 'ARTICLE' && b.textContent.toLowerCase().indexOf(q) > -1) : (b.getAttribute('data-trilha') === atual);
+      b.hidden = !ok;
+      if(ok && b.tagName === 'ARTICLE') matchCount++;
+    });
+
+    if(vazio) vazio.hidden = matchCount > 0;
+
+    // Render structured hierarchical TOC in the lateral menu
+    toc.innerHTML = '';
+
+    if(q) {
+      // Search results view
+      var sGroup = document.createElement('div');
+      sGroup.className = 'toc-group active';
+      sGroup.innerHTML = '<div class="toc-group-btn" style="cursor:default"><span class="toc-group-title">🔍 Resultados</span><span class="toc-group-count">' + matchCount + '</span></div>';
+      var ol = document.createElement('ol');
+      ol.className = 'toc-list';
+      articles.forEach(function(art){
+        if(art.hidden) return;
+        var li = document.createElement('li');
+        li.className = 'toc-item';
+        var a = document.createElement('a');
+        a.href = '#' + art.id;
+        var h3 = art.querySelector('h3');
+        var tr = art.getAttribute('data-trilha');
+        var trMeta = trilhasMeta[tr] || { nome: tr, num: '' };
+        a.innerHTML = '<span class="toc-num">' + trMeta.num + '</span>' + (h3 ? h3.textContent : art.id);
+        a.addEventListener('click', function(ev){
+          ev.preventDefault();
+          ev.stopPropagation();
+          scrollToElement(art);
+          setActiveToc(art.id);
+          history.replaceState(null, '', '#' + art.id);
+        });
+        li.appendChild(a);
+        ol.appendChild(li);
+      });
+      sGroup.appendChild(ol);
+      toc.appendChild(sGroup);
+    } else {
+      // Full structured Tree: all 5 trilhas listed in sidebar!
+      Object.keys(trilhasMeta).forEach(function(tKey){
+        var meta = trilhasMeta[tKey];
+        var caps = chaptersByTrilha[tKey] || [];
+        var isCurrentTrilha = (tKey === atual);
+
+        var group = document.createElement('div');
+        group.className = 'toc-group' + (isCurrentTrilha ? ' active' : '');
+
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'toc-group-btn';
+        btn.innerHTML = '<span class="toc-group-title">' + meta.nome + '</span>' +
+                        '<span class="toc-group-count">' + caps.length + '</span>';
+        
+        btn.addEventListener('click', function(ev){
+          ev.preventDefault();
+          if(atual !== tKey) {
+            atual = tKey;
+            busca.value = '';
+            try { localStorage.setItem('manual-trilha', atual); } catch(e){}
+            history.replaceState(null, '', '#' + tKey);
+            render();
+            var firstCap = chaptersByTrilha[tKey] && chaptersByTrilha[tKey][0];
+            if(firstCap) {
+              setTimeout(function(){ scrollToElement(firstCap.el); setActiveToc(firstCap.id); }, 60);
+            }
+          }
+        });
+
+        group.appendChild(btn);
+
+        // Render chapter list for the active trilha in sidebar
+        if(isCurrentTrilha && caps.length > 0) {
+          var ol = document.createElement('ol');
+          ol.className = 'toc-list';
+          caps.forEach(function(item, idx){
+            var li = document.createElement('li');
+            li.className = 'toc-item';
+            var a = document.createElement('a');
+            a.href = '#' + item.id;
+            var numStr = String(idx + 1).padStart(2, '0');
+            a.innerHTML = '<span class="toc-num">' + numStr + '</span> ' + item.title;
+            a.addEventListener('click', function(ev){
+              ev.preventDefault();
+              ev.stopPropagation();
+              scrollToElement(item.el);
+              setActiveToc(item.id);
+              history.replaceState(null, '', '#' + item.id);
+            });
+            li.appendChild(a);
+            ol.appendChild(li);
+          });
+          group.appendChild(ol);
+        }
+
+        toc.appendChild(group);
+      });
+    }
+
+    if(targetToScroll) {
+      setTimeout(function(){
+        scrollToElement(targetToScroll);
+        setActiveToc(targetToScroll.id);
+      }, 60);
+    }
+  }
+
+  // Handle URL anchors and in-page anchor clicks
+  function navigateTo(hashStr, updateHistory) {
+    var res = resolveTarget(hashStr);
+    if(res) {
+      var trilhaChanged = (atual !== res.trilha);
+      if(trilhaChanged) {
+        atual = res.trilha;
+        busca.value = '';
+        try { localStorage.setItem('manual-trilha', atual); } catch(e){}
+        render();
+      }
+      if(res.el) {
+        scrollToElement(res.el);
+        setActiveToc(res.id);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      if(updateHistory && res.id) {
+        history.replaceState(null, '', '#' + res.id);
+      }
+    } else {
+      render();
+    }
+  }
+
+  // Global delegated click for any in-manual links with anchors
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest('a[href^="#"], [data-goto]');
+    if(!a) return;
+    var hash = a.getAttribute('data-goto') || a.getAttribute('href');
+    if(hash && hash.startsWith('#')) hash = hash.slice(1);
+    var res = resolveTarget(hash);
+    if(res) {
+      ev.preventDefault();
+      navigateTo(hash, true);
+    }
+  });
+
+  busca.addEventListener('input', function(){
+    render();
+  });
+
+  // Listen to browser navigation (back/forward)
+  window.addEventListener('hashchange', function(){
+    navigateTo(location.hash, false);
+  });
+
+  // Scrollspy to highlight active chapter in TOC
+  if('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function(entries){
+      if(busca.value) return; // don't spy during search
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !entry.target.hidden) {
+          setActiveToc(entry.target.id);
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+
+    articles.forEach(function(art){ spy.observe(art); });
+  }
+
+  // Code copy buttons
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pre = btn.parentNode.querySelector('pre'), txt = pre.textContent;
+      function sel(){ var r=document.createRange(); r.selectNodeContents(pre); var s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='Selecionado'; }
+      try{ navigator.clipboard.writeText(txt).then(function(){btn.textContent='Copiado';},sel); }catch(e){ sel(); }
+      setTimeout(function(){btn.textContent='Copiar';},2000);
+    });
+  });
+
+  // Lightbox
+  var lb = document.getElementById('lb'), lbi = lb.querySelector('img');
+  document.addEventListener('click', function(ev){
+    var t = ev.target;
+    if(t && t.matches && t.matches('img[data-zoom]')){ lbi.src=t.src; lbi.alt=t.alt; lb.classList.remove('full'); lb.classList.add('on'); return; }
+    if(t === lbi){ ev.stopPropagation(); lb.classList.toggle('full'); return; }
+    if(lb.classList.contains('on')){ lb.classList.remove('on'); }
+  });
+  document.addEventListener('keydown', function(ev){ if(ev.key === 'Escape') lb.classList.remove('on'); });
+
+  // Initial Load with Anchor Check
+  if(location.hash) {
+    navigateTo(location.hash, false);
+  } else {
+    try {
+      var s = localStorage.getItem('manual-trilha');
+      if(trilhasMeta[s]) atual = s;
+    } catch(e){}
+    render();
+  }
+})();
+</script>
+</body>
+</html>
