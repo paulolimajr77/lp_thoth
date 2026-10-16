@@ -624,19 +624,14 @@ h1 em, h2 em {
   position: absolute;
   width: 104px;
   height: 104px;
-  border-radius: 28px;
-  background: var(--amber);
   display: grid;
   place-items: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-  padding: 18px;
 }
 
 .orbit-icon {
-  width: 100%;
+  width: 72px;
   height: auto;
   display: block;
-  filter: brightness(0) saturate(100%) invert(14%) sepia(30%) saturate(600%) hue-rotate(60deg) brightness(40%);
 }
 
 .orbit-tag {
