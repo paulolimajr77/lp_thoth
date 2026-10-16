@@ -52,9 +52,11 @@ const tl=gsap.timeline({defaults:{ease:'power2.out'},scrollTrigger:{trigger:flow
 if(!tablet)tl.fromTo(fill,{[axis]:0},{[axis]:1,ease:'none',duration:steps.length},0);
 steps.forEach((st,i)=>{const node=st.querySelector('.flow-node'),paths=st.querySelectorAll('.draw'),demo=st.querySelectorAll('.flow-demo > *'),txt=st.querySelectorAll('small,h3,p');
 tl.from(node,{scale:.6,opacity:.2,duration:.35},i).from(paths,{strokeDashoffset:1,duration:.7,stagger:.12,ease:'none'},i+.1).from(txt,{opacity:0,y:10,duration:.4,stagger:.06},i+.15).from(demo,{opacity:0,y:12,duration:.4,stagger:.18},i+.35)});
-const stages=steps[3].querySelectorAll('.stage');
-if(stages.length===3){stages.forEach((c,k)=>{tl.to(c,{className:'chip stage on',duration:.01},3.7+k*.3);if(k<2)tl.to(c,{className:'chip stage',duration:.01},4+k*.3)})}
-steps[1].querySelectorAll('.chip').forEach((c,k)=>{tl.to(c,{className:'chip on',duration:.01},1.55+k*.15)});
+/* chips acendem por cor (nao por classe: className brigava com opacity/y do from) */
+const ON={backgroundColor:'#283618',color:'#fefae0',borderColor:'#283618',duration:.01},light=el=>{const s=getComputedStyle(el);return {backgroundColor:s.backgroundColor,color:s.color,borderColor:s.borderTopColor,duration:.01}};
+const stages=[...steps[3].querySelectorAll('.stage')];
+stages.forEach((c,k)=>{const off=light(c);tl.to(c,ON,3.7+k*.3);if(k<stages.length-1)tl.to(c,off,4+k*.3)});
+[...steps[1].querySelectorAll('.chip')].forEach((c,k)=>{tl.to(c,ON,1.55+k*.15)});
 })}
 
 /* Movimento ligado ao scroll (GSAP + ScrollTrigger) */
