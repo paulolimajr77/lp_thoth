@@ -2092,3 +2092,70 @@ code {
   .flow-node { position: absolute; left: 0; top: 0; margin: 0; }
   .flow-demo { min-height: 0; }
 }
+
+/* ==========================================================================
+   Orbita do Thoth: elementos do CRM girando em loop (CSS puro)
+   ========================================================================== */
+.intro-grid { grid-template-columns: 520px 1fr; gap: 70px; }
+.intro-orbit { --k: 1; height: calc(520px * var(--k)); display: grid; place-items: center; position: relative; }
+.orbit-stage {
+  position: relative; width: 520px; height: 520px; flex: none;
+  margin: calc(260px * (var(--k) - 1));
+  transform: scale(var(--k)); transform-origin: center;
+}
+.orbit-stage::before {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 400px; height: 400px; margin: -200px 0 0 -200px;
+  border-radius: 50%; box-shadow: 0 0 0 38px rgba(221, 161, 94, .03), 0 0 0 76px rgba(221, 161, 94, .02);
+}
+.orbit-stage .orbit-core { left: 50%; top: 50%; margin: -52px 0 0 -52px; z-index: 3; }
+.core-pulse {
+  position: absolute; left: 50%; top: 50%; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%;
+  border: 1.5px solid rgba(221, 161, 94, .55); opacity: 0; animation: corePulse 5s ease-out infinite;
+}
+.core-pulse.p2 { animation-delay: 2.5s; }
+.orbit-stage .orbit-icon { position: relative; filter: drop-shadow(0 0 14px rgba(221, 161, 94, .35)); animation: iconBreath 5s ease-in-out infinite; }
+.o-sweep {
+  position: absolute; left: 50%; top: 50%; width: 400px; height: 400px; margin: -200px 0 0 -200px; border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(221, 161, 94, 0) 0deg, rgba(221, 161, 94, 0) 300deg, rgba(221, 161, 94, .16) 360deg);
+  -webkit-mask-image: radial-gradient(circle, transparent 22%, #000 24%, #000 100%);
+  mask-image: radial-gradient(circle, transparent 22%, #000 24%, #000 100%);
+  animation: orbitSpin 9s linear infinite;
+}
+.orbit-track {
+  position: absolute; left: 50%; top: 50%; border-radius: 50%;
+  width: calc(var(--r) * 2); height: calc(var(--r) * 2); margin: calc(var(--r) * -1) 0 0 calc(var(--r) * -1);
+  border: 1px dashed rgba(140, 169, 134, .32);
+  animation: orbitSpin var(--t) linear infinite;
+}
+.t-a { --r: 95px; --t: 48s; border-style: solid; border-color: rgba(221, 161, 94, .3); }
+.t-b { --r: 150px; --t: 80s; animation-direction: reverse; }
+.t-c { --r: 200px; --t: 120s; border-color: rgba(221, 161, 94, .22); }
+.on {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%) rotate(var(--a)) translateY(calc(var(--r) * -1)) rotate(calc(var(--a) * -1));
+}
+.on-in {
+  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  font: 600 10.5px var(--mono); letter-spacing: .1em; color: var(--cream);
+  background: rgba(254, 250, 224, .08); border: 1px solid rgba(254, 250, 224, .18);
+  padding: 7px 11px; border-radius: 99px; backdrop-filter: blur(2px);
+  animation: orbitSpinBack var(--t) linear infinite;
+}
+.on-in::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c, #dda15e); flex: none; box-shadow: 0 0 8px var(--c, #dda15e); }
+.t-b .on-in { animation-direction: reverse; }
+.on.ch .on-in { --c: #8ca986; }
+.on.tool .on-in { --c: #dda15e; }
+.on.pillar .on-in { background: rgba(221, 161, 94, .18); border-color: rgba(221, 161, 94, .55); letter-spacing: .13em; padding: 8px 13px; }
+.t-a .on-in, .t-b .on-in, .t-c .on-in { --t: inherit; }
+.t-a .on-in { animation-duration: 48s; }
+.t-b .on-in { animation-duration: 80s; }
+.t-c .on-in { animation-duration: 120s; }
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
+@keyframes orbitSpinBack { to { transform: rotate(-360deg); } }
+@keyframes corePulse { 0% { transform: scale(.7); opacity: .55; } 100% { transform: scale(2.9); opacity: 0; } }
+@keyframes iconBreath { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@media (max-width: 1050px) { .intro-grid { grid-template-columns: 1fr; gap: 40px; } .intro-orbit { --k: .9; } }
+@media (max-width: 600px) { .intro-orbit { --k: .64; } }
+@media (prefers-reduced-motion: reduce) {
+  .o-sweep, .orbit-track, .on-in, .core-pulse, .orbit-stage .orbit-icon { animation: none !important; }
+}
