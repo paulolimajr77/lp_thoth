@@ -74,9 +74,9 @@ img {
   position: sticky;
   top: 0;
   z-index: 80;
-  background: rgba(254, 250, 224, 0.96);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(254, 250, 224, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(40, 54, 24, 0.08);
 }
 
