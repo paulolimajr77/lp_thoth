@@ -921,6 +921,36 @@
   .h2-scroll .pg-stage svg{min-width:560px}
 }
 
+.h2-pain{background:#fff}
+.h2-pain .section-heading h2,.h2-more .section-heading h2{font:700 clamp(30px,3.6vw,46px)/1.08 var(--display);letter-spacing:-.045em;max-width:760px;margin-inline:auto}
+.h2-pain .section-heading p,.h2-more .section-heading p,.h2-who .section-heading p{max-width:600px;margin:14px auto 0;color:var(--muted);font-size:17px}
+.h2-pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.h2-pain-card{display:flex;flex-direction:column;gap:14px;padding:24px 24px 26px;border:1px solid var(--line);border-radius:20px;background:#fff}
+.h2-pain-q{margin:0;font:700 19px/1.25 var(--display);letter-spacing:-.03em;color:#1d1c18}
+.h2-pain-a{margin:0;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:15px;line-height:1.55}
+.h2-pain-a span{color:#a69861;font-weight:700;margin-right:4px}
+.h2-more{background:var(--surface)}
+.h2-more-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;border:1px solid var(--line);border-radius:22px;background:#fff;overflow:hidden}
+.h2-more-grid>div{padding:24px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.h2-more-grid>div:nth-child(4n){border-right:0}.h2-more-grid>div:nth-last-child(-n+4){border-bottom:0}
+.h2-more-grid h3{margin:0 0 8px;font:700 17px var(--display);letter-spacing:-.025em}
+.h2-more-grid p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+.h2-more-note{margin:26px 0 0;text-align:center}
+.h2-who-list>div{padding:18px 26px}
+.h2-who-list h3{font-size:17px}
+.h2-who-foot{margin:30px 0 0;text-align:center;color:var(--muted);font-size:16px}
+.h2-feat-copy .h2-ticks{margin-top:18px}
+@media(max-width:1000px){
+  .h2-pain-grid{grid-template-columns:repeat(2,1fr)}
+  .h2-more-grid{grid-template-columns:repeat(2,1fr)}
+  .h2-more-grid>div,.h2-more-grid>div:nth-child(4n){border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .h2-more-grid>div:nth-child(2n){border-right:0}.h2-more-grid>div:nth-last-child(-n+2){border-bottom:0}
+}
+@media(max-width:620px){
+  .h2-pain-grid,.h2-more-grid{grid-template-columns:1fr}
+  .h2-more-grid>div,.h2-more-grid>div:nth-child(2n){border-right:0;border-bottom:1px solid var(--line)}.h2-more-grid>div:last-child{border-bottom:0}
+}
+
 
 .feat-art{background:#fff;border:1px solid var(--line);border-radius:18px;padding:0;overflow:hidden;aspect-ratio:4/3}
 .feat-art svg{display:block;width:100%;height:100%}
@@ -1011,6 +1041,10 @@
   .pg-brake-inner{grid-template-columns:1fr;padding:26px}
 }
 
+.pg-pain{padding:10px 0 0}
+.pg-pain-box{padding:26px 30px;border:1px solid var(--line);border-radius:20px;background:#fbfaf6}
+.pg-pain-box small{display:block;margin-bottom:8px;color:#a69861;font:500 11px var(--mono);letter-spacing:.14em}
+.pg-pain-box p{margin:0;max-width:820px;font:600 clamp(18px,2vw,22px)/1.45 var(--display);letter-spacing:-.02em;color:#2d2b24}
 /* Home: cena com video no lugar do relogio */
 .scene-grid.scene-video-grid{grid-template-columns:minmax(300px,520px) minmax(0,1fr);gap:clamp(36px,6vw,84px);align-items:center}
 .scene-video .video-frame{max-width:none;margin:0;border-radius:18px}
