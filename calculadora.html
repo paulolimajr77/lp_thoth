@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Calcule quanto a demora para responder e as conversas que esfriam custam por mês, e compare com o plano do THOTH." />
+    <meta name="theme-color" content="#506d48" />
+    <title>Calculadora de vendas perdidas — THOTH</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icon-dourado.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./paginas.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+<header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="brand" href="./index.html" aria-label="THOTH — início"><img src="./assets/thoth-logo.png" alt="THOTH" width="140" height="34"></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" data-menu-toggle>
+          <span></span><span></span>
+          <span class="sr-only">Abrir menu</span>
+        </button>
+        <nav class="nav" id="menu-principal" data-nav aria-label="Navegação principal">
+          <a href="index.html#como-funciona">Como funciona</a>
+          <div class="nav-drop" data-drop>
+            <button type="button" class="nav-drop-btn" aria-expanded="false" aria-haspopup="true" data-drop-btn>Funcionalidades <i aria-hidden="true">▾</i></button>
+            <div class="nav-drop-panel"><a href="./agentes-de-ia.html">Agentes de IA</a><a href="./ia-com-controle.html">IA com controle</a><a href="./retomadas.html">Retomadas</a><a href="./atendimento.html">Atendimento</a><a href="./funil.html">Funil</a><a href="./agenda.html">Agenda</a><a href="./anuncios-e-vendas.html">Anúncios e vendas</a><a href="./integracoes.html">Integrações</a></div>
+          </div>
+          <a href="index.html#nichos">Soluções</a>
+          <a href="index.html#planos">Planos</a>
+          <a href="./calculadora.html">Calculadora</a>
+          <a href="index.html#faq">Dúvidas</a>
+          <a class="button button-small button-dark" href="./demonstracao.html">Ver demonstração</a>
+        </nav>
+      </div>
+    </header>
+    <main id="conteudo">
+      <section class="pg-hero ca-hero"><div class="shell">
+        <div class="pg-hero-copy reveal pg-center">
+          <p class="eyebrow">CALCULADORA</p>
+          <h1>Quanto a demora para responder custa por mês?</h1>
+          <p class="pg-lead">Mexa nos números e veja quanto da sua venda se perde fora do horário e nas conversas que esfriam. Todas as premissas são editáveis.</p>
+        </div>
+        <div class="ca-grid"><div class="ca-card reveal">
+      <h2 class="ca-h">Seus números</h2>
+      <div class="ca-inputs"><label class="ca-f" for="c-contatos"><span>Contatos novos por mês</span><div><input id="c-contatos" type="number" inputmode="decimal" min="0" value="120"></div></label><label class="ca-f" for="c-ticket"><span>Ticket médio de uma venda</span><div><input id="c-ticket" type="number" inputmode="decimal" min="0" value="800"><i>R$</i></div></label><label class="ca-f" for="c-fecha"><span>Quantos desses você fecha hoje</span><div><input id="c-fecha" type="number" inputmode="decimal" min="0" value="20"><i>%</i></div></label></div>
+      <label class="ca-f ca-plan" for="c-plano"><span>Plano THOTH</span><select id="c-plano"><option value="297">Acesso, R$ 297 por mês</option><option value="397" selected>Pronto para vender, R$ 397 por mês</option><option value="1097">Acompanhado, R$ 1.097 por mês</option></select></label>
+      <details class="ca-adv"><summary>Ver e ajustar as 4 premissas <span>+</span></summary><div class="ca-inputs"><label class="ca-f" for="c-fora"><span>Chegam fora do horário</span><div><input id="c-fora" type="number" inputmode="decimal" min="0" value="30"><i>%</i></div><small>Parte dos contatos que escreve à noite, no fim de semana ou em horário de pico</small></label><label class="ca-f" for="c-rec"><span>Recuperados com resposta imediata</span><div><input id="c-rec" type="number" inputmode="decimal" min="0" value="35"><i>%</i></div><small>Quantos desses você ganha ao responder na hora</small></label><label class="ca-f" for="c-esfria"><span>Conversas que esfriam</span><div><input id="c-esfria" type="number" inputmode="decimal" min="0" value="40"><i>%</i></div><small>Quem conversou e sumiu antes de decidir</small></label><label class="ca-f" for="c-volta"><span>Voltam com a retomada</span><div><input id="c-volta" type="number" inputmode="decimal" min="0" value="15"><i>%</i></div><small>Quantos desses respondem a um follow-up</small></label></div></details>
+    </div><div class="ca-result reveal reveal-delay">
+      <small>RECEITA EM JOGO POR MÊS</small>
+      <strong id="o-total">R$ 0</strong>
+      <p id="o-vendas" class="ca-sales"></p>
+      <p id="o-plano" class="ca-plan-line"></p>
+      <a id="o-wa" class="button button-primary" href="#" target="_blank" rel="noopener">Quero recuperar isso <span aria-hidden="true">↗</span></a>
+      <p class="ca-dis">Estimativa a partir das premissas acima, não é promessa de resultado. Considera só a mensalidade do plano, sem a implantação.</p>
+    </div></div>
+      </div></section>
+      <section class="pg-how"><div class="shell">
+        <div class="section-heading reveal"><h2>Veja a conta linha a linha.</h2></div>
+        <div class="ca-lines reveal">
+          <div><h3>1. Quem chega e não é atendido na hora</h3>
+            <ol><li><span>Contatos fora do horário</span><b id="l1">0</b></li><li><span>Recuperados com resposta imediata</span><b id="l2">0</b></li><li><span>Viram venda</span><b id="l3">0</b></li><li><span>Receita em jogo</span><b id="l4">0</b></li></ol></div>
+          <div><h3>2. Quem conversa e esfria</h3>
+            <ol><li><span>Conversas que esfriam</span><b id="m1">0</b></li><li><span>Voltam com a retomada</span><b id="m2">0</b></li><li><span>Viram venda</span><b id="m3">0</b></li><li><span>Receita em jogo</span><b id="m4">0</b></li></ol></div>
+        </div>
+        <p class="pg-limit">Os números mostrados são arredondados. A soma das duas partes é o valor em destaque.</p>
+      </div></section>
+      <section class="faq-section pg-faq"><div class="shell faq-grid"><div class="faq-intro reveal"><h2>Perguntas frequentes</h2></div><div class="faq-list reveal reveal-delay"><details><summary>De onde vêm as premissas?<span>+</span></summary><p>São valores de partida para você testar. Troque pelos números reais da sua operação para a estimativa fazer sentido.</p></details><details><summary>Por que duas partes na conta?<span>+</span></summary><p>A primeira mede a venda perdida por demora de resposta. A segunda mede a venda que esfria depois da conversa e que a retomada automática pode recuperar.</p></details><details><summary>O resultado é uma garantia?<span>+</span></summary><p>Não. É uma estimativa feita com as premissas que você informou.</p></details><details><summary>A implantação entra na conta?<span>+</span></summary><p>Não. A calculadora compara com a mensalidade do plano escolhido.</p></details></div></div></section>
+      
+      <section class="final-cta">
+        <div class="shell final-cta-inner reveal">
+          <h2>Quer ver isso rodando na sua operação?</h2>
+          <p>Veja a demonstração ou fale com a gente com os seus números já preenchidos.</p>
+          <div class="hero-actions pg-final-actions">
+            <a class="button button-primary button-large" href="./demonstracao.html">Ver demonstração do THOTH <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="https://wa.me/5515988263583?text=Quero%20ver%20o%20THOTH%20recuperando%20vendas%20na%20minha%20opera%C3%A7%C3%A3o" target="_blank" rel="noopener">Falar no WhatsApp <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-grid footer-grid-4">
+        <div><a class="brand brand-light" href="./index.html" aria-label="THOTH — início"><img src="./assets/thoth-logo-claro.png" alt="THOTH" width="150" height="36"></a><p>Atendimento, CRM, automação e IA no mesmo fluxo.</p></div>
+        <div><small>FUNÇÕES</small><a href="./agentes-de-ia.html">Agentes de IA</a><a href="./ia-com-controle.html">IA com controle</a><a href="./retomadas.html">Retomadas</a><a href="./atendimento.html">Atendimento</a><a href="./funil.html">Funil</a><a href="./agenda.html">Agenda</a><a href="./anuncios-e-vendas.html">Anúncios e vendas</a><a href="./integracoes.html">Integrações</a></div>
+        <div><small>PRODUTO</small><a href="index.html#como-funciona">Como funciona</a><a href="./clinicas.html">Para clínicas</a><a href="index.html#planos">Planos</a><a href="./calculadora.html">Calculadora</a><a href="./personalizacao-da-ia.html">Personalização da IA</a><a href="./boas-praticas-whatsapp.html">Boas práticas no WhatsApp</a><a href="./demonstracao.html">Demonstração</a><a href="./manual.html">Manual de uso</a></div>
+        <div><small>CONVERSAR</small><a href="https://wa.me/5515988263583?text=Quero%20conhecer%20a%20THOTH" target="_blank" rel="noopener">WhatsApp ↗</a><a href="index.html#faq">Dúvidas frequentes</a></div>
+      </div>
+      <div class="shell footer-bottom"><span>© <span data-year></span> THOTH</span><span>CRM · Atendimento · Automação · IA</span></div>
+    </footer>
+    <script src="./script.js"></script>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var brl=function(v){return 'R$ '+Math.round(v).toLocaleString('pt-BR')};
+  var num=function(v,d){return v.toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:d==null?1:d})};
+  var ids=['c-contatos','c-ticket','c-fecha','c-fora','c-rec','c-esfria','c-volta','c-plano'];
+  function rd(i){var v=parseFloat(String($(i).value).replace(',','.'));return isFinite(v)&&v>=0?v:0}
+  function go(){
+    var contatos=rd('c-contatos'),ticket=rd('c-ticket'),fecha=Math.min(rd('c-fecha'),100)/100,
+        fora=Math.min(rd('c-fora'),100)/100,rec=Math.min(rd('c-rec'),100)/100,
+        esfria=Math.min(rd('c-esfria'),100)/100,volta=Math.min(rd('c-volta'),100)/100,plano=rd('c-plano');
+    var a1=contatos*fora,a2=a1*rec,a3=a2*fecha,r1=a3*ticket;
+    var b1=contatos*esfria,b2=b1*volta,b3=b2*fecha,r2=b3*ticket;
+    var tot=r1+r2,vendas=a3+b3,saldo=tot-plano,x=plano?tot/plano:0;
+    $('o-total').textContent=brl(tot);
+    $('o-vendas').textContent=num(vendas)+' vendas por mês';
+    $('o-plano').textContent=plano?(x>=1?'O plano se paga '+num(x)+'× e sobram '+brl(saldo)+' por mês.':'Com esses números o plano ainda não se paga ('+num(x)+'×).'):'';
+    $('l1').textContent=num(a1,0);$('l2').textContent=num(a2,0);$('l3').textContent=num(a3);$('l4').textContent=brl(r1);
+    $('m1').textContent=num(b1,0);$('m2').textContent=num(b2,0);$('m3').textContent=num(b3);$('m4').textContent=brl(r2);
+    var t='Calculei no site: '+brl(tot)+' por mês em jogo ('+num(contatos,0)+' contatos, ticket '+brl(ticket)+'). Quero ver como o THOTH recupera isso.';
+    $('o-wa').href='https://wa.me/5515988263583?text='+encodeURIComponent(t);
+  }
+  ids.forEach(function(i){$(i).addEventListener('input',go);$(i).addEventListener('change',go)});
+  go();
+})();
+</script>
+  </body>
+</html>
