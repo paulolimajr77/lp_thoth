@@ -247,54 +247,58 @@
 .m1-ok0{animation:m1-ok0 14s cubic-bezier(.3,.1,.25,1) infinite}
 @keyframes m1-ok1{0%{opacity:0;transform:translateY(4px)}33.99%{opacity:0;transform:translateY(4px)}36%{opacity:1;transform:none}64%{opacity:1;transform:none}66%{opacity:0;transform:translateY(-3px)}100%{opacity:0}}
 .m1-ok1{animation:m1-ok1 14s cubic-bezier(.3,.1,.25,1) infinite}
-@keyframes m2-p0a{0%{offset-distance:0%;opacity:0}1.9%{offset-distance:0%;opacity:0}2%{offset-distance:0%;opacity:1}4%{offset-distance:100%;opacity:1}4.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p0a{animation:m2-p0a 12s ease-in-out infinite}
-@keyframes m2-p0b{0%{offset-distance:0%;opacity:0}7.9%{offset-distance:0%;opacity:0}8%{offset-distance:0%;opacity:1}13%{offset-distance:100%;opacity:1}13.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p0b{animation:m2-p0b 12s ease-in-out infinite}
-@keyframes m2-p1a{0%{offset-distance:0%;opacity:0}9.9%{offset-distance:0%;opacity:0}10%{offset-distance:0%;opacity:1}12%{offset-distance:100%;opacity:1}12.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p1a{animation:m2-p1a 12s ease-in-out infinite}
-@keyframes m2-p1b{0%{offset-distance:0%;opacity:0}15.9%{offset-distance:0%;opacity:0}16%{offset-distance:0%;opacity:1}21%{offset-distance:100%;opacity:1}21.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p1b{animation:m2-p1b 12s ease-in-out infinite}
-@keyframes m2-p2a{0%{offset-distance:0%;opacity:0}17.9%{offset-distance:0%;opacity:0}18%{offset-distance:0%;opacity:1}20%{offset-distance:100%;opacity:1}20.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p2a{animation:m2-p2a 12s ease-in-out infinite}
-@keyframes m2-p2b{0%{offset-distance:0%;opacity:0}23.9%{offset-distance:0%;opacity:0}24%{offset-distance:0%;opacity:1}29%{offset-distance:100%;opacity:1}29.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p2b{animation:m2-p2b 12s ease-in-out infinite}
-@keyframes m2-p3a{0%{offset-distance:0%;opacity:0}25.9%{offset-distance:0%;opacity:0}26%{offset-distance:0%;opacity:1}28%{offset-distance:100%;opacity:1}28.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p3a{animation:m2-p3a 12s ease-in-out infinite}
-@keyframes m2-p3b{0%{offset-distance:0%;opacity:0}31.9%{offset-distance:0%;opacity:0}32%{offset-distance:0%;opacity:1}37%{offset-distance:100%;opacity:1}37.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p3b{animation:m2-p3b 12s ease-in-out infinite}
-@keyframes m2-p4a{0%{offset-distance:0%;opacity:0}51.9%{offset-distance:0%;opacity:0}52%{offset-distance:0%;opacity:1}54%{offset-distance:100%;opacity:1}54.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p4a{animation:m2-p4a 12s ease-in-out infinite}
-@keyframes m2-p4b{0%{offset-distance:0%;opacity:0}57.9%{offset-distance:0%;opacity:0}58%{offset-distance:0%;opacity:1}63%{offset-distance:100%;opacity:1}63.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p4b{animation:m2-p4b 12s ease-in-out infinite}
-@keyframes m2-p5a{0%{offset-distance:0%;opacity:0}59.9%{offset-distance:0%;opacity:0}60%{offset-distance:0%;opacity:1}62%{offset-distance:100%;opacity:1}62.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p5a{animation:m2-p5a 12s ease-in-out infinite}
-@keyframes m2-p5b{0%{offset-distance:0%;opacity:0}65.9%{offset-distance:0%;opacity:0}66%{offset-distance:0%;opacity:1}71%{offset-distance:100%;opacity:1}71.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p5b{animation:m2-p5b 12s ease-in-out infinite}
-@keyframes m2-p6a{0%{offset-distance:0%;opacity:0}67.9%{offset-distance:0%;opacity:0}68%{offset-distance:0%;opacity:1}70%{offset-distance:100%;opacity:1}70.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p6a{animation:m2-p6a 12s ease-in-out infinite}
-@keyframes m2-p6b{0%{offset-distance:0%;opacity:0}73.9%{offset-distance:0%;opacity:0}74%{offset-distance:0%;opacity:1}79%{offset-distance:100%;opacity:1}79.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p6b{animation:m2-p6b 12s ease-in-out infinite}
-@keyframes m2-p7a{0%{offset-distance:0%;opacity:0}75.9%{offset-distance:0%;opacity:0}76%{offset-distance:0%;opacity:1}78%{offset-distance:100%;opacity:1}78.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p7a{animation:m2-p7a 12s ease-in-out infinite}
-@keyframes m2-p7b{0%{offset-distance:0%;opacity:0}81.9%{offset-distance:0%;opacity:0}82%{offset-distance:0%;opacity:1}87%{offset-distance:100%;opacity:1}87.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
-.m2-p7b{animation:m2-p7b 12s ease-in-out infinite}
-@keyframes m2-r0{0%{stroke:#d9d4c2;fill:#ffffff}0%{stroke:#d9d4c2;fill:#ffffff}1.5%{stroke:#8a8672;fill:#f4f1e8}4%{stroke:#8a8672;fill:#f4f1e8}6%{stroke:#d9d4c2;fill:#ffffff}8%{stroke:#d9d4c2;fill:#ffffff}9.5%{stroke:#8a8672;fill:#f4f1e8}12%{stroke:#8a8672;fill:#f4f1e8}14%{stroke:#d9d4c2;fill:#ffffff}16%{stroke:#d9d4c2;fill:#ffffff}17.5%{stroke:#8a8672;fill:#f4f1e8}20%{stroke:#8a8672;fill:#f4f1e8}22%{stroke:#d9d4c2;fill:#ffffff}24%{stroke:#d9d4c2;fill:#ffffff}25.5%{stroke:#8a8672;fill:#f4f1e8}28%{stroke:#8a8672;fill:#f4f1e8}30%{stroke:#d9d4c2;fill:#ffffff}50%{stroke:#d9d4c2;fill:#ffffff}51.5%{stroke:#8a8672;fill:#f4f1e8}54%{stroke:#8a8672;fill:#f4f1e8}56%{stroke:#d9d4c2;fill:#ffffff}58%{stroke:#d9d4c2;fill:#ffffff}59.5%{stroke:#8a8672;fill:#f4f1e8}62%{stroke:#8a8672;fill:#f4f1e8}64%{stroke:#d9d4c2;fill:#ffffff}66%{stroke:#d9d4c2;fill:#ffffff}67.5%{stroke:#8a8672;fill:#f4f1e8}70%{stroke:#8a8672;fill:#f4f1e8}72%{stroke:#d9d4c2;fill:#ffffff}74%{stroke:#d9d4c2;fill:#ffffff}75.5%{stroke:#8a8672;fill:#f4f1e8}78%{stroke:#8a8672;fill:#f4f1e8}80%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
-.m2-r0{animation:m2-r0 12s linear infinite}
-@keyframes m2-vv{0%{stroke:#d9d4c2;fill:#ffffff}4%{stroke:#d9d4c2;fill:#ffffff}5%{stroke:#2fb16f;fill:#e6f6ee}9%{stroke:#2fb16f;fill:#e6f6ee}10.5%{stroke:#d9d4c2;fill:#ffffff}12%{stroke:#d9d4c2;fill:#ffffff}13%{stroke:#5b8def;fill:#eaf0fe}17%{stroke:#5b8def;fill:#eaf0fe}18.5%{stroke:#d9d4c2;fill:#ffffff}20%{stroke:#d9d4c2;fill:#ffffff}21%{stroke:#e0564f;fill:#fdecea}25%{stroke:#e0564f;fill:#fdecea}26.5%{stroke:#d9d4c2;fill:#ffffff}28%{stroke:#d9d4c2;fill:#ffffff}29%{stroke:#f0a030;fill:#fdf1dc}33%{stroke:#f0a030;fill:#fdf1dc}34.5%{stroke:#d9d4c2;fill:#ffffff}54%{stroke:#d9d4c2;fill:#ffffff}55%{stroke:#5b8def;fill:#eaf0fe}59%{stroke:#5b8def;fill:#eaf0fe}60.5%{stroke:#d9d4c2;fill:#ffffff}62%{stroke:#d9d4c2;fill:#ffffff}63%{stroke:#2fb16f;fill:#e6f6ee}67%{stroke:#2fb16f;fill:#e6f6ee}68.5%{stroke:#d9d4c2;fill:#ffffff}70%{stroke:#d9d4c2;fill:#ffffff}71%{stroke:#f0a030;fill:#fdf1dc}75%{stroke:#f0a030;fill:#fdf1dc}76.5%{stroke:#d9d4c2;fill:#ffffff}78%{stroke:#d9d4c2;fill:#ffffff}79%{stroke:#e0564f;fill:#fdecea}83%{stroke:#e0564f;fill:#fdecea}84.5%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
-.m2-vv{animation:m2-vv 12s linear infinite}
-@keyframes m2-r1{0%{stroke:#d9d4c2;fill:#ffffff}13%{stroke:#d9d4c2;fill:#ffffff}14.5%{stroke:#2fb16f;fill:#e6f6ee}22%{stroke:#2fb16f;fill:#e6f6ee}24%{stroke:#d9d4c2;fill:#ffffff}71%{stroke:#d9d4c2;fill:#ffffff}72.5%{stroke:#2fb16f;fill:#e6f6ee}80%{stroke:#2fb16f;fill:#e6f6ee}82%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
-.m2-r1{animation:m2-r1 12s linear infinite}
-@keyframes m2-r2{0%{stroke:#d9d4c2;fill:#ffffff}21%{stroke:#d9d4c2;fill:#ffffff}22.5%{stroke:#5b8def;fill:#eaf0fe}30%{stroke:#5b8def;fill:#eaf0fe}32%{stroke:#d9d4c2;fill:#ffffff}63%{stroke:#d9d4c2;fill:#ffffff}64.5%{stroke:#5b8def;fill:#eaf0fe}72%{stroke:#5b8def;fill:#eaf0fe}74%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
-.m2-r2{animation:m2-r2 12s linear infinite}
-@keyframes m2-hand{0%{transform:rotate(0deg)}10%{transform:rotate(0deg)}60%{transform:rotate(720deg)}100%{transform:rotate(720deg)}}
-.m2-hand{animation:m2-hand 12s ease-in-out infinite}
-@keyframes m2-r3{0%{stroke:#d9d4c2;fill:#ffffff}37%{stroke:#d9d4c2;fill:#ffffff}38.5%{stroke:#f0a030;fill:#fdf1dc}46%{stroke:#f0a030;fill:#fdf1dc}48%{stroke:#d9d4c2;fill:#ffffff}79%{stroke:#d9d4c2;fill:#ffffff}80.5%{stroke:#f0a030;fill:#fdf1dc}88%{stroke:#f0a030;fill:#fdf1dc}90%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
-.m2-r3{animation:m2-r3 12s linear infinite}
-@keyframes m2-r4{0%{stroke:#d9d4c2;fill:#ffffff}29%{stroke:#d9d4c2;fill:#ffffff}30.5%{stroke:#e0564f;fill:#fdecea}38%{stroke:#e0564f;fill:#fdecea}40%{stroke:#d9d4c2;fill:#ffffff}87%{stroke:#d9d4c2;fill:#ffffff}88.5%{stroke:#e0564f;fill:#fdecea}96%{stroke:#e0564f;fill:#fdecea}98%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
-.m2-r4{animation:m2-r4 12s linear infinite}
-@keyframes m2-hist{0%{opacity:0;transform:translateY(4px)}3.99%{opacity:0;transform:translateY(4px)}6%{opacity:1;transform:none}94%{opacity:1;transform:none}96%{opacity:0;transform:translateY(-3px)}100%{opacity:0}}
-.m2-hist{animation:m2-hist 12s cubic-bezier(.3,.1,.25,1) infinite}
+@keyframes m2-e10{0%{offset-distance:0%;opacity:0}2.9%{offset-distance:0%;opacity:0}3%{offset-distance:0%;opacity:1}6%{offset-distance:100%;opacity:1}6.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e10{animation:m2-e10 16s ease-in-out infinite}
+@keyframes m2-e11{0%{offset-distance:0%;opacity:0}38.9%{offset-distance:0%;opacity:0}39%{offset-distance:0%;opacity:1}42%{offset-distance:100%;opacity:1}42.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e11{animation:m2-e11 16s ease-in-out infinite}
+@keyframes m2-e20{0%{offset-distance:0%;opacity:0}9.9%{offset-distance:0%;opacity:0}10%{offset-distance:0%;opacity:1}13%{offset-distance:100%;opacity:1}13.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e20{animation:m2-e20 16s ease-in-out infinite}
+@keyframes m2-e21{0%{offset-distance:0%;opacity:0}45.9%{offset-distance:0%;opacity:0}46%{offset-distance:0%;opacity:1}49%{offset-distance:100%;opacity:1}49.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e21{animation:m2-e21 16s ease-in-out infinite}
+@keyframes m2-e30{0%{offset-distance:0%;opacity:0}15.9%{offset-distance:0%;opacity:0}16%{offset-distance:0%;opacity:1}19%{offset-distance:100%;opacity:1}19.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e30{animation:m2-e30 16s ease-in-out infinite}
+@keyframes m2-e31{0%{offset-distance:0%;opacity:0}42.9%{offset-distance:0%;opacity:0}43%{offset-distance:0%;opacity:1}46%{offset-distance:100%;opacity:1}46.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e31{animation:m2-e31 16s ease-in-out infinite}
+@keyframes m2-e32{0%{offset-distance:0%;opacity:0}51.9%{offset-distance:0%;opacity:0}52%{offset-distance:0%;opacity:1}55%{offset-distance:100%;opacity:1}55.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e32{animation:m2-e32 16s ease-in-out infinite}
+@keyframes m2-e40{0%{offset-distance:0%;opacity:0}51.9%{offset-distance:0%;opacity:0}52%{offset-distance:0%;opacity:1}55%{offset-distance:100%;opacity:1}55.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e40{animation:m2-e40 16s ease-in-out infinite}
+@keyframes m2-e41{0%{offset-distance:0%;opacity:0}59.9%{offset-distance:0%;opacity:0}60%{offset-distance:0%;opacity:1}63%{offset-distance:100%;opacity:1}63.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e41{animation:m2-e41 16s ease-in-out infinite}
+@keyframes m2-e50{0%{offset-distance:0%;opacity:0}59.9%{offset-distance:0%;opacity:0}60%{offset-distance:0%;opacity:1}63%{offset-distance:100%;opacity:1}63.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e50{animation:m2-e50 16s ease-in-out infinite}
+@keyframes m2-e60{0%{offset-distance:0%;opacity:0}25.9%{offset-distance:0%;opacity:0}26%{offset-distance:0%;opacity:1}29%{offset-distance:100%;opacity:1}29.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e60{animation:m2-e60 16s ease-in-out infinite}
+@keyframes m2-e70{0%{offset-distance:0%;opacity:0}33.9%{offset-distance:0%;opacity:0}34%{offset-distance:0%;opacity:1}40%{offset-distance:100%;opacity:1}40.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e70{animation:m2-e70 16s ease-in-out infinite}
+@keyframes m2-e80{0%{offset-distance:0%;opacity:0}19.9%{offset-distance:0%;opacity:0}20%{offset-distance:0%;opacity:1}24%{offset-distance:100%;opacity:1}24.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e80{animation:m2-e80 16s ease-in-out infinite}
+@keyframes m2-e81{0%{offset-distance:0%;opacity:0}46.9%{offset-distance:0%;opacity:0}47%{offset-distance:0%;opacity:1}50%{offset-distance:100%;opacity:1}50.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e81{animation:m2-e81 16s ease-in-out infinite}
+@keyframes m2-e82{0%{offset-distance:0%;opacity:0}55.9%{offset-distance:0%;opacity:0}56%{offset-distance:0%;opacity:1}60%{offset-distance:100%;opacity:1}60.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e82{animation:m2-e82 16s ease-in-out infinite}
+@keyframes m2-e90{0%{offset-distance:0%;opacity:0}67.9%{offset-distance:0%;opacity:0}68%{offset-distance:0%;opacity:1}72%{offset-distance:100%;opacity:1}72.8%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m2-e90{animation:m2-e90 16s ease-in-out infinite}
+@keyframes m2-r0{0%{stroke:#d9d4c2;fill:#ffffff}0%{stroke:#d9d4c2;fill:#ffffff}1.5%{stroke:#8a8672;fill:#f4f1e8}4%{stroke:#8a8672;fill:#f4f1e8}6%{stroke:#d9d4c2;fill:#ffffff}36%{stroke:#d9d4c2;fill:#ffffff}37.5%{stroke:#8a8672;fill:#f4f1e8}40%{stroke:#8a8672;fill:#f4f1e8}42%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
+.m2-r0{animation:m2-r0 16s linear infinite}
+@keyframes m2-r1{0%{stroke:#d9d4c2;fill:#ffffff}7%{stroke:#d9d4c2;fill:#ffffff}8.5%{stroke:#5b8def;fill:#eaf0fe}11%{stroke:#5b8def;fill:#eaf0fe}13%{stroke:#d9d4c2;fill:#ffffff}43%{stroke:#d9d4c2;fill:#ffffff}44.5%{stroke:#5b8def;fill:#eaf0fe}47%{stroke:#5b8def;fill:#eaf0fe}49%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
+.m2-r1{animation:m2-r1 16s linear infinite}
+@keyframes m2-r2{0%{stroke:#d9d4c2;fill:#ffffff}13%{stroke:#d9d4c2;fill:#ffffff}14.5%{stroke:#9b6bdb;fill:#f1eafb}17%{stroke:#9b6bdb;fill:#f1eafb}19%{stroke:#d9d4c2;fill:#ffffff}40%{stroke:#d9d4c2;fill:#ffffff}41.5%{stroke:#9b6bdb;fill:#f1eafb}44%{stroke:#9b6bdb;fill:#f1eafb}46%{stroke:#d9d4c2;fill:#ffffff}49%{stroke:#d9d4c2;fill:#ffffff}50.5%{stroke:#9b6bdb;fill:#f1eafb}53%{stroke:#9b6bdb;fill:#f1eafb}55%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
+.m2-r2{animation:m2-r2 16s linear infinite}
+@keyframes m2-r3{0%{stroke:#d9d4c2;fill:#ffffff}19%{stroke:#d9d4c2;fill:#ffffff}20.5%{stroke:#f0a030;fill:#fdf1dc}27%{stroke:#f0a030;fill:#fdf1dc}29%{stroke:#d9d4c2;fill:#ffffff}46%{stroke:#d9d4c2;fill:#ffffff}47.5%{stroke:#f0a030;fill:#fdf1dc}52%{stroke:#f0a030;fill:#fdf1dc}54%{stroke:#d9d4c2;fill:#ffffff}55%{stroke:#d9d4c2;fill:#ffffff}56.5%{stroke:#f0a030;fill:#fdf1dc}61%{stroke:#f0a030;fill:#fdf1dc}63%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
+.m2-r3{animation:m2-r3 16s linear infinite}
+@keyframes m2-r4{0%{stroke:#d9d4c2;fill:#ffffff}55%{stroke:#d9d4c2;fill:#ffffff}56.5%{stroke:#8a8672;fill:#f4f1e8}61%{stroke:#8a8672;fill:#f4f1e8}63%{stroke:#d9d4c2;fill:#ffffff}63%{stroke:#d9d4c2;fill:#ffffff}64.5%{stroke:#8a8672;fill:#f4f1e8}69%{stroke:#8a8672;fill:#f4f1e8}71%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
+.m2-r4{animation:m2-r4 16s linear infinite}
+@keyframes m2-r5{0%{stroke:#d9d4c2;fill:#ffffff}63%{stroke:#d9d4c2;fill:#ffffff}64.5%{stroke:#2fb16f;fill:#e6f6ee}71%{stroke:#2fb16f;fill:#e6f6ee}73%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
+.m2-r5{animation:m2-r5 16s linear infinite}
+@keyframes m2-r6{0%{stroke:#d9d4c2;fill:#ffffff}29%{stroke:#d9d4c2;fill:#ffffff}30.5%{stroke:#f0a030;fill:#fdf1dc}35%{stroke:#f0a030;fill:#fdf1dc}37%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
+.m2-r6{animation:m2-r6 16s linear infinite}
+@keyframes m2-r7{0%{stroke:#d9d4c2;fill:#ffffff}20%{stroke:#d9d4c2;fill:#ffffff}21.5%{stroke:#5b8def;fill:#eaf0fe}26%{stroke:#5b8def;fill:#eaf0fe}28%{stroke:#d9d4c2;fill:#ffffff}47%{stroke:#d9d4c2;fill:#ffffff}48.5%{stroke:#5b8def;fill:#eaf0fe}51%{stroke:#5b8def;fill:#eaf0fe}53%{stroke:#d9d4c2;fill:#ffffff}56%{stroke:#d9d4c2;fill:#ffffff}57.5%{stroke:#5b8def;fill:#eaf0fe}61%{stroke:#5b8def;fill:#eaf0fe}63%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
+.m2-r7{animation:m2-r7 16s linear infinite}
+@keyframes m2-r8{0%{stroke:#d9d4c2;fill:#ffffff}72%{stroke:#d9d4c2;fill:#ffffff}73.5%{stroke:#e0564f;fill:#fdecea}80%{stroke:#e0564f;fill:#fdecea}82%{stroke:#d9d4c2;fill:#ffffff}100%{stroke:#d9d4c2;fill:#ffffff}}
+.m2-r8{animation:m2-r8 16s linear infinite}
+@keyframes m2-fim{0%{opacity:0;transform:translateY(4px)}3.99%{opacity:0;transform:translateY(4px)}6%{opacity:1;transform:none}94%{opacity:1;transform:none}96%{opacity:0;transform:translateY(-3px)}100%{opacity:0}}
+.m2-fim{animation:m2-fim 16s cubic-bezier(.3,.1,.25,1) infinite}
 @keyframes m3-t0{0%{fill:#e6e2d6}5%{fill:#e6e2d6}6.5%{fill:#2fb16f}44%{fill:#2fb16f}46%{fill:#e6e2d6}52%{fill:#e6e2d6}53.5%{fill:#2fb16f}92%{fill:#2fb16f}94%{fill:#e6e2d6}100%{fill:#e6e2d6}}
 .m3-t0{animation:m3-t0 14s linear infinite}
 @keyframes m3-k0{0%{transform:translateX(0)}5%{transform:translateX(0)}6.5%{transform:translateX(14px)}44%{transform:translateX(14px)}46%{transform:translateX(0)}52%{transform:translateX(0)}53.5%{transform:translateX(14px)}92%{transform:translateX(14px)}94%{transform:translateX(0)}100%{transform:translateX(0)}}
