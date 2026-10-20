@@ -548,6 +548,7 @@
 .cc-wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:40px}
 .cc-wrap .vm-art{max-width:640px;width:100%;margin-inline:auto}
 .cc-wrap .vm-art svg{display:block;width:100%;height:auto}
+.cc-solo{display:block}
 .cc-steps{margin:0;padding:0;list-style:none;display:grid;gap:2px}
 .cc-steps li{display:grid;grid-template-columns:32px 1fr;gap:14px;padding:12px 14px;border-left:2px solid var(--line);opacity:.55;animation:ccStep 18s linear infinite;animation-delay:calc(var(--i)*3s)}
 .cc-steps b{color:#a69861;font:700 11px var(--mono);padding-top:3px}
