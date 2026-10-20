@@ -1350,6 +1350,22 @@
 
 
 /* ====== paginas internas + menu de funcoes ====== */
+/* ===== textos de ate 1140px e sem palavra solta ===== */
+.hero-copy{max-width:1180px}
+.hero-lead{max-width:1140px}
+.centered,.section-heading,.section-heading.centered{max-width:1140px}
+.section-heading h2,.h2-pain .section-heading h2,.h2-more .section-heading h2,.h2-how .section-heading h2,.h2-who .section-heading h2,.h2-feats>.shell>.section-heading h2{max-width:1140px}
+.section-heading p,.h2-pain .section-heading p,.h2-more .section-heading p,.h2-who .section-heading p,.h2-feats>.shell>.section-heading p{max-width:1140px}
+.final-cta-inner{max-width:1140px}
+.final-cta p:not(.mono-label){max-width:1140px;margin-inline:auto}
+.pg-pain-box p,.pg-pain-box h2{max-width:1140px}
+.pg-center .pg-lead{max-width:1140px}
+.h2-pain-after{max-width:1140px;margin:40px auto 0;text-align:center;color:var(--muted);font-size:17px}
+h1,h2,h3{text-wrap:balance}
+.hero-lead,.section-heading p,.final-cta p,.pg-pain-box p,.h2-pain-q,.h2-pain-after,.pg-lead,.h2-who-foot,.faq-intro p,.h2-feat-copy>p,.pg-example p{text-wrap:balance}
+p,li,summary{text-wrap:pretty}
+.pg-list li>div,.pg-note,.pg-limit,.pg-cols p,.pg-ticks li,.h2-ticks li,.h2-who-list p,.h2-pain-a,.h2-step-txt p,.plan-top p{text-wrap:balance}
+
 .eyebrow::before,.eyebrow::after,.eyebrow>span{display:none!important}
 .eyebrow{gap:0}
 @media(max-width:620px){.hero .eyebrow{justify-content:center;text-align:center}}
