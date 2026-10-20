@@ -362,12 +362,30 @@
 .m14-p2{animation:m14-p2 6s linear infinite}
 @keyframes m14-p3{0%{stroke-dashoffset:14}66%{stroke-dashoffset:14}84%{stroke-dashoffset:-100}100%{stroke-dashoffset:-100}}
 .m14-p3{animation:m14-p3 6s linear infinite}
-@keyframes m15-p0{0%{stroke-dashoffset:14}0%{stroke-dashoffset:14}22%{stroke-dashoffset:-100}100%{stroke-dashoffset:-100}}
-.m15-p0{animation:m15-p0 6s linear infinite}
-@keyframes m15-p1{0%{stroke-dashoffset:14}22%{stroke-dashoffset:14}44%{stroke-dashoffset:-100}100%{stroke-dashoffset:-100}}
-.m15-p1{animation:m15-p1 6s linear infinite}
-@keyframes m15-p2{0%{stroke-dashoffset:14}44%{stroke-dashoffset:14}66%{stroke-dashoffset:-100}100%{stroke-dashoffset:-100}}
-.m15-p2{animation:m15-p2 6s linear infinite}
+@keyframes m15-k0{0%{offset-distance:0%;opacity:0}1%{offset-distance:0%;opacity:1}13%{offset-distance:100%;opacity:1}14%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m15-k0{animation:m15-k0 3.6s cubic-bezier(.5,0,.4,1) infinite}
+@keyframes m15-r0{0%{transform:scale(1);opacity:0}13%{transform:scale(1);opacity:0}14%{transform:scale(1);opacity:.9}26%{transform:scale(1.5);opacity:0}100%{transform:scale(1.5);opacity:0}}
+.m15-r0{animation:m15-r0 3.6s ease-out infinite}
+.m15-r0{transform-origin:186px 95px}
+.m15-c0{transform-origin:186px 44px}
+@keyframes m15-c0{0%{opacity:0;transform:scale(.9) translateY(6px)}13.9%{opacity:0;transform:scale(.9) translateY(6px)}17%{opacity:1;transform:none}31%{opacity:1;transform:none}33%{opacity:0;transform:scale(.96)}100%{opacity:0;transform:scale(.9) translateY(6px)}}
+.m15-c0{animation:m15-c0 3.6s ease-out infinite}
+@keyframes m15-k1{0%{offset-distance:0%;opacity:0}34%{offset-distance:0%;opacity:1}46%{offset-distance:100%;opacity:1}47%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m15-k1{animation:m15-k1 3.6s cubic-bezier(.5,0,.4,1) infinite}
+@keyframes m15-r1{0%{transform:scale(1);opacity:0}46%{transform:scale(1);opacity:0}47%{transform:scale(1);opacity:.9}59%{transform:scale(1.5);opacity:0}100%{transform:scale(1.5);opacity:0}}
+.m15-r1{animation:m15-r1 3.6s ease-out infinite}
+.m15-r1{transform-origin:186px 95px}
+.m15-c1{transform-origin:186px 44px}
+@keyframes m15-c1{0%{opacity:0;transform:scale(.9) translateY(6px)}46.9%{opacity:0;transform:scale(.9) translateY(6px)}50%{opacity:1;transform:none}64%{opacity:1;transform:none}66%{opacity:0;transform:scale(.96)}100%{opacity:0;transform:scale(.9) translateY(6px)}}
+.m15-c1{animation:m15-c1 3.6s ease-out infinite}
+@keyframes m15-k2{0%{offset-distance:0%;opacity:0}67%{offset-distance:0%;opacity:1}79%{offset-distance:100%;opacity:1}80%{offset-distance:100%;opacity:0}100%{offset-distance:100%;opacity:0}}
+.m15-k2{animation:m15-k2 3.6s cubic-bezier(.5,0,.4,1) infinite}
+@keyframes m15-r2{0%{transform:scale(1);opacity:0}79%{transform:scale(1);opacity:0}80%{transform:scale(1);opacity:.9}92%{transform:scale(1.5);opacity:0}100%{transform:scale(1.5);opacity:0}}
+.m15-r2{animation:m15-r2 3.6s ease-out infinite}
+.m15-r2{transform-origin:186px 95px}
+.m15-c2{transform-origin:186px 44px}
+@keyframes m15-c2{0%{opacity:0;transform:scale(.9) translateY(6px)}79.9%{opacity:0;transform:scale(.9) translateY(6px)}83%{opacity:1;transform:none}96%{opacity:1;transform:none}98%{opacity:0;transform:scale(.96)}100%{opacity:0;transform:scale(.9) translateY(6px)}}
+.m15-c2{animation:m15-c2 3.6s ease-out infinite}
 @keyframes m16-a{0%{opacity:0;transform:translateY(8px)}4%{opacity:0;transform:translateY(8px)}8%{opacity:1;transform:none}92%{opacity:1;transform:none}96%{opacity:0;transform:none}100%{opacity:0}}
 .m16-a{animation:m16-a 10s ease-out infinite}
 @keyframes m16-b{0%{opacity:0;transform:translateY(8px)}22%{opacity:0;transform:translateY(8px)}26%{opacity:1;transform:none}92%{opacity:1;transform:none}96%{opacity:0;transform:none}100%{opacity:0}}
@@ -648,6 +666,8 @@
 .pg-mini .fu-line,.pg-stage .fu-line,.vm-art .vm-line{stroke-width:.7!important}
 .pg-mini .fu-glow,.pg-stage .fu-glow,.vm-art .vm-glow{stroke-width:1.3!important}
 .h2-step-art .pg-mini{max-width:340px;margin-inline:auto}
+.pg-mini .ch-line{fill:none;stroke:rgba(43,42,37,.22);stroke-width:1px!important;vector-effect:non-scaling-stroke}
+.pg-mini .pk{offset-rotate:0deg}
 
 
 
