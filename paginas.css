@@ -644,6 +644,11 @@
 .vm-art path[stroke-width="3"]{stroke-width:1.8}
 .pg-mini .fu-node{r:4.5px;fill:#fff}.pg-stage .fu-node{r:7px;fill:#fff}.pg-mini .rt-core{r:15px}
 .vm-art circle[stroke-width="14"]{stroke-width:8}
+.pg-mini :is(rect,circle):not([stroke-width]),.pg-stage :is(rect,circle):not([stroke-width]),.vm-art :is(rect,circle):not([stroke-width]){vector-effect:non-scaling-stroke;stroke-width:1px!important}
+.pg-mini .fu-line,.pg-stage .fu-line,.vm-art .vm-line{stroke-width:.7!important}
+.pg-mini .fu-glow,.pg-stage .fu-glow,.vm-art .vm-glow{stroke-width:1.3!important}
+.h2-step-art .pg-mini{max-width:340px;margin-inline:auto}
+
 
 
 .h2-sec{padding:100px 0}
