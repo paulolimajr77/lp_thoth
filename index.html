@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A TOTH reúne atendimento, CRM, automação e agentes de IA em um único fluxo comercial." />
+    <meta name="description" content="A TOTH responde no WhatsApp, Instagram e Facebook, coloca cada contato no funil certo e volta a falar com quem sumiu." />
     <meta name="theme-color" content="#6048ea" />
     <title>TOTH — CRM, atendimento e IA no mesmo fluxo</title>
     <link rel="icon" type="image/svg+xml" href="./assets/icon-dourado.svg" />
@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./paginas.css" />
   </head>
   <body>
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -18,18 +19,20 @@
     <header class="site-header" data-header>
       <div class="shell header-inner">
         <a class="brand" href="#topo" aria-label="TOTH — início"><img src="./assets/thoth-logo.png" alt="TOTH" width="140" height="34"></a>
-
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" data-menu-toggle>
           <span></span><span></span>
           <span class="sr-only">Abrir menu</span>
         </button>
-
         <nav class="nav" id="menu-principal" data-nav aria-label="Navegação principal">
           <a href="#como-funciona">Como funciona</a>
-          <a href="#ia">IA com controle</a>
+          <div class="nav-drop" data-drop>
+            <button type="button" class="nav-drop-btn" aria-expanded="false" aria-haspopup="true" data-drop-btn>Funções <i aria-hidden="true">▾</i></button>
+            <div class="nav-drop-panel"><a href="./agentes-de-ia.html">Agentes de IA</a><a href="./ia-com-controle.html">IA com controle</a><a href="./retomadas.html">Retomadas</a><a href="./atendimento.html">Atendimento</a><a href="./funil.html">Funil</a><a href="./agenda.html">Agenda</a><a href="./anuncios-e-vendas.html">Anúncios e vendas</a><a href="./integracoes.html">Integrações</a></div>
+          </div>
+          <a href="./clinicas.html">Clínicas</a>
           <a href="#planos">Planos</a>
           <a href="#faq">Dúvidas</a>
-          <a class="button button-small button-dark" href="https://wa.me/5515988263583?text=Quero%20ver%20a%20TOTH%20funcionando" target="_blank" rel="noopener">Ver demonstração</a>
+          <a class="button button-small button-dark" href="./demonstracao.html">Ver demonstração</a>
         </nav>
       </div>
     </header>
@@ -40,15 +43,15 @@
         <div class="shell hero-grid">
           <div class="hero-copy reveal">
             <h1>Todo <em>“oi”</em> que ninguém responde <span class="hero-loss">é dinheiro</span> de anúncio <span class="hero-loss">jogado fora.</span></h1>
-            <p class="hero-lead">A TOTH reúne WhatsApp, Instagram, Facebook, funil de vendas, follow-ups e agentes de IA em uma única operação. Cada contato entra no processo certo, recebe resposta e avança com contexto.</p>
+            <p class="hero-lead">A TOTH responde no WhatsApp, no Instagram e no Facebook, coloca cada contato no funil certo e volta a falar com quem sumiu. Quando a conversa pede uma pessoa, ela assume com o resumo na mão.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="https://wa.me/5515988263583?text=Quero%20ver%20a%20TOTH%20funcionando" target="_blank" rel="noopener">Quero ver a TOTH funcionando <span aria-hidden="true">↗</span></a>
-              <a class="text-link" href="#como-funciona">Entender o fluxo <span aria-hidden="true">↓</span></a>
+              <a class="button button-primary" href="./demonstracao.html">Ver a TOTH funcionando em 1 min 40 <span aria-hidden="true">→</span></a>
+              <a class="text-link" href="https://wa.me/5515988263583?text=Quero%20ver%20a%20TOTH%20funcionando" target="_blank" rel="noopener">Falar no WhatsApp <span aria-hidden="true">↗</span></a>
             </div>
             <ul class="hero-notes" aria-label="Diferenciais principais">
-              <li>Implantação assistida</li>
-              <li>Atendimento humano + IA</li>
-              <li>Dados separados por empresa</li>
+              <li>A gente hospeda e configura</li>
+              <li>A IA passa para uma pessoa quando precisa</li>
+              <li>Os dados de cada empresa ficam separados</li>
             </ul>
           </div>
 
@@ -86,34 +89,19 @@
       </section>
 
       <section class="scene-section" id="cena">
-        <div class="shell scene-grid">
-          <div class="scene-clock reveal" id="relogio">
-            <svg viewBox="0 0 320 320" role="img" aria-label="Relógio marcando 23:40, hora em que uma mensagem chega">
-              <defs>
-                <radialGradient id="dialGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#ffffff"/>
-                  <stop offset="86%" stop-color="#fbfaf5"/>
-                  <stop offset="100%" stop-color="#efeadb"/>
-                </radialGradient>
-              </defs>
-              <circle class="dial" cx="160" cy="160" r="148" fill="url(#dialGrad)"/>
-              <circle class="dial-ring" cx="160" cy="160" r="130"/>
-              <line class="t-major" x1="160" y1="22" x2="160" y2="38" transform="rotate(0 160 160)"/><line class="t-minor" x1="160" y1="22" x2="160" y2="34" transform="rotate(30 160 160)"/><line class="t-minor" x1="160" y1="22" x2="160" y2="34" transform="rotate(60 160 160)"/><line class="t-major" x1="160" y1="22" x2="160" y2="38" transform="rotate(90 160 160)"/><line class="t-minor" x1="160" y1="22" x2="160" y2="34" transform="rotate(120 160 160)"/><line class="t-minor" x1="160" y1="22" x2="160" y2="34" transform="rotate(150 160 160)"/><line class="t-major" x1="160" y1="22" x2="160" y2="38" transform="rotate(180 160 160)"/><line class="t-minor" x1="160" y1="22" x2="160" y2="34" transform="rotate(210 160 160)"/><line class="t-minor" x1="160" y1="22" x2="160" y2="34" transform="rotate(240 160 160)"/><line class="t-major" x1="160" y1="22" x2="160" y2="38" transform="rotate(270 160 160)"/><line class="t-minor" x1="160" y1="22" x2="160" y2="34" transform="rotate(300 160 160)"/><line class="t-minor" x1="160" y1="22" x2="160" y2="34" transform="rotate(330 160 160)"/>
-              <line class="hand hand-hour" x1="160" y1="160" x2="160" y2="92"/>
-              <line class="hand hand-min" x1="160" y1="160" x2="160" y2="60"/>
-              <circle class="hub" cx="160" cy="160" r="7.5"/>
-              <circle class="hub-dot" cx="160" cy="160" r="3"/>
-              <g class="clock-badge">
-                <rect x="96" y="196" width="128" height="38" rx="19"/>
-                <text class="badge-time" x="160" y="222" text-anchor="middle">23:40</text>
-              </g>
-              <text class="badge-label" x="160" y="256" text-anchor="middle">UMA MENSAGEM CHEGA</text>
-            </svg>
+        <div class="shell scene-grid scene-video-grid">
+          <div class="scene-video reveal">
+            <div class="video-frame" id="videoFrame">
+              <video id="demoVideo" src="./assets/video/thoth-demo.mp4" poster="./assets/video/thoth-demo-capa.jpg" muted loop playsinline preload="none" controls controlslist="nodownload" aria-label="Vídeo de demonstração da TOTH"></video>
+              <button class="video-sound" id="videoSound" type="button" hidden><span aria-hidden="true">🔊</span> Ativar som</button>
+              <button class="video-enlarge" id="videoEnlarge" type="button" aria-label="Ampliar o vídeo"><span aria-hidden="true">⤢</span> Ampliar</button>
+            </div>
+            <p class="video-cap">Do primeiro “oi” ao follow-up, em 1 minuto e 40.</p>
           </div>
           <div class="scene-copy reveal reveal-delay">
             <p class="eyebrow"><span></span>A cena que muda a venda</p>
             <h2>Às 23h40, o cliente não quer esperar até amanhã.</h2>
-            <p>Sem sistema, ele espera. E amanhã pode ser tarde. Com a TOTH, a conversa recebe a resposta certa, o negócio entra no funil e, se o cliente sumir, o sistema pode retomar no momento definido.</p>
+            <p>Ele pergunta o preço, pede uma foto e quer saber se você atende sábado. Sem sistema, ele espera, e amanhã pode já ter fechado com outro. Com a IA ligada, ele recebe a resposta com a foto, o preço e o horário. A conversa já entra no funil e, se ele sumir, a TOTH volta a falar com ele.</p>
             <div class="scene-steps" role="list" aria-label="Caminho da mensagem">
               <span role="listitem">mensagem</span><i aria-hidden="true">→</i><span role="listitem">resposta</span><i aria-hidden="true">→</i><span role="listitem">funil</span><i aria-hidden="true">→</i><span role="listitem">follow-up</span>
             </div>
@@ -121,32 +109,19 @@
         </div>
       </section>
 
-      <section class="video-section" id="video">
-        <div class="shell">
-          <div class="video-heading reveal">
-            <p class="eyebrow"><span></span>Veja funcionando</p>
-            <h2>Do primeiro “oi” ao follow-up, em 1 minuto e 40.</h2>
-          </div>
-          <div class="video-frame reveal reveal-delay" id="videoFrame">
-            <video id="demoVideo" src="./assets/video/thoth-demo.mp4" poster="./assets/video/thoth-demo-capa.jpg" muted loop playsinline preload="none" controls controlslist="nodownload" aria-label="Vídeo de demonstração da TOTH"></video>
-            <button class="video-sound" id="videoSound" type="button" hidden><span aria-hidden="true">🔊</span> Ativar som</button>
-          </div>
-        </div>
-      </section>
-
       <section class="pain-section section-dark" id="perdas">
         <div class="shell pain-grid">
           <div class="section-heading reveal">
-            <h2>O lead chegou. O que acontece depois?</h2>
-            <p>Você investe para gerar conversas. Mas, quando o contato entra no WhatsApp, o processo passa a depender de memória, planilhas e mensagens espalhadas.</p>
-            <p class="pain-summary">Uma falha parece pequena. Repetida todos os dias, ela vira receita perdida.</p>
+            <h2>O lead chegou. E agora?</h2>
+            <p>Você paga para gerar conversas. Quando o contato cai no WhatsApp, o resto depende de memória, de planilha e de mensagem solta.</p>
+            <p class="pain-summary">Uma falha parece pequena. Repetida todos os dias, vira receita perdida.</p>
           </div>
 
           <div class="leak-list reveal reveal-delay">
-            <article><div class="leak-image"><img src="./assets/thumbs/radar-leak.webp" data-zoom="./assets/full/30-radar.webp" alt="Fila de contatos aguardando atendimento na TOTH" width="560" height="408" loading="lazy" decoding="async" /></div><div><h3>Sem resposta</h3><p>O cliente espera, perde o timing e procura outra empresa.</p></div></article>
-            <article><div class="leak-image"><img src="./assets/thumbs/followup-leak.webp" data-zoom="./assets/full/150-followup-modelos.webp" alt="Configuração de retomadas automáticas na TOTH" width="560" height="407" loading="lazy" decoding="async" /></div><div><h3>Sem retorno</h3><p>A conversa começou, mas ninguém lembrou de retomá-la.</p></div></article>
-            <article><div class="leak-image"><img src="./assets/thumbs/rot-leak.webp" data-zoom="./assets/full/40-roteadores.webp" alt="Distribuição de conversas e responsáveis na TOTH" width="560" height="407" loading="lazy" decoding="async" /></div><div><h3>Sem responsável</h3><p>Duas pessoas respondem — ou ninguém assume.</p></div></article>
-            <article><div class="leak-image"><img src="./assets/thumbs/desemp-leak.webp" data-zoom="./assets/full/53-desempenho.webp" alt="Painel de desempenho e visibilidade comercial da TOTH" width="450" height="328" loading="lazy" decoding="async" /></div><div><h3>Sem visibilidade</h3><p>O gestor descobre a perda quando a oportunidade já esfriou.</p></div></article>
+            <article><div class="leak-image"><img src="./assets/thumbs/radar-leak.webp" data-zoom="./assets/full/30-radar.webp" alt="Fila de contatos aguardando atendimento na TOTH" width="560" height="408" loading="lazy" decoding="async" /></div><div><h3>Ninguém viu</h3><p>A pergunta chega às 22h e só é lida às 9h.</p></div></article>
+            <article><div class="leak-image"><img src="./assets/thumbs/followup-leak.webp" data-zoom="./assets/full/150-followup-modelos.webp" alt="Configuração de retomadas automáticas na TOTH" width="560" height="407" loading="lazy" decoding="async" /></div><div><h3>Ninguém voltou</h3><p>A conversa começou e ninguém lembrou de retomar.</p></div></article>
+            <article><div class="leak-image"><img src="./assets/thumbs/rot-leak.webp" data-zoom="./assets/full/40-roteadores.webp" alt="Distribuição de conversas e responsáveis na TOTH" width="560" height="407" loading="lazy" decoding="async" /></div><div><h3>Ninguém assumiu</h3><p>Duas pessoas respondem o mesmo cliente, ou nenhuma.</p></div></article>
+            <article><div class="leak-image"><img src="./assets/thumbs/desemp-leak.webp" data-zoom="./assets/full/53-desempenho.webp" alt="Painel de desempenho e visibilidade comercial da TOTH" width="450" height="328" loading="lazy" decoding="async" /></div><div><h3>Ninguém mediu</h3><p>Você paga o anúncio e não sabe qual deles vendeu.</p></div></article>
           </div>
         </div>
       </section>
@@ -154,50 +129,48 @@
       <section class="flow-section" id="como-funciona">
         <div class="shell">
           <div class="section-heading centered reveal">
-            <h2>Uma conversa deixa de ser mensagem solta e vira uma oportunidade acompanhada.</h2>
+            <h2>Cada conversa vira uma oportunidade com dono e próximo passo.</h2>
           </div>
 
           <div class="flow-rail" data-flow-rail>
             <article class="flow-step reveal">
               <div class="flow-number">01</div>
-              <h3>O contato chega</h3>
-              <p>WhatsApp, Instagram, Facebook, formulário, anúncio ou prospecção.</p>
+              <h3>Chega</h3>
+              <p>WhatsApp, Instagram, Facebook, formulário ou anúncio. A origem fica registrada.</p>
             </article>
             <article class="flow-step reveal">
               <div class="flow-number">02</div>
-              <h3>A TOTH organiza</h3>
-              <p>Registra origem, distribui o atendimento e abre a oportunidade no funil certo.</p>
+              <h3>Entra no funil</h3>
+              <p>O negócio abre na etapa certa, com os campos do seu processo.</p>
             </article>
             <article class="flow-step reveal">
               <div class="flow-number">03</div>
-              <h3>A IA ajuda</h3>
-              <p>Responde com informações aprovadas e chama uma pessoa quando necessário.</p>
+              <h3>Responde</h3>
+              <p>A IA responde com o que você aprovou. Se a conversa pede uma pessoa, ela chama.</p>
             </article>
             <article class="flow-step reveal">
               <div class="flow-number">04</div>
-              <h3>O sistema acompanha</h3>
-              <p>Follow-ups retomam quem parou, dentro das regras e horários definidos.</p>
+              <h3>Retoma</h3>
+              <p>Se o cliente sumir, a TOTH volta a falar no horário que você definiu.</p>
             </article>
             <article class="flow-step reveal">
               <div class="flow-number">05</div>
-              <h3>A equipe conduz</h3>
-              <p>Histórico, contexto e próxima ação aparecem sem o cliente repetir tudo.</p>
+              <h3>A equipe assume</h3>
+              <p>Histórico, resumo e próxima ação aparecem sem o cliente repetir tudo.</p>
             </article>
             <article class="flow-step reveal">
               <div class="flow-number">06</div>
-              <h3>A gestão enxerga</h3>
-              <p>Tempo de resposta, avanço, origem e perdas ficam disponíveis para decisão.</p>
+              <h3>Mostra</h3>
+              <p>Você vê tempo de resposta, origem e onde as vendas se perdem.</p>
             </article>
           </div>
 
           <div class="product-wide reveal">
             <div class="product-wide-copy">
-              <h3>Cada oportunidade mostra há quanto tempo espera e o que precisa acontecer agora.</h3>
-              <a href="https://wa.me/5515988263583?text=Quero%20ver%20o%20funil%20da%20TOTH" target="_blank" rel="noopener">Ver este fluxo em uma demonstração <span aria-hidden="true">↗</span></a>
+              <h3>Cada negócio mostra há quanto tempo espera e o que precisa acontecer agora.</h3>
+              <a href="./funil.html">Ver como o funil funciona <span aria-hidden="true">→</span></a>
             </div>
-            <div class="product-wide-image">
-              <img src="./assets/117-funil-quadro.webp" data-zoom="./assets/full/117-funil-quadro.webp" alt="Quadro de funil comercial da TOTH" width="1126" height="735" loading="lazy" decoding="async" />
-            </div>
+            <div class="product-wide-image kanban-wrap"><div class="pg-stage" data-stage><svg viewBox="0 0 680 350" role="img" aria-label="Quadro de funil com cards que passam de uma etapa para outra e uma previsão ponderada que cresce"><defs><pattern id="kbg" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="rgba(159,196,143,.07)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#kbg)"/><rect x="20" y="50" width="120" height="252" rx="12" class="kb-col"/><text x="80" y="40" text-anchor="middle" class="dim mono" style="font-size:11px">NOVO CONTATO</text><rect x="148" y="50" width="120" height="252" rx="12" class="kb-col"/><text x="208" y="40" text-anchor="middle" class="dim mono" style="font-size:11px">EM CONVERSA</text><rect x="276" y="50" width="120" height="252" rx="12" class="kb-col"/><text x="336" y="40" text-anchor="middle" class="dim mono" style="font-size:11px">PROPOSTA</text><rect x="404" y="50" width="120" height="252" rx="12" class="kb-col"/><text x="464" y="40" text-anchor="middle" class="dim mono" style="font-size:11px">AGENDADO</text><rect x="532" y="50" width="120" height="252" rx="12" class="kb-col"/><text x="592" y="40" text-anchor="middle" class="dim mono" style="font-size:11px">FECHADO</text><g class="kb-c0" style="transform:translate(28px,64px)"><rect class="kb-r0 kb-card" width="104" height="40" rx="8"/><rect x="8" y="12" width="6" height="16" rx="3" class="kb-dot"/><text x="22" y="25" style="font-size:12px">Orçamento</text></g><g class="kb-c1" style="transform:translate(156px,114px)"><rect class="kb-r1 kb-card" width="104" height="40" rx="8"/><rect x="8" y="12" width="6" height="16" rx="3" class="kb-dot"/><text x="22" y="25" style="font-size:12px">Visita</text></g><g class="kb-c2" style="transform:translate(156px,64px)"><rect class="kb-r2 kb-card" width="104" height="40" rx="8"/><rect x="8" y="12" width="6" height="16" rx="3" class="kb-dot"/><text x="22" y="25" style="font-size:12px">Consulta</text></g><g class="kb-c3" style="transform:translate(284px,64px)"><rect class="kb-r3 kb-card" width="104" height="40" rx="8"/><rect x="8" y="12" width="6" height="16" rx="3" class="kb-dot"/><text x="22" y="25" style="font-size:12px">Proposta</text></g><g class="kb-c4" style="transform:translate(412px,64px)"><rect class="kb-r4 kb-card" width="104" height="40" rx="8"/><rect x="8" y="12" width="6" height="16" rx="3" class="kb-dot"/><text x="22" y="25" style="font-size:12px">Retorno</text></g><g class="kb-c5" style="transform:translate(540px,64px)"><rect class="kb-r5 kb-card" width="104" height="40" rx="8"/><rect x="8" y="12" width="6" height="16" rx="3" class="kb-dot"/><text x="22" y="25" style="font-size:12px">Matrícula</text></g><text x="20" y="338" class="dim mono" style="font-size:11px">PREVISÃO PONDERADA (EXEMPLO)</text><rect x="250" y="327" width="300" height="10" rx="5" class="kb-track"/><rect x="250" y="327" width="300" height="10" rx="5" class="kb-bar kb-bar" style="transform:scaleX(.86)"/><text x="570" y="338" class="kb-v0 kb-val" style="opacity:0">R$ 12 mil</text><text x="570" y="338" class="kb-v1 kb-val" style="opacity:0">R$ 19 mil</text><text x="570" y="338" class="kb-v2 kb-val" style="opacity:0">R$ 26 mil</text><text x="570" y="338" class="kb-v3 kb-val" style="opacity:1">R$ 31 mil</text></svg></div></div>
           </div>
         </div>
       </section>
@@ -206,23 +179,23 @@
         <div class="shell">
           <div class="section-heading split-heading reveal">
             <div>
-              <h2>Menos oportunidades esquecidas. Mais controle sobre cada conversa.</h2>
+              <h2>Quem atende, quem acompanha e o que fazer agora, sempre à vista.</h2>
             </div>
-            <p>Não se trata de colocar mais uma ferramenta na equipe. Trata-se de deixar claro quem atende, quem acompanha e qual é o próximo passo.</p>
+            <p>Sem planilha e sem depender da memória de ninguém.</p>
           </div>
 
           <div class="outcome-grid">
             <article class="outcome-card reveal">
               <div class="outcome-image crop-radar"><img src="./assets/thumbs/radar-outcome.webp" data-zoom="./assets/full/30-radar.webp" alt="Radar de conversas que precisam de atenção" width="960" height="619" loading="lazy" decoding="async" /></div>
-              <div class="outcome-copy"><span>ATENDER</span><h3>Sem deixar a fila crescer</h3><p>Reúna canais, distribua conversas e identifique rapidamente quem ainda espera uma resposta.</p></div>
+              <div class="outcome-copy"><span>ATENDER</span><h3>A fila não cresce sem você ver</h3><p>Vários números e canais na mesma tela, com a conversa distribuída para quem deve responder.</p></div>
             </article>
             <article class="outcome-card reveal reveal-delay">
               <div class="outcome-image"><img src="./assets/thumbs/followup-outcome.webp" data-zoom="./assets/full/150-followup-modelos.webp" alt="Modelos de follow-up da TOTH" width="1120" height="560" loading="lazy" decoding="async" /></div>
-              <div class="outcome-copy"><span>ACOMPANHAR</span><h3>Sem depender da memória</h3><p>Programe retomadas e deixe o sistema mostrar quem está esfriando antes que seja tarde.</p></div>
+              <div class="outcome-copy"><span>ACOMPANHAR</span><h3>Quem esfriou aparece antes de sumir</h3><p>Um radar mostra os contatos que estão esperando, e as retomadas saem pelas regras que você montou.</p></div>
             </article>
             <article class="outcome-card reveal reveal-delay-2">
               <div class="outcome-image crop-metrics"><img src="./assets/thumbs/desemp-outcome.webp" data-zoom="./assets/full/53-desempenho.webp" alt="Relatório de desempenho comercial da TOTH" width="1120" height="560" loading="lazy" decoding="async" /></div>
-              <div class="outcome-copy"><span>GERENCIAR</span><h3>Sem trabalhar no escuro</h3><p>Veja tempo de resposta, gargalos, perdas e o custo real da operação humana e automática.</p></div>
+              <div class="outcome-copy"><span>GERENCIAR</span><h3>Você vê onde a venda se perde</h3><p>Tempo de resposta, origem do anúncio, perdas e custo de IA ficam na mesma tela.</p></div>
             </article>
           </div>
         </div>
@@ -231,9 +204,9 @@
       <section class="difference-section">
         <div class="shell difference-grid">
           <div class="difference-copy reveal">
-            <h2>A IA não fica isolada na conversa. Ela participa da operação.</h2>
+            <h2>Por que não é mais um chatbot?</h2>
             <p>Um chatbot comum responde e encerra. A TOTH conecta a conversa ao CRM, ao próximo passo e à pessoa certa.</p>
-            <a class="button button-dark" href="https://wa.me/5515988263583?text=Quero%20entender%20os%20agentes%20da%20TOTH" target="_blank" rel="noopener">Conhecer os agentes de IA</a>
+            <a class="button button-dark" href="./agentes-de-ia.html">Conhecer os agentes de IA</a>
           </div>
 
           <div class="cmp-table reveal reveal-delay" role="table" aria-label="Chatbot comum comparado com a TOTH">
@@ -243,6 +216,8 @@
             <div class="cmp-row" role="row"><span role="cell">Histórico preso no chat</span><strong role="cell"><i aria-hidden="true">✓</i>Contato e oportunidade no CRM</strong></div>
             <div class="cmp-row" role="row"><span role="cell">Transfere sem contexto</span><strong role="cell"><i aria-hidden="true">✓</i>Passa para uma pessoa com resumo</strong></div>
             <div class="cmp-row" role="row"><span role="cell">Espera o cliente voltar</span><strong role="cell"><i aria-hidden="true">✓</i>Retoma conforme regras aprovadas</strong></div>
+            <div class="cmp-row" role="row"><span role="cell">Inventa quando não sabe</span><strong role="cell"><i aria-hidden="true">✓</i>Responde com o que você aprovou e confere hora, preço e endereço</strong></div>
+            <div class="cmp-row" role="row"><span role="cell">Você paga anúncio no escuro</span><strong role="cell"><i aria-hidden="true">✓</i>A venda volta para o Google Ads e para a Meta</strong></div>
           </div>
         </div>
       </section>
@@ -250,24 +225,22 @@
       <section class="control-section section-dark" id="ia">
         <div class="shell control-grid">
           <div class="control-screen reveal">
-            <div class="control-window">
-              <img src="./assets/thumbs/agent-control.webp" data-zoom="./assets/full/140b-agente-capacidades.webp" alt="Configuração de capacidades e limites de um agente de IA na TOTH" width="1004" height="965" loading="lazy" decoding="async" />
-            </div>
-            <div class="control-stamp"><span>CONTROLE</span><strong>Humano no comando</strong></div>
+            <div class="control-stage"><div class="pg-stage" data-stage><svg viewBox="0 0 680 345" role="img" aria-label="Capacidades do agente de IA que são ligadas uma a uma, com um contador que sobe"><defs><pattern id="swgh" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="rgba(159,196,143,.07)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#swgh)"/><text x="40" y="44" class="dim mono" style="font-size:11px">CAPACIDADES DO AGENTE</text><rect x="470" y="26" width="170" height="26" rx="13" class="fu-seal"/><text x="555" y="43" text-anchor="middle" class="mono" style="font-size:10.5px;fill:#cdb87a">MODO DE TESTE ATIVO</text><rect x="30" y="72" width="620" height="38" rx="10" class="sw-row"/><text x="50" y="97" style="font-size:13px">Ver horários livres e marcar</text><rect x="570" y="78" width="56" height="26" rx="13" class="sw-track sw-t0" style="fill:#6a9a5c"/><circle cx="611" cy="91" r="10" class="sw-thumb sw-h0"/><rect x="30" y="116" width="620" height="38" rx="10" class="sw-row"/><text x="50" y="141" style="font-size:13px">Preencher campos do funil</text><rect x="570" y="122" width="56" height="26" rx="13" class="sw-track sw-t1" style="fill:#6a9a5c"/><circle cx="611" cy="135" r="10" class="sw-thumb sw-h1"/><rect x="30" y="160" width="620" height="38" rx="10" class="sw-row"/><text x="50" y="185" style="font-size:13px">Mover o negócio de etapa</text><rect x="570" y="166" width="56" height="26" rx="13" class="sw-track sw-t2" style="fill:#6a9a5c"/><circle cx="611" cy="179" r="10" class="sw-thumb sw-h2"/><rect x="30" y="204" width="620" height="38" rx="10" class="sw-row"/><text x="50" y="229" style="font-size:13px">Enviar a foto do produto</text><rect x="570" y="210" width="56" height="26" rx="13" class="sw-track sw-t3" style="fill:#2c3f27"/><circle cx="583" cy="223" r="10" class="sw-thumb sw-h3"/><rect x="30" y="248" width="620" height="38" rx="10" class="sw-row"/><text x="50" y="273" style="font-size:13px">Passar para uma pessoa</text><rect x="570" y="254" width="56" height="26" rx="13" class="sw-track sw-t4" style="fill:#2c3f27"/><circle cx="583" cy="267" r="10" class="sw-thumb sw-h4"/><text x="40" y="332" class="sw-k0 sw-count" style="opacity:0">0 ligadas</text><text x="40" y="332" class="sw-k1 sw-count" style="opacity:0">1 ligada</text><text x="40" y="332" class="sw-k2 sw-count" style="opacity:0">2 ligadas</text><text x="40" y="332" class="sw-k3 sw-count" style="opacity:1">3 ligadas</text><text x="640" y="332" text-anchor="end" class="dim mono" style="font-size:10.5px">TODA CAPACIDADE NASCE DESLIGADA</text></svg></div></div>
+            
           </div>
 
           <div class="control-copy reveal reveal-delay">
-            <h2>Automação onde ajuda. Pessoas onde importam.</h2>
-            <p>Você define quando a IA responde, o que ela consulta e quais ações pode executar.</p>
+            <h2>A IA só faz o que você ligou.</h2>
+            <p>Você decide quando ela responde, o que ela consulta e o que ela pode fazer.</p>
             <ul class="check-list">
-              <li><span>✓</span> Base com informações aprovadas pela empresa</li>
-              <li><span>✓</span> Agentes separados por função ou assunto</li>
-              <li><span>✓</span> Transferência humana em negociação ou dúvida</li>
-              <li><span>✓</span> Modo de teste antes de liberar ao público</li>
-              <li><span>✓</span> Limites de uso, custo e ações configuráveis</li>
-              <li><span>✓</span> Histórico das respostas e decisões</li>
+              <li><span>✓</span> Cada capacidade nasce desligada. Você liga uma a uma.</li>
+              <li><span>✓</span> Todo número novo começa em modo de teste.</li>
+              <li><span>✓</span> Antes de enviar, um segundo verificador confere hora, preço e endereço.</li>
+              <li><span>✓</span> Você define um teto de gasto por mês.</li>
+              <li><span>✓</span> Digitar #off numa conversa pausa a IA ali.</li>
             </ul>
-            <p class="control-note">A proposta não é substituir a equipe. É impedir que ela perca tempo com repetição e clientes por falta de acompanhamento.</p>
+            <p class="control-note">A proposta não é trocar a sua equipe. É impedir que ela perca cliente por falta de acompanhamento.</p>
+            <a class="button button-light" href="./ia-com-controle.html">Ver como a IA é controlada <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>
@@ -276,11 +249,11 @@
         <div class="shell orb-grid">
           <div class="orb-visual reveal"><div class="orb-scale"><div class="orbit-stage" role="img" aria-label="A TOTH no centro, com canais, agentes de IA, funil, agenda, propostas, follow-ups, métricas e integrações girando ao redor"><span class="o-sweep" aria-hidden="true"></span><div class="orbit-core" aria-hidden="true"><span class="core-pulse"></span><span class="core-pulse p2"></span><img src="./assets/icon-dourado.svg" alt="" class="orbit-icon"></div><div class="orb-track orb-a" aria-hidden="true"><span class="orb-item orb-ch" style="--a:0deg"><b class="orb-pill">WhatsApp</b></span><span class="orb-item orb-ch" style="--a:120deg"><b class="orb-pill">Instagram</b></span><span class="orb-item orb-ch" style="--a:240deg"><b class="orb-pill">Facebook</b></span></div><div class="orb-track orb-b" aria-hidden="true"><span class="orb-item orb-tool" style="--a:0deg"><b class="orb-pill">Agentes de IA</b></span><span class="orb-item orb-tool" style="--a:72deg"><b class="orb-pill">Funil</b></span><span class="orb-item orb-tool" style="--a:144deg"><b class="orb-pill">Agenda</b></span><span class="orb-item orb-tool" style="--a:216deg"><b class="orb-pill">Propostas</b></span><span class="orb-item orb-tool" style="--a:288deg"><b class="orb-pill">Follow-ups</b></span></div><div class="orb-track orb-c" aria-hidden="true"><span class="orb-item orb-pillar" style="--a:20deg"><b class="orb-pill">ATENDER</b></span><span class="orb-item orb-tool" style="--a:80deg"><b class="orb-pill">Métricas</b></span><span class="orb-item orb-pillar" style="--a:140deg"><b class="orb-pill">VENDER</b></span><span class="orb-item orb-tool" style="--a:200deg"><b class="orb-pill">Integrações</b></span><span class="orb-item orb-pillar" style="--a:260deg"><b class="orb-pill">ACOMPANHAR</b></span><span class="orb-item orb-tool" style="--a:320deg"><b class="orb-pill">Ads</b></span></div></div></div></div>
           <div class="orb-copy reveal reveal-delay">
-            <p class="eyebrow"><span></span>Tudo conectado</p>
-            <h2>A TOTH conversa com os canais e ferramentas que já fazem parte do seu negócio.</h2>
-            <p>Canais, agentes de IA, funil, agenda, propostas, follow-ups e métricas giram em torno de um só centro: a conversa com o cliente.</p>
+            <p class="eyebrow"><span></span>Integrações</p>
+            <h2>Conecta com o que você já usa.</h2>
+            <p>Google Agenda, Meta Ads, Google Ads, n8n, API, webhooks e MCP. O que não tiver conexão pronta, a gente avalia no diagnóstico.</p>
             <p class="orb-note">Funis, formulários, páginas, agenda, propostas, catálogo e integrações podem ser adaptados ao escopo de cada operação.</p>
-            <a class="orb-link" href="https://wa.me/5515988263583?text=Quero%20confirmar%20uma%20integra%C3%A7%C3%A3o%20com%20a%20TOTH" target="_blank" rel="noopener">Consultar uma integração <span aria-hidden="true">↗</span></a>
+            <a class="orb-link" href="./integracoes.html">Ver as integrações <span aria-hidden="true">→</span></a>
           </div>
         </div>
         <div class="integration-track" aria-label="Integrações disponíveis">
@@ -296,7 +269,7 @@
       <section class="fit-section">
         <div class="shell fit-grid">
           <div class="fit-title reveal">
-            <h2>Para empresas que vendem por conversa e já sentem o custo da desorganização.</h2>
+            <h2>Para quem vende por conversa.</h2>
           </div>
           <div class="fit-list reveal reveal-delay">
             <div class="fit-card"><img src="./assets/thumbs/inbox-fit.webp" data-zoom="./assets/full/21-inbox-conversa-ia.webp" alt="Atendimento multicanal organizado na TOTH" width="780" height="390" loading="lazy" decoding="async" /><p>Entram contatos todos os dias por WhatsApp ou redes sociais.</p></div>
@@ -307,13 +280,18 @@
             <div class="fit-card"><img src="./assets/thumbs/agent-fit.webp" data-zoom="./assets/full/140b-agente-capacidades.webp" alt="Controles e capacidades de agentes de IA" width="780" height="385" loading="lazy" decoding="async" /><p>O negócio quer aplicar IA sem perder o controle da operação.</p></div>
           </div>
         </div>
-        <div class="shell segment-line reveal">Clínicas <i>•</i> Imobiliárias <i>•</i> Lojas <i>•</i> Escolas <i>•</i> Agências <i>•</i> Escritórios <i>•</i> Serviços</div>
+        <div class="shell niche-grid reveal">
+          <article class="is-main"><h3>Clínicas e consultórios</h3><p>Retomadas prontas para consulta, exame, cirurgia e falta, agenda com Google e bloqueio de afirmação clínica.</p><a href="./clinicas.html">Ver a página de clínicas →</a></article>
+          <article><h3>Imobiliárias</h3><p>Funil com os campos do imóvel, agenda de visitas e anúncio que volta para a Meta e o Google.</p></article>
+          <article><h3>Lojas e e-commerce</h3><p>Produtos com foto e preço, integração com a Nuvemshop e acompanhamento depois da venda.</p></article>
+          <article><h3>Cursos e infoprodutos</h3><p>Captação por formulário, campanhas, anúncio rastreado e retomada de quem abandonou.</p></article>
+        </div>
       </section>
 
       <section class="implementation-section">
         <div class="shell">
           <div class="section-heading centered reveal">
-            <h2>A TOTH não chega vazia para você descobrir sozinho.</h2>
+            <h2>Você não começa sozinho.</h2>
           </div>
           <ol class="implementation-steps">
             <li class="reveal"><span>01</span><h3>Diagnóstico</h3><p>Mapeamos canais, equipe, processo e pontos de perda.</p></li>
@@ -327,8 +305,8 @@
       <section class="plans-section" id="planos">
         <div class="shell">
           <div class="plans-heading reveal">
-            <h2>Escolha quanto da implantação você quer assumir.</h2>
-            <p>Todos os planos incluem o sistema hospedado e atualizado. O que muda é o nível de configuração e acompanhamento.</p>
+            <h2>Escolha quanto da implantação a gente faz por você.</h2>
+            <p>Todos os planos incluem o sistema hospedado e atualizado. O que muda é o quanto de configuração e de acompanhamento você recebe.</p>
           </div>
           <div class="plans-grid">
             <article class="plan-card reveal">
@@ -339,7 +317,6 @@
             </article>
 
             <article class="plan-card plan-featured reveal reveal-delay">
-              <div class="recommendation">MAIS INDICADO</div>
               <div class="plan-top"><span>RECOMENDADO</span><h3>Pronto para vender</h3><p>Para quem quer receber a operação configurada e validada.</p></div>
               <div class="price"><strong>R$ 2.997</strong><small>implantação</small><b>+</b><strong>R$ 397</strong><small>por mês</small></div>
               <a class="button button-primary" href="https://wa.me/5515988263583?text=Quero%20a%20TOTH%20pronta%20para%20vender" target="_blank" rel="noopener">Receber pronta para vender</a>
@@ -353,7 +330,7 @@
               <ul><li>Tudo do Pronto para vender</li><li>Relatório mensal</li><li>Revisão dos agentes e da base</li><li>Análise de origem, resposta e perdas</li><li>Reunião mensal de melhoria</li><li>Até 20 atendentes e 10 números</li></ul>
             </article>
           </div>
-          <p class="plans-footnote">Consumo de IA, API oficial do WhatsApp, Google, Meta, e-mail e outros fornecedores são cobrados separadamente. Condições e limites finais são confirmados na proposta.</p>
+          <p class="plans-footnote">Consumo de IA, API oficial do WhatsApp, Google, Meta, e-mail e outros fornecedores são cobrados à parte, conforme o uso.</p>
         </div>
       </section>
 
@@ -362,7 +339,7 @@
           <div class="demo-copy">
             <h2>Uma demonstração vale mais do que uma lista de recursos.</h2>
             <p>Veja um contato chegando, a IA respondendo, o negócio entrando no funil e a equipe assumindo com contexto.</p>
-            <a class="button button-dark" href="https://wa.me/5515988263583?text=Quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20da%20TOTH" target="_blank" rel="noopener">Agendar demonstração <span aria-hidden="true">↗</span></a>
+            <a class="button button-dark" href="./demonstracao.html">Ver a demonstração <span aria-hidden="true">→</span></a>
           </div>
           <div class="demo-visual">
             <img src="./assets/thumbs/rot-demo.webp" data-zoom="./assets/full/40-roteadores.webp" alt="Roteador de agentes de IA da TOTH" width="916" height="611" loading="lazy" decoding="async" />
@@ -384,6 +361,8 @@
             <details><summary>Funciona com Instagram e Facebook?<span>+</span></summary><p>Sim. As mensagens podem chegar ao mesmo Inbox usado pela equipe e pelos agentes de IA.</p></details>
             <details><summary>Consigo adaptar ao meu funil atual?<span>+</span></summary><p>O funil pode usar as etapas, campos e regras do seu processo. Integrações externas são confirmadas durante o diagnóstico.</p></details>
             <details><summary>Existe risco de bloqueio do WhatsApp?<span>+</span></summary><p>Conexões não oficiais sempre envolvem risco. A TOTH oferece controles de ritmo, horário e teste para reduzi-lo e também pode trabalhar com a API oficial do WhatsApp.</p></details>
+            <details><summary>Quem hospeda?<span>+</span></summary><p>A gente. Você não instala nem mantém servidor.</p></details>
+            <details><summary>Meus dados ficam misturados com os de outras empresas?<span>+</span></summary><p>Não. Cada empresa é uma organização separada.</p></details>
             <details><summary>O que é cobrado à parte?<span>+</span></summary><p>Consumo de IA, API oficial do WhatsApp, serviços de e-mail e contas de outros fornecedores são cobrados separadamente, conforme o uso e a solução escolhida.</p></details>
           </div>
         </div>
@@ -392,17 +371,19 @@
       <section class="final-cta">
         <div class="shell final-cta-inner reveal">
           <img class="final-symbol" src="./assets/icon.svg" alt="" width="40" height="73" aria-hidden="true">
-          <h2>Quantas oportunidades sua empresa perdeu este mês sem perceber?</h2>
-          <p>Veja a TOTH funcionando com uma operação parecida com a sua.</p>
-          <a class="button button-primary button-large" href="https://wa.me/5515988263583?text=Quero%20uma%20demonstra%C3%A7%C3%A3o%20da%20TOTH" target="_blank" rel="noopener">Quero uma demonstração <span aria-hidden="true">↗</span></a>
+          <h2>Quantas conversas sua empresa perdeu este mês sem perceber?</h2>
+          <p>Veja a TOTH rodando com uma operação parecida com a sua.</p>
+          <a class="button button-primary button-large" href="https://wa.me/5515988263583?text=Quero%20uma%20demonstra%C3%A7%C3%A3o%20da%20TOTH" target="_blank" rel="noopener">Quero ver na minha operação <span aria-hidden="true">↗</span></a>
+          <p class="final-alt"><a class="text-link" href="./demonstracao.html">Ver a demonstração em vídeo →</a></p>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="shell footer-grid">
+      <div class="shell footer-grid footer-grid-4">
         <div><a class="brand brand-light" href="#topo" aria-label="TOTH — início"><img src="./assets/thoth-logo-claro.png" alt="TOTH" width="150" height="36"></a><p>Atendimento, CRM, automação e IA no mesmo fluxo.</p></div>
-        <div><small>PRODUTO</small><a href="#como-funciona">Como funciona</a><a href="#ia">IA com controle</a><a href="#planos">Planos</a><a href="./manual.html">Manual de uso</a></div>
+        <div><small>FUNÇÕES</small><a href="./agentes-de-ia.html">Agentes de IA</a><a href="./ia-com-controle.html">IA com controle</a><a href="./retomadas.html">Retomadas</a><a href="./atendimento.html">Atendimento</a><a href="./funil.html">Funil</a><a href="./agenda.html">Agenda</a><a href="./anuncios-e-vendas.html">Anúncios e vendas</a><a href="./integracoes.html">Integrações</a></div>
+        <div><small>PRODUTO</small><a href="#como-funciona">Como funciona</a><a href="./clinicas.html">Para clínicas</a><a href="#planos">Planos</a><a href="./demonstracao.html">Demonstração</a><a href="./manual.html">Manual de uso</a></div>
         <div><small>CONVERSAR</small><a href="https://wa.me/5515988263583?text=Quero%20conhecer%20a%20TOTH" target="_blank" rel="noopener">WhatsApp ↗</a><a href="#faq">Dúvidas frequentes</a></div>
       </div>
       <div class="shell footer-bottom"><span>© <span data-year></span> TOTH</span><span>CRM · Atendimento · Automação · IA</span></div>

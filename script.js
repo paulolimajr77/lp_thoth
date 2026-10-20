@@ -135,7 +135,7 @@ if (opportunityLane && opportunitySteps.length && !reducedMotion) {
   window.setTimeout(playOpportunityFlow, 700);
 }
 
-document.querySelector('[data-year]').textContent = new Date().getFullYear();
+const yearEl = document.querySelector('[data-year]'); if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 const guideDialog = document.getElementById('guideDialog');
 if (guideDialog && typeof guideDialog.showModal === 'function') {
@@ -195,4 +195,49 @@ if (demoVideo && videoSound) {
   });
   demoVideo.addEventListener('volumechange', () => { if (!demoVideo.muted) videoSound.hidden = true; });
   demoVideo.addEventListener('play', () => { if (!canAuto) videoSound.hidden = true; });
+}
+
+
+/* menu de funcoes */
+document.querySelectorAll('[data-drop]').forEach((drop) => {
+  const btn = drop.querySelector('[data-drop-btn]');
+  btn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const open = drop.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(open));
+  });
+});
+document.addEventListener('click', (event) => {
+  document.querySelectorAll('[data-drop].is-open').forEach((drop) => {
+    if (!drop.contains(event.target)) { drop.classList.remove('is-open'); drop.querySelector('[data-drop-btn]').setAttribute('aria-expanded', 'false'); }
+  });
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape') return;
+  document.querySelectorAll('[data-drop].is-open').forEach((drop) => drop.classList.remove('is-open'));
+});
+
+/* animacoes SVG: so rodam quando estao na tela */
+const stages = document.querySelectorAll('[data-stage]');
+if ('IntersectionObserver' in window) {
+  const stageObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => entry.target.classList.toggle('is-live', entry.isIntersecting));
+  }, { threshold: 0.15 });
+  stages.forEach((stage) => stageObserver.observe(stage));
+} else {
+  stages.forEach((stage) => stage.classList.add('is-live'));
+}
+
+/* video: ampliar */
+const videoFrameEl = document.getElementById('videoFrame');
+const videoEnlarge = document.getElementById('videoEnlarge');
+if (videoFrameEl && videoEnlarge) {
+  const setBig = (big) => {
+    videoFrameEl.classList.toggle('is-big', big);
+    document.body.classList.toggle('has-big-video', big);
+    videoEnlarge.innerHTML = big ? '<span aria-hidden="true">✕</span> Fechar' : '<span aria-hidden="true">⤢</span> Ampliar';
+    videoEnlarge.setAttribute('aria-label', big ? 'Fechar o vídeo ampliado' : 'Ampliar o vídeo');
+  };
+  videoEnlarge.addEventListener('click', () => setBig(!videoFrameEl.classList.contains('is-big')));
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && videoFrameEl.classList.contains('is-big')) setBig(false); });
 }
