@@ -1350,21 +1350,6 @@
 
 
 /* ====== paginas internas + menu de funcoes ====== */
-/* ===== textos de ate 1140px e sem palavra solta ===== */
-.hero-copy{max-width:1180px}
-.hero-lead{max-width:1140px}
-.centered,.section-heading,.section-heading.centered{max-width:1140px}
-.section-heading h2,.h2-pain .section-heading h2,.h2-more .section-heading h2,.h2-how .section-heading h2,.h2-who .section-heading h2,.h2-feats>.shell>.section-heading h2{max-width:1140px}
-.section-heading p,.h2-pain .section-heading p,.h2-more .section-heading p,.h2-who .section-heading p,.h2-feats>.shell>.section-heading p{max-width:1140px}
-.final-cta-inner{max-width:1140px}
-.final-cta p:not(.mono-label){max-width:1140px;margin-inline:auto}
-.pg-pain-box p,.pg-pain-box h2{max-width:1140px}
-.pg-center .pg-lead{max-width:1140px}
-.h2-pain-after{max-width:1140px;margin:40px auto 0;text-align:center;color:var(--muted);font-size:17px}
-h1,h2,h3{text-wrap:balance}
-.hero-lead,.section-heading p,.final-cta p,.pg-pain-box p,.h2-pain-q,.h2-pain-after,.pg-lead,.h2-who-foot,.faq-intro p,.h2-feat-copy>p,.pg-example p{text-wrap:balance}
-p,li,summary{text-wrap:pretty}
-.pg-list li>div,.pg-note,.pg-limit,.pg-cols p,.pg-ticks li,.h2-ticks li,.h2-who-list p,.h2-pain-a,.h2-step-txt p,.plan-top p{text-wrap:balance}
 
 .eyebrow::before,.eyebrow::after,.eyebrow>span{display:none!important}
 .eyebrow{gap:0}
@@ -1475,6 +1460,35 @@ body.has-big-video{overflow:hidden}
 .control-stage .control-stamp{position:absolute;right:-12px;bottom:-14px}
 .fit-section .segment-line{display:none}
 .hero-notes{list-style:none}
+
+/* ===== escala tipografica: corpo 16px, apoio 14px, CTAs 16px ===== */
+.hero-lead,.section-heading p,.h2-pain .section-heading p,.h2-more .section-heading p,.h2-who .section-heading p,.h2-feats>.shell>.section-heading p,.h2-feat-copy>p,.h2-pain-after,.h2-pain-a,.h2-ticks li,.h2-who-main p,.h2-who-list p,.h2-who-foot,.h2-step p,.pg-lead,.pg-pain-box p,.pg-pain-box h2+p,.pg-list li,.pg-note,.pg-limit,.pg-cols p,.pg-ticks,.pg-example p,.pg-example ol,.final-cta p:not(.mono-label),.faq-intro p,.faq-list p,.faq-list summary,.pg-table td,.h2-more-grid p,.plan-top p{font-size:1rem;line-height:1.6}
+.h2-fine,.plans-footnote,.video-cap,.hero-notes,.hero-notes li,.plan-card li{font-size:.875rem;line-height:1.5}
+.button,.button-large,.text-link,.h2-link,.h2-who-foot .h2-link{font-size:1rem}
+.h2-link,.text-link{font-weight:700}
+.site-header .button-small{font-size:.875rem}
+.h2-feat-copy>p.h2-fine{font-size:.875rem}
+.h2-video .video-cap{font-size:.875rem}
+.h2-more-note,.plans-heading>p{font-size:1rem}
+.plan-card .plan-top p{font-size:.875rem;line-height:1.5}
+/* ===== textos de ate 1140px e sem palavra solta ===== */
+.hero-copy{max-width:1180px}
+.hero-lead{max-width:1140px}
+.centered,.section-heading,.section-heading.centered{max-width:1140px}
+.section-heading h2,.h2-pain .section-heading h2,.h2-more .section-heading h2,.h2-how .section-heading h2,.h2-who .section-heading h2,.h2-feats>.shell>.section-heading h2{max-width:1140px}
+.section-heading p,.h2-pain .section-heading p,.h2-more .section-heading p,.h2-who .section-heading p,.h2-feats>.shell>.section-heading p{max-width:1140px}
+.final-cta-inner{max-width:1140px}
+.final-cta p:not(.mono-label){max-width:1140px;margin-inline:auto}
+.pg-pain-box p,.pg-pain-box h2{max-width:1140px}
+.pg-center .pg-lead{max-width:1140px}
+.h2-pain-after{max-width:1140px;margin:40px auto 0;text-align:center;color:var(--muted);font-size:1rem}
+h1,h2,h3{text-wrap:balance}
+.hero-lead,.section-heading p,.final-cta p,.pg-pain-box p,.h2-pain-q,.h2-pain-after,.pg-lead,.h2-who-foot,.faq-intro p,.h2-feat-copy>p,.pg-example p{text-wrap:balance}
+p,li,summary{text-wrap:pretty}
+.pg-list li>div,.pg-note,.pg-limit,.pg-cols p,.pg-ticks li,.h2-ticks li,.h2-who-list p,.h2-pain-a,.h2-step-txt p,.plan-top p{text-wrap:balance}
+/* li dentro de listas numeradas herdam o corpo */
+.pg-example li{font-size:1rem;line-height:1.6}
+.pg-ticks li{font-size:1rem}
 
 .flow-split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,72px);align-items:center;margin-top:50px}
 .flow-steps{counter-reset:none;margin:0;padding:0;list-style:none;display:grid;gap:0}
