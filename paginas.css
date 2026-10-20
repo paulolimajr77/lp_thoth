@@ -543,8 +543,21 @@
 @media(prefers-reduced-motion:reduce){.vm-art *{animation:none!important}}
 .vm-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .vm-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-@media(max-width:1000px){.vm-grid-4{grid-template-columns:repeat(2,1fr)}.vm-grid-3{grid-template-columns:1fr}}
-@media(max-width:520px){.vm-grid-4{grid-template-columns:1fr}}
+.vm-grid-3 .vm-art svg{max-width:none;max-height:none;width:100%}
+@media(max-width:1100px){.vm-grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1000px){
+  .vm-grid-3{grid-template-columns:1fr}
+  .vm-grid-3 .vm-feature{flex-direction:row;align-items:center}
+  .vm-grid-3 .vm-art{flex:0 0 50%;padding:20px}
+  .vm-grid-3 .vm-copy{padding:20px 28px 20px 8px}
+}
+@media(max-width:640px){
+  .vm-grid-3 .vm-feature{flex-direction:column;align-items:stretch}
+  .vm-grid-3 .vm-art{flex:none;width:100%;padding:18px 14px 0}
+  .vm-grid-3 .vm-copy{padding:10px 22px 24px}
+  .vm-grid-4{grid-template-columns:1fr}
+  .vm-feature .vm-art svg{max-width:300px}
+}
 .cc-wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:40px}
 .cc-wrap .vm-art{max-width:640px;width:100%;margin-inline:auto}
 .cc-wrap .vm-art svg{display:block;width:100%;height:auto}
@@ -558,6 +571,24 @@
 @media(max-width:1000px){.cc-wrap{grid-template-columns:1fr}.cc-wrap .vm-art{order:-1}.cc-steps{grid-template-columns:repeat(2,1fr)}.cc-steps p{display:none}}
 @media(max-width:560px){.cc-steps{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.cc-steps li{animation:none;opacity:1}}
+
+
+/* tracos finos e elegantes */
+.vm-art .vm-glow,.pg-stage .fu-glow,.pg-mini .fu-glow{stroke-width:1.6;filter:none}
+.vm-art .vm-line,.pg-stage .fu-line,.pg-mini .fu-line{stroke-width:1;stroke-dasharray:2 5}
+.vm-art .vm-glass,.vm-art .vm-glass2,.vm-art .vm-bub,.vm-art .vm-gold,.vm-art .vm-col,.vm-art .vm-card{stroke-width:1}
+.vm-art .vm-card-gold{stroke-width:1.3;filter:none}
+.vm-art .vm-hub,.vm-art .vm-node{stroke-width:1.2;filter:none}
+.vm-art .vm-rail{stroke-width:1}
+.vm-art .vm-dot{filter:none}
+.vm-art rect[fill="#a69861"]{stroke-width:1}
+.pg-stage .fu-node,.pg-mini .fu-node,.pg-stage .rt-core,.pg-mini .rt-core,.pg-stage .rt-agent,.pg-mini .rt-agent,.pg-stage .kb-card,.pg-mini .kb-card,.pg-stage .kb-col,.pg-mini .kb-col,.pg-stage .fu-bubble,.pg-mini .fu-bubble,.pg-stage .sw-row,.pg-mini .sw-row,.pg-stage .ag-cell,.pg-mini .ag-cell,.pg-stage .vf-gate,.pg-stage .vf-sent,.pg-stage .fu-end,.pg-stage .fu-seal{stroke-width:1;filter:none}
+.pg-stage .ag-req,.pg-mini .ag-req,.pg-stage .ag-chip{stroke-width:1.2}
+.pg-stage .qu-sweep,.pg-mini .qu-sweep{filter:none;opacity:.7}
+.vm-art circle[stroke-width],.vm-art path[stroke-width]{stroke-width:1.4}
+.vm-art path[stroke-width="3"]{stroke-width:1.8}
+.pg-mini .fu-node{r:4.5px;fill:#fff}.pg-stage .fu-node{r:7px;fill:#fff}.pg-mini .rt-core{r:15px}
+.vm-art circle[stroke-width="14"]{stroke-width:8}
 
 
 /* ====== paginas internas + menu de funcoes ====== */
