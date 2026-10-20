@@ -698,8 +698,9 @@
 .h2-step-art{margin-bottom:20px}
 .h2-step-art .pg-mini{width:100%}
 .h2-step-txt{padding:0 6px}
-.h2-step b{display:block;color:#a69861;font:700 12px var(--mono);letter-spacing:.12em;margin:0 0 6px}
-.h2-step h3{margin:0 0 8px;font:700 22px/1.15 var(--display);letter-spacing:-.035em}
+.h2-step h3{display:flex;align-items:baseline;gap:10px;margin:0 0 8px;font:700 22px/1.15 var(--display);letter-spacing:-.035em}
+.h2-n{color:#a69861;font:700 13px var(--mono);letter-spacing:.08em}
+.h2-step h3 i{font-style:normal;color:#cfc9b5;font-weight:400}
 .h2-step p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
 .h2-feats .shell{display:grid;gap:110px}
 .h2-feat{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(36px,6vw,90px);align-items:center}
