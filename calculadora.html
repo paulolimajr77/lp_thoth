@@ -45,11 +45,12 @@
         </div>
         <div class="ca-grid"><div class="ca-card reveal">
       <h2 class="ca-h">Seus números</h2>
-      <div class="ca-inputs"><label class="ca-f" for="c-contatos"><span>Contatos novos por mês</span><div><input id="c-contatos" type="number" inputmode="decimal" min="0" value="120"></div></label><label class="ca-f" for="c-ticket"><span>Ticket médio de uma venda</span><div><input id="c-ticket" type="number" inputmode="decimal" min="0" value="800"><i>R$</i></div></label><label class="ca-f" for="c-fecha"><span>Quantos desses você fecha hoje</span><div><input id="c-fecha" type="number" inputmode="decimal" min="0" value="20"><i>%</i></div></label></div>
-      <label class="ca-f ca-plan" for="c-plano"><span>Plano THOTH</span><select id="c-plano"><option value="297">Acesso, R$ 297 por mês</option><option value="397" selected>Pronto para vender, R$ 397 por mês</option><option value="1097">Acompanhado, R$ 1.097 por mês</option></select></label>
-      <details class="ca-adv"><summary>Ver e ajustar as 4 premissas <span>+</span></summary><div class="ca-inputs"><label class="ca-f" for="c-fora"><span>Chegam fora do horário</span><div><input id="c-fora" type="number" inputmode="decimal" min="0" value="30"><i>%</i></div><small>Parte dos contatos que escreve à noite, no fim de semana ou em horário de pico</small></label><label class="ca-f" for="c-rec"><span>Recuperados com resposta imediata</span><div><input id="c-rec" type="number" inputmode="decimal" min="0" value="35"><i>%</i></div><small>Quantos desses você ganha ao responder na hora</small></label><label class="ca-f" for="c-esfria"><span>Conversas que esfriam</span><div><input id="c-esfria" type="number" inputmode="decimal" min="0" value="40"><i>%</i></div><small>Quem conversou e sumiu antes de decidir</small></label><label class="ca-f" for="c-volta"><span>Voltam com a retomada</span><div><input id="c-volta" type="number" inputmode="decimal" min="0" value="15"><i>%</i></div><small>Quantos desses respondem a um follow-up</small></label></div></details>
+      <div class="ca-inputs"><div class="ca-f"><label for="c-contatos"><span>Contatos novos por mês</span></label><div><input id="c-contatos" type="number" inputmode="decimal" min="0" value="120" aria-describedby="c-contatos-e"></div><small class="ca-err" id="c-contatos-e" role="alert"></small></div><div class="ca-f"><label for="c-ticket"><span>Ticket médio de uma venda</span></label><div><input id="c-ticket" type="number" inputmode="decimal" min="0" value="800" aria-describedby="c-ticket-u c-ticket-e"><i aria-hidden="true">R$</i><span class="sr-only" id="c-ticket-u">em reais</span></div><small class="ca-err" id="c-ticket-e" role="alert"></small></div><div class="ca-f"><label for="c-fecha"><span>Quantos desses você fecha hoje</span></label><div><input id="c-fecha" type="number" inputmode="decimal" min="0" max="100" value="20" aria-describedby="c-fecha-u c-fecha-e"><i aria-hidden="true">%</i><span class="sr-only" id="c-fecha-u">em porcentagem, de 0 a 100</span></div><small class="ca-err" id="c-fecha-e" role="alert"></small></div></div>
+      <div class="ca-f ca-plan"><label for="c-plano"><span>Plano THOTH</span></label><select id="c-plano"><option value="297">Acesso, R$ 297 por mês</option><option value="397" selected>Pronto para vender, R$ 397 por mês</option><option value="1097">Acompanhado, R$ 1.097 por mês</option></select></div>
+      <details class="ca-adv"><summary>Ver e ajustar as 4 premissas <span>+</span></summary><div class="ca-inputs"><div class="ca-f"><label for="c-fora"><span>Chegam fora do horário</span></label><div><input id="c-fora" type="number" inputmode="decimal" min="0" max="100" value="30" aria-describedby="c-fora-u c-fora-h c-fora-e"><i aria-hidden="true">%</i><span class="sr-only" id="c-fora-u">em porcentagem, de 0 a 100</span></div><small id="c-fora-h">Parte dos contatos que escreve à noite, no fim de semana ou em horário de pico</small><small class="ca-err" id="c-fora-e" role="alert"></small></div><div class="ca-f"><label for="c-rec"><span>Recuperados com resposta imediata</span></label><div><input id="c-rec" type="number" inputmode="decimal" min="0" max="100" value="35" aria-describedby="c-rec-u c-rec-h c-rec-e"><i aria-hidden="true">%</i><span class="sr-only" id="c-rec-u">em porcentagem, de 0 a 100</span></div><small id="c-rec-h">Quantos desses você ganha ao responder na hora</small><small class="ca-err" id="c-rec-e" role="alert"></small></div><div class="ca-f"><label for="c-esfria"><span>Conversas que esfriam</span></label><div><input id="c-esfria" type="number" inputmode="decimal" min="0" max="100" value="40" aria-describedby="c-esfria-u c-esfria-h c-esfria-e"><i aria-hidden="true">%</i><span class="sr-only" id="c-esfria-u">em porcentagem, de 0 a 100</span></div><small id="c-esfria-h">Quem conversou e sumiu antes de decidir</small><small class="ca-err" id="c-esfria-e" role="alert"></small></div><div class="ca-f"><label for="c-volta"><span>Voltam com a retomada</span></label><div><input id="c-volta" type="number" inputmode="decimal" min="0" max="100" value="15" aria-describedby="c-volta-u c-volta-h c-volta-e"><i aria-hidden="true">%</i><span class="sr-only" id="c-volta-u">em porcentagem, de 0 a 100</span></div><small id="c-volta-h">Quantos desses respondem a um follow-up</small><small class="ca-err" id="c-volta-e" role="alert"></small></div></div></details>
     </div><div class="ca-result reveal reveal-delay">
       <small>RECEITA EM JOGO POR MÊS</small>
+      <span class="sr-only" id="o-live" role="status" aria-live="polite"></span>
       <strong id="o-total">R$ 0</strong>
       <p id="o-vendas" class="ca-sales"></p>
       <p id="o-plano" class="ca-plan-line"></p>
@@ -61,9 +62,9 @@
         <div class="section-heading reveal"><h2>Veja a conta linha a linha.</h2></div>
         <div class="ca-lines reveal">
           <div><h3>1. Quem chega e não é atendido na hora</h3>
-            <ol><li><span>Contatos fora do horário</span><b id="l1">0</b></li><li><span>Recuperados com resposta imediata</span><b id="l2">0</b></li><li><span>Viram venda</span><b id="l3">0</b></li><li><span>Receita em jogo</span><b id="l4">0</b></li></ol></div>
+            <table><caption class="sr-only">Quem chega fora do horário</caption><tbody><tr><th scope="row">Contatos fora do horário</th><td id="l1">0</td></tr><tr><th scope="row">Recuperados com resposta imediata</th><td id="l2">0</td></tr><tr><th scope="row">Viram venda</th><td id="l3">0</td></tr><tr><th scope="row">Receita em jogo</th><td id="l4">0</td></tr></tbody></table></div>
           <div><h3>2. Quem conversa e esfria</h3>
-            <ol><li><span>Conversas que esfriam</span><b id="m1">0</b></li><li><span>Voltam com a retomada</span><b id="m2">0</b></li><li><span>Viram venda</span><b id="m3">0</b></li><li><span>Receita em jogo</span><b id="m4">0</b></li></ol></div>
+            <table><caption class="sr-only">Quem conversa e esfria</caption><tbody><tr><th scope="row">Conversas que esfriam</th><td id="m1">0</td></tr><tr><th scope="row">Voltam com a retomada</th><td id="m2">0</td></tr><tr><th scope="row">Viram venda</th><td id="m3">0</td></tr><tr><th scope="row">Receita em jogo</th><td id="m4">0</td></tr></tbody></table></div>
         </div>
         <p class="pg-limit">Os números mostrados são arredondados. A soma das duas partes é o valor em destaque.</p>
       </div></section>
@@ -89,7 +90,7 @@
       </div>
       <div class="shell footer-bottom"><span>© <span data-year></span> THOTH</span><span>CRM · Atendimento · Automação · IA</span></div>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./script.js"></script><script>(function(){var f=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('a[href]').forEach(function(a){if(a.getAttribute('href')==='./'+f){a.setAttribute('aria-current','page')}})})();</script>
 <script>
 (function(){
   var $=function(i){return document.getElementById(i)};
@@ -97,7 +98,21 @@
   var num=function(v,d){return v.toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:d==null?1:d})};
   var ids=['c-contatos','c-ticket','c-fecha','c-fora','c-rec','c-esfria','c-volta','c-plano'];
   function rd(i){var v=parseFloat(String($(i).value).replace(',','.'));return isFinite(v)&&v>=0?v:0}
+  var pct=['c-fecha','c-fora','c-rec','c-esfria','c-volta'],timer;
+  function check(){
+    var ok=true;
+    ['c-contatos','c-ticket'].concat(pct).forEach(function(i){
+      var el=$(i),raw=String(el.value).replace(',','.'),v=parseFloat(raw),msg='';
+      if(raw===''||!isFinite(v)){msg='Preencha este campo com um número.';}
+      else if(v<0){msg='Use um valor maior ou igual a zero.';}
+      else if(pct.indexOf(i)>-1&&v>100){msg='Use um valor de 0 a 100.';}
+      $(i+'-e').textContent=msg;el.setAttribute('aria-invalid',msg?'true':'false');if(msg)ok=false;
+    });
+    return ok;
+  }
+  function say(t){clearTimeout(timer);timer=setTimeout(function(){$('o-live').textContent=t},900)}
   function go(){
+    var valid=check();
     var contatos=rd('c-contatos'),ticket=rd('c-ticket'),fecha=Math.min(rd('c-fecha'),100)/100,
         fora=Math.min(rd('c-fora'),100)/100,rec=Math.min(rd('c-rec'),100)/100,
         esfria=Math.min(rd('c-esfria'),100)/100,volta=Math.min(rd('c-volta'),100)/100,plano=rd('c-plano');
@@ -110,6 +125,7 @@
     $('l1').textContent=num(a1,0);$('l2').textContent=num(a2,0);$('l3').textContent=num(a3);$('l4').textContent=brl(r1);
     $('m1').textContent=num(b1,0);$('m2').textContent=num(b2,0);$('m3').textContent=num(b3);$('m4').textContent=brl(r2);
     var t='Calculei no site: '+brl(tot)+' por mês em jogo ('+num(contatos,0)+' contatos, ticket '+brl(ticket)+'). Quero ver como o THOTH recupera isso.';
+    say('Receita em jogo por mês: '+brl(tot)+'. '+num(vendas)+' vendas por mês. '+$('o-plano').textContent+(valid?'':' Corrija os campos com erro.'));
     $('o-wa').href='https://wa.me/5515988263583?text='+encodeURIComponent(t);
   }
   ids.forEach(function(i){$(i).addEventListener('input',go);$(i).addEventListener('change',go)});
