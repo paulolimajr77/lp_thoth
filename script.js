@@ -241,3 +241,54 @@ if (videoFrameEl && videoEnlarge) {
   videoEnlarge.addEventListener('click', () => setBig(!videoFrameEl.classList.contains('is-big')));
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && videoFrameEl.classList.contains('is-big')) setBig(false); });
 }
+
+// Ajustes Apple (25/10/2026): a janela nasce do botão que a abriu e volta para ele ao fechar.
+// Roda depois do showModal() dos ouvintes acima (mesmo clique, registrados antes).
+const origemDaJanela = (dialog, gatilho) => {
+  if (!dialog || !gatilho || !dialog.open) return;
+  const g = gatilho.getBoundingClientRect();
+  const d = dialog.getBoundingClientRect();
+  dialog.style.transformOrigin = `${g.left + g.width / 2 - d.left}px ${g.top + g.height / 2 - d.top}px`;
+};
+document.querySelectorAll('[data-guide-open]').forEach((btn) => btn.addEventListener('click', () => origemDaJanela(guideDialog, btn)));
+document.querySelectorAll('img[data-zoom]').forEach((img) => {
+  img.addEventListener('click', () => origemDaJanela(zoomDialog, img));
+  img.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') origemDaJanela(zoomDialog, img); });
+});
+
+/* Cards de preço (31/10/2026): chave mensal/anual troca o valor com animação e leva o período na mensagem do WhatsApp. */
+const chavePeriodo = document.querySelector('[data-billing-switch]');
+const gradePlanos = document.querySelector('.plans-grid[data-periodo]');
+if (chavePeriodo && gradePlanos) {
+  const semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const trocar = (el, texto) => {
+    if (el.textContent === texto) return;
+    if (semMovimento) { el.textContent = texto; return; }
+    el.classList.remove('troca-entra');
+    el.classList.add('troca-sai');
+    clearTimeout(el._troca);
+    el._troca = setTimeout(() => {
+      el.textContent = texto;
+      el.classList.remove('troca-sai');
+      void el.offsetWidth;
+      el.classList.add('troca-entra');
+    }, 180);
+  };
+  const aplicar = (periodo) => {
+    chavePeriodo.dataset.periodo = periodo;
+    gradePlanos.dataset.periodo = periodo;
+    chavePeriodo.querySelectorAll('[data-billing]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.billing === periodo)));
+    gradePlanos.querySelectorAll('[data-mensal]').forEach((el) => trocar(el, el.dataset[periodo]));
+    gradePlanos.querySelectorAll('a[data-plano]').forEach((a) => {
+      const msg = `Tenho interesse no plano ${a.dataset.plano} da THOTH${periodo === 'anual' ? ' (pagamento anual)' : ''}`;
+      a.href = `https://wa.me/5515988263583?text=${encodeURIComponent(msg)}`;
+    });
+  };
+  chavePeriodo.querySelectorAll('[data-billing]').forEach((b) => b.addEventListener('click', () => aplicar(b.dataset.billing)));
+  chavePeriodo.addEventListener('keydown', (event) => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    const periodo = event.key === 'ArrowRight' ? 'anual' : 'mensal';
+    aplicar(periodo);
+    chavePeriodo.querySelector(`[data-billing="${periodo}"]`).focus();
+  });
+}

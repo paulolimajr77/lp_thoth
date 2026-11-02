@@ -86,7 +86,7 @@
   <ul class="cw-story" id="r-story"></ul>
 
   <div class="cw-pay"><p class="cw-pay-q">Quantas vendas pagam o THOTH?</p><p class="cw-pay-a" id="r-pay"></p>
-    <fieldset class="cw-plans"><legend class="sr-only">Plano para comparar</legend><label class="cw-plan"><input type="radio" name="plano" value="297"><span>Acesso<small>R$ 297 por mês</small></span></label><label class="cw-plan"><input type="radio" name="plano" value="397" checked><span>Pronto para vender<small>R$ 397 por mês</small></span></label><label class="cw-plan"><input type="radio" name="plano" value="1097"><span>Acompanhado<small>R$ 1.097 por mês</small></span></label></fieldset></div>
+    <fieldset class="cw-plans"><legend class="sr-only">Plano para comparar</legend><label class="cw-plan"><input type="radio" name="plano" value="197"><span>Essencial<small>R$ 197 por mês</small></span></label><label class="cw-plan"><input type="radio" name="plano" value="397" checked><span>Profissional<small>R$ 397 por mês</small></span></label><label class="cw-plan"><input type="radio" name="plano" value="697"><span>Avançado<small>R$ 697 por mês</small></span></label><label class="cw-plan"><input type="radio" name="plano" value="1197"><span>Empresa<small>R$ 1.197 por mês</small></span></label></fieldset></div>
 
   <div class="hero-actions"><a id="r-wa" class="button button-primary" href="#" target="_blank" rel="noopener">Quero recuperar isso <span aria-hidden="true">↗</span></a><button type="button" class="text-link cw-redo" id="cw-redo">Mudar minhas respostas</button></div>
 
@@ -115,7 +115,7 @@
         <div><small>PRODUTO</small><a href="index.html#como-funciona">Como funciona</a><a href="./clinicas.html">Para clínicas</a><a href="index.html#planos">Planos</a><a href="./calculadora.html">Calculadora</a><a href="./personalizacao-da-ia.html">Personalização da IA</a><a href="./boas-praticas-whatsapp.html">Boas práticas no WhatsApp</a><a href="./demonstracao.html">Demonstração</a><a href="./manual.html">Manual de uso</a></div>
         <div><small>CONVERSAR</small><a href="https://wa.me/5515988263583?text=Quero%20conhecer%20a%20THOTH" target="_blank" rel="noopener">WhatsApp ↗</a><a href="index.html#faq">Dúvidas frequentes</a></div>
       </div>
-      <div class="shell footer-bottom"><span>© <span data-year></span> THOTH</span><span>CRM · Atendimento · Automação · IA</span></div>
+      <div class="shell footer-bottom"><span>© <span data-year></span> THOTH · PLJR Empreendimentos Digitais · CNPJ 40.025.715/0001-13</span><span class="footer-legal"><a href="https://crm.thothcrm.com.br/legal/terms" target="_blank" rel="noopener">Termos de uso</a><a href="https://crm.thothcrm.com.br/legal/privacy" target="_blank" rel="noopener">Política de privacidade</a></span></div>
     </footer>
     <script src="./script.js"></script><script>(function(){var f=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('a[href]').forEach(function(a){if(a.getAttribute('href')==='./'+f){a.setAttribute('aria-current','page')}})})();</script>
 <script>
@@ -172,7 +172,7 @@
     st.push('<li>Dessas pessoas, algumas voltam a conversar e <b>cerca de '+num(r.mid,1)+' compram</b>.</li>');
     $('r-story').innerHTML=st.join('');
     var need=Math.max(1,Math.ceil(r.plan/r.T));
-    var nm={297:'Acesso',397:'Pronto para vender',1097:'Acompanhado'}[r.plan];
+    var nm={197:'Essencial',397:'Profissional',697:'Avançado',1197:'Empresa'}[r.plan];
     $('r-pay').innerHTML='O plano <b>'+nm+'</b> custa '+brl(r.plan)+' por mês. '+(need===1?'<b>Uma venda</b> de '+brl(r.T)+' já paga.':'Bastam <b>'+need+' vendas</b> de '+brl(r.T)+' para pagar.')+(r.mid>=need?' A estimativa é de '+num(r.mid,1)+' vendas a mais por mês.':' Com as suas respostas a estimativa fica abaixo disso, converse com a gente para ver o caso.');
     var rows=[['Pessoas que chamam por mês',num(r.C)],['Chamam fora do horário',num(r.out)],['Conversas que esfriam',num(r.cold)],['Vendas que você fecha hoje',num(r.hoje)],['Vendas a mais (estimativa)',num(r.mid,1)],['Valor de uma venda',brl(r.T)],['Valor estimado por mês',brl(vv)]];
     $('r-table').innerHTML=rows.map(function(x){return '<tr><th scope="row">'+x[0]+'</th><td>'+x[1]+'</td></tr>'}).join('');

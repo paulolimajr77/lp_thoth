@@ -1713,3 +1713,140 @@ a[aria-current="page"]{font-weight:700;text-decoration:underline;text-underline-
 }
 .control-stage .pg-stage{max-width:480px}
 
+
+
+/* ===== Ajustes no estilo Apple (skill apple-design), 25/10/2026 =====
+   Cópia de antes: Desktop\JOSUE-thoth-crm-html-v9-2026-10-16-antes-apple-design-20261025
+   As animações em loop ficam como estão (decisão do Paulo). */
+/* 1. Letra mínima legível (11–12 px), em rem para seguir o tamanho de letra do aparelho */
+.button-small{font-size:.75rem}
+.eyebrow,.mono-label{font-size:.75rem}
+.hero-notes{font-size:.75rem}
+.stage-label{font-size:.6875rem}
+.leak-list article span{font-size:.6875rem}
+.flow-number{font-size:.6875rem}
+.outcome-copy span{font-size:.6875rem}
+.compare-head{font-size:.6875rem}
+.control-stamp span{font-size:.6875rem}
+.fit-list span{font-size:.6875rem}
+.segment-line{font-size:.75rem}
+.implementation-steps span{font-size:.6875rem}
+.recommendation{font-size:.6875rem}
+.plan-top>span{font-size:.6875rem}
+.price small,.price b{font-size:.6875rem}
+.plans-footnote{font-size:.75rem}
+.demo-play small{font-size:.6875rem}
+.footer-grid small{font-size:.6875rem}
+.footer-bottom{font-size:.6875rem}
+@media(max-width:520px){.compare-head span,.compare-row p{font-size:.75rem}}
+.comparison-card-head small{font-size:.6875rem}
+.plan-top>span,.plan-featured .plan-top>span{font-size:.6875rem}
+.vm-feature .vm-copy small{font-size:.75rem}
+.cc-steps b{font-size:.75rem}
+.h2-who-main small{font-size:.75rem}
+.pg-brake-tag{font-size:.75rem}
+.pg-more small{font-size:.75rem}
+.pg-pain-box small{font-size:.75rem}
+/* 4. Títulos menos apertados */
+.section-heading h2,.plans-heading h2,.connections-heading h2,.fit-title h2,.faq-intro h2{letter-spacing:-.035em}
+.hero h1{letter-spacing:-.04em}
+.pain-section h2{letter-spacing:-.035em}
+.product-wide-copy h3{letter-spacing:-.03em}
+.outcome-copy h3{letter-spacing:-.03em}
+.difference-copy h2,.control-copy h2,.demo-copy h2{letter-spacing:-.035em}
+.final-cta h2{letter-spacing:-.04em}
+.h2-how .section-heading h2,.h2-who .section-heading h2{letter-spacing:-.03em}
+.h2-feat-copy h2,.h2-feat-copy h3{letter-spacing:-.03em}
+.h2-pain .section-heading h2,.h2-more .section-heading h2,.h2-feats>.shell>.section-heading h2{letter-spacing:-.03em}
+.pg-hero h1{letter-spacing:-.035em}
+.pg-how .section-heading h2{letter-spacing:-.03em}
+/* Base da letra em rem: quem aumenta a letra no aparelho vê o site crescer junto */
+body{font-size:1rem}
+@media(max-width:520px){body{font-size:.9375rem}}
+
+/* 2. Resposta no toque: o botão afunda na hora em que é pressionado, sem o atraso do toque */
+.button,.guide-fab,.guide-close,.zoom-close,.menu-toggle,.nav-drop-btn,.video-enlarge,.video-sound,summary,img[data-zoom],.nav a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.button:active{transform:scale(.97);transition-duration:.1s}
+.button:hover:active{transform:translateY(-2px) scale(.97)}
+.guide-fab:active{transform:scale(.96);transition-duration:.1s}
+.guide-close:active,.zoom-close:active,.menu-toggle:active,.nav-drop-btn:active,.video-enlarge:active,.video-sound:active{transform:scale(.92);transition:transform .1s}
+summary:active{opacity:.7}
+.nav a:not(.button):active{opacity:.6}
+img[data-zoom]:active{transform:scale(.99);transition:transform .1s}
+/* no celular o "passar o mouse" fica grudado depois do toque: sem pulo para cima */
+@media(hover:none){.button:hover,.guide-fab:hover{transform:none}}
+
+/* 3. Guia prático e zoom: nascem do botão que os abriu e voltam para ele (a origem vem do script.js) */
+.guide-dialog,.zoom-dialog{transition:opacity .26s cubic-bezier(.2,.8,.2,1),transform .34s cubic-bezier(.2,.8,.2,1),overlay .34s allow-discrete,display .34s allow-discrete}
+.guide-dialog:not([open]),.zoom-dialog:not([open]){opacity:0;transform:scale(.9)}
+@starting-style{.guide-dialog[open],.zoom-dialog[open]{opacity:0;transform:scale(.9)}}
+.guide-dialog::backdrop,.zoom-dialog::backdrop{transition:opacity .26s ease,overlay .34s allow-discrete,display .34s allow-discrete}
+.guide-dialog:not([open])::backdrop,.zoom-dialog:not([open])::backdrop{opacity:0}
+@starting-style{.guide-dialog[open]::backdrop,.zoom-dialog[open]::backdrop{opacity:0}}
+
+/* 5a. Menos transparência pedida no aparelho: superfícies sólidas */
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .guide-dialog::backdrop{background:rgba(17,17,14,.82);backdrop-filter:none}
+  .zoom-dialog::backdrop{background:rgba(17,17,14,.88);backdrop-filter:none}
+  .video-enlarge{background:#11110e;backdrop-filter:none}
+  .stage-label,.float-card{background:#fff}
+}
+/* 5b. Contraste alto pedido no aparelho: texto mais escuro e bordas visíveis */
+@media (prefers-contrast:more){
+  :root{--muted:#3e3b33;--line:#8c8778}
+  .site-header{background:#fff;border-bottom-color:#11110e}
+  .nav>a:not(.button){color:#11110e}
+  .button-outline{border-color:#11110e}
+}
+/* ===== fim dos ajustes Apple ===== */
+
+/* ===== Cards de preço v2 (31/10/2026): chave mensal/anual, limites em selos, preço com troca animada ===== */
+.billing-switch{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;margin:30px auto 0;padding:5px;border:1px solid var(--line);border-radius:999px;background:var(--surface);isolation:isolate}
+.billing-switch button{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:132px;min-height:44px;padding:0 20px;border:0;border-radius:999px;color:var(--muted);background:none;font:700 .9375rem var(--body);cursor:pointer;transition:color .3s}
+.billing-switch button[aria-checked="true"]{color:#fff}
+.billing-switch button:focus-visible{outline:3px solid var(--brand-gold);outline-offset:2px}
+.billing-switch em{padding:3px 8px;border-radius:999px;color:var(--brand-green);background:#e6efe1;font:500 .6875rem var(--mono);font-style:normal;transition:color .3s,background .3s}
+.billing-switch button[aria-checked="true"] em{color:#fff;background:rgba(255,255,255,.18)}
+.billing-thumb{position:absolute;z-index:0;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:999px;background:var(--brand-green);box-shadow:0 8px 20px rgba(52,73,46,.28);transition:transform .45s cubic-bezier(.34,1.3,.5,1)}
+.billing-switch[data-periodo="anual"] .billing-thumb{transform:translateX(100%)}
+.plan-limits{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+.plan-limits span{padding:5px 10px;border-radius:999px;color:var(--brand-green);background:#eef4ea;font:500 .75rem var(--mono)}
+.plans-grid .plan-featured .plan-limits span{color:#f3ecd1;background:rgba(166,152,97,.2)}
+.price.price-v2{display:block;margin:18px 0 16px;padding:18px 0}
+.price-v2 .price-label{display:block;margin:0 0 6px;color:var(--muted);font:500 .75rem var(--mono)}
+.price-main{display:flex;align-items:baseline;gap:4px;overflow:hidden}
+.price-v2 .price-main strong{display:inline-block;font:700 2.5rem/1.1 var(--display);letter-spacing:-.04em}
+.price-v2 .price-main small{display:inline;color:var(--muted);font:500 .875rem var(--body)}
+.price-sub{min-height:1.5em;margin:6px 0 0;color:var(--brand-green);font-size:.8125rem;font-weight:600}
+.plans-grid .plan-featured .price-v2 .price-label,.plans-grid .plan-featured .price-v2 .price-main small{color:#cdd5c6}
+.plans-grid .plan-featured .price-sub{color:var(--brand-gold)}
+.troca-sai{animation:preco-sai .18s ease-in forwards}
+.troca-entra{animation:preco-entra .32s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes preco-sai{to{opacity:0;transform:translateY(-55%)}}
+@keyframes preco-entra{from{opacity:0;transform:translateY(55%)}to{opacity:1;transform:none}}
+@media(max-width:520px){.billing-switch{display:grid;width:100%;margin-top:24px}.billing-switch button{min-width:0;padding:0 10px}}
+@media(prefers-reduced-motion:reduce){.billing-thumb{transition:none}.troca-sai,.troca-entra{animation:none}}
+
+/* Guia prático (31/10/2026): botão branco que abre o curso numa janela nova */
+a.guide-fab{padding-right:22px;color:var(--ink);background:#fff;border-color:var(--line);box-shadow:0 14px 34px rgba(17,17,14,.16);text-decoration:none}
+a.guide-fab:hover{background:#fff;box-shadow:0 20px 44px rgba(17,17,14,.22)}
+a.guide-fab small{color:var(--brand-green);font-size:.75rem}
+a.guide-fab .guide-fab-icon{background:var(--brand-green)}
+.plans-grid .plan-card .plan-top p{min-height:0}
+.plans-grid .plan-featured .price-sub{color:#e2d6a6}
+
+/* Rodapé legal (31/10/2026): termos e privacidade abrem no CRM */
+.footer-legal{display:flex;flex-wrap:wrap;gap:16px}.footer-legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}.footer-legal a:hover{color:#fff}
+.footer{padding-bottom:96px}
+
+/* Caixa da IA (31/10/2026): deixa claro que a IA é paga pelo cliente e quais conexões são aceitas */
+.ia-box{display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:1100px;margin:44px auto 0;padding:34px;border:1px solid var(--brand-green);border-radius:18px;background:#f3f7f0}.ia-box small{color:var(--brand-green);font:500 .75rem var(--mono);letter-spacing:.12em}.ia-box h3{margin:10px 0 12px;font:700 1.6rem/1.15 var(--display);letter-spacing:-.03em}.ia-box-head p{margin:0;color:#3e3b33}.ia-box-list>p{margin:0 0 8px}.ia-box-list ul{margin:0 0 14px;padding:0;list-style:none}.ia-box-list li{position:relative;padding:5px 0 5px 22px;font-size:.9375rem}.ia-box-list li::before{content:"✓";position:absolute;left:0;color:var(--brand-green);font-weight:700}.ia-box-note{margin:0;padding-top:12px;border-top:1px solid rgba(80,109,72,.25);font-size:.875rem;color:#3e3b33}@media(max-width:820px){.ia-box{grid-template-columns:1fr;gap:20px;padding:24px 20px}}
+.ia-box-note+.ia-box-note{margin-top:10px}
+
+
+/* Topo em telas de 1280px ou mais (31/10/2026): texto usa até 1280px; título em uma linha e a frase laranja como subtítulo numa linha só */
+@media(min-width:1280px){.hero-copy,.hero h1{max-width:1280px}.hero h1{font-size:clamp(58px,4.4vw,78px);text-wrap:nowrap}.hero h1 br{display:none}.hero h1 .hero-loss{display:block;margin-top:.14em;font-size:.6em;letter-spacing:-.035em}.hero-lead{max-width:1180px;font-size:1.0625rem}}
+
+/* 4 planos iguais aos da cobrança do CRM + caixa de implantação (31/10/2026) */
+.plans-grid.planos-4{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.planos-4 .plan-card{min-height:0;padding:26px 22px}.planos-4 .price-v2 .price-main strong{font-size:2.1rem}.planos-4 .plan-card>.button{padding-inline:12px}@media(max-width:1180px){.plans-grid.planos-4{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px;margin-inline:auto}.planos-4 .plan-featured{transform:none}}@media(max-width:700px){.plans-grid.planos-4{grid-template-columns:1fr}}.impl-box{display:grid;grid-template-columns:1fr 1.4fr;gap:36px;max-width:1100px;margin:44px auto 0;padding:34px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.impl-box small{color:var(--brand-green);font:500 .75rem var(--mono);letter-spacing:.12em}.impl-box h3{margin:10px 0 12px;font:700 1.6rem/1.15 var(--display);letter-spacing:-.03em}.impl-head p{margin:0;color:#3e3b33}.impl-list{display:grid;gap:12px;margin:0;padding:0;list-style:none}.impl-list li{display:grid;gap:4px;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid var(--line)}.impl-list strong{font:700 1.05rem var(--display)}.impl-list span{color:#3e3b33;font-size:.9375rem}@media(max-width:820px){.impl-box{grid-template-columns:1fr;gap:20px;padding:24px 20px}}
