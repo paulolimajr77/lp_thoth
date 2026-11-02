@@ -1,0 +1,59 @@
+/* Painel do funil na seção Onde a venda se perde */
+.fv-grade{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:56px;align-items:center;margin-bottom:48px}
+.fv-grade .section-heading{margin:0;max-width:none;text-align:left}
+.fv-grade .section-heading h2,.fv-grade .section-heading p{margin-inline:0}
+.fv-painel{position:relative;width:100%;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 24px 60px #413b2512}
+.fv-palco{position:absolute;left:0;top:0;transform-origin:0 0;color:var(--ink);font-family:var(--body)}
+.fv-cena{position:absolute;inset:0;transition:opacity .45s cubic-bezier(.16,1,.3,1)}
+.fv-mono{font:500 9.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+
+.fv-topo{position:absolute;left:16px;right:16px;top:16px;display:flex;align-items:center;justify-content:space-between;color:var(--brand-gold-deep)}
+.fv-chave{position:relative;display:inline-flex;height:28px;padding:3px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.fv-chave i{position:absolute;left:3px;top:3px;width:56px;height:20px;border-radius:999px;background:#e5e1d4;transition:transform .72s cubic-bezier(.34,1.56,.64,1),background .48s}
+.fv-chave b{position:relative;z-index:1;display:grid;place-items:center;width:56px;color:var(--ink);font:500 9.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:color .3s}
+.fv-chave b:last-of-type{color:var(--muted)}
+.fv-chave.fv-no-depois i{transform:translateX(56px);background:var(--brand-green)}
+.fv-chave.fv-no-depois b:first-of-type{color:var(--muted)}
+.fv-chave.fv-no-depois b:last-of-type{color:#fff}
+
+.fv-moldura{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+.fv-moldura rect{fill:#506d480a;stroke:var(--brand-green);stroke-width:1.5;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;transition:stroke-dashoffset 1.76s cubic-bezier(.16,1,.3,1),opacity .48s}
+.fv-moldura.fv-ve rect{stroke-dashoffset:0;opacity:1}
+.fv-selo{position:absolute;top:53px;z-index:4;padding:3px 10px;border:1px solid #506d4880;border-radius:999px;background:#fff;color:var(--brand-green);font-size:9px;white-space:nowrap;opacity:0;transform:translateX(-50%);transition:opacity .4s}
+.fv-selo.fv-ve{opacity:1}
+
+.fv-etapa{position:absolute;z-index:1;display:grid;place-items:center;background:var(--purple-soft);color:var(--ink);font-size:13px;font-weight:700;clip-path:polygon(0 0,100% 0,88% 100%,12% 100%);transition:background .5s,color .5s}
+.fv-etapa.fv-acesa{background:var(--brand-green);color:#fff}
+.fv-estreito .fv-etapa{font-size:11px}
+.fv-liga{position:absolute;z-index:1;height:0;border-top:1.5px dashed #b9b4a2;opacity:0;transition:opacity .4s,border-color .4s}
+.fv-liga.fv-ve{opacity:1}
+.fv-liga.fv-ok-feito{border-top-style:solid;border-color:var(--brand-green)}
+.fv-furo{position:absolute;z-index:3;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #b9b4a2;transition:background .4s,box-shadow .4s}
+.fv-furo.fv-ok-feito{background:var(--brand-green);box-shadow:0 0 0 2px #506d4840}
+
+.fv-chip{position:absolute;z-index:2;height:44px;opacity:0;transform:translateX(10px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .96s cubic-bezier(.16,1,.3,1)}
+.fv-chip.fv-ve{opacity:1;transform:none}
+.fv-face{position:absolute;inset:0;display:flex;align-items:center;gap:8px;padding:0 10px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:12px;font-weight:600;line-height:1.15;transition:opacity .72s,transform .72s cubic-bezier(.34,1.56,.64,1)}
+.fv-antes{color:var(--muted)}
+.fv-depois{border-color:#506d4866;background:#f4f7f2;color:var(--ink);opacity:0;transform:scale(.94)}
+.fv-chip.fv-ok-feito .fv-antes{opacity:0;transform:scale(.94)}
+.fv-chip.fv-ok-feito .fv-depois{opacity:1;transform:none}
+.fv-n{color:var(--brand-gold);font:500 9.5px var(--mono)}
+.fv-ok{display:grid;flex:none;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--brand-green)}
+
+.fv-rotulo{position:absolute;left:16px;top:350px;color:var(--muted)}
+.fv-barra{position:absolute;left:16px;right:16px;top:370px;height:14px;overflow:hidden;border:1px solid var(--line);border-radius:7px;background:repeating-linear-gradient(135deg,#f7f6f1 0 6px,#efece1 6px 12px)}
+.fv-barra i{position:absolute;left:0;top:0;bottom:0;width:22%;border-radius:7px;background:#cfc9b4;transition:width 2.24s cubic-bezier(.16,1,.3,1),background .8s}
+.fv-barra.fv-cheia i{width:100%;background:var(--brand-green)}
+.fv-nota{position:absolute;right:16px;top:398px;color:#8a8672;font-size:8.5px}
+
+.fv-gota{position:absolute;left:-3px;top:-3px;z-index:2;width:6px;height:6px;border-radius:50%;background:var(--brand-gold);pointer-events:none}
+.fv-faisca{position:absolute;z-index:5;width:5px;height:5px;margin:-2.5px;border-radius:50%;pointer-events:none}
+.fv-cursor{position:absolute;left:0;top:0;z-index:6;opacity:0;pointer-events:none;transition:transform 1.2s cubic-bezier(.65,0,.35,1),opacity .48s cubic-bezier(.16,1,.3,1)}
+
+@media (max-width:980px){
+  .fv-grade{grid-template-columns:minmax(0,1fr);gap:32px}
+  .fv-grade .section-heading{text-align:center}
+  .fv-grade .section-heading h2,.fv-grade .section-heading p{margin-inline:auto}
+  .fv-painel{max-width:560px;margin-inline:auto}
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desligar uma chave que não se usa mais · API Tokens | Curso THOTH</title>
+<meta name="description" content="Saber quando e como revogar uma chave, o que acontece depois e como trocar uma chave sem deixar o outro sistema parado.">
+<link rel="canonical" href="https://thothcrm.com.br/curso/api-tokens/revogar-um-token.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="THOTH">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Desligar uma chave que não se usa mais · API Tokens | Curso THOTH">
+<meta property="og:description" content="Saber quando e como revogar uma chave, o que acontece depois e como trocar uma chave sem deixar o outro sistema parado.">
+<meta property="og:url" content="https://thothcrm.com.br/curso/api-tokens/revogar-um-token.html">
+<meta property="og:image" content="https://thothcrm.com.br/assets/og-thoth.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/icon-dourado.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/curso/curso.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Curso", "item": "https://thothcrm.com.br/curso/"}, {"@type": "ListItem", "position": 2, "name": "API Tokens", "item": "https://thothcrm.com.br/curso/api-tokens/"}, {"@type": "ListItem", "position": 3, "name": "Desligar uma chave que não se usa mais", "item": "https://thothcrm.com.br/curso/api-tokens/revogar-um-token.html"}]}</script>
+</head>
+<body>
+<header class="estatica-topo"><a class="estatica-marca" href="/curso/">Curso THOTH CRM</a><nav aria-label="Principal"><a href="/curso/">Todas as aulas</a><a href="/curso/historias/">Histórias</a><a href="/">Conhecer o THOTH</a></nav></header>
+<main class="estatica-principal"><div class="coluna"><nav class="trilha" aria-label="Caminho"><a href="/curso/">Curso</a><span>›</span><a href="/curso/api-tokens/">API Tokens</a><span>›</span><span>Desligar uma chave que não se usa mais</span></nav>
+<header class="coluna-texto"><span class="rotulo-mono">API Tokens · lição 3 de 3</span><h1 class="titulo-pagina">Desligar uma chave que não se usa mais</h1><p class="subtitulo">Saber quando e como revogar uma chave, o que acontece depois e como trocar uma chave sem deixar o outro sistema parado.</p></header><section class="passo"><div class="passo-num" aria-hidden="true">01</div><div class="passo-corpo"><span class="rotulo-mono">Passo 1 de 3</span><h2>O botão Revogar</h2><p class="texto">Cada chave ligada tem o botão &quot;Revogar&quot; no fim da linha. Ele desliga a chave na hora, sem pedir confirmação, e não tem volta. A partir daí, o sistema que usava a chave é recusado e não lê nem grava mais nada no CRM. Use quando parar de usar um sistema ou quando desconfiar que a chave vazou.</p><figure class="tela"><img src="/curso/capturas/api-tokens--revogar-um-token--p1.jpg" alt="Tela do THOTH CRM: O botão Revogar" width="1440" height="900" loading="eager"><svg class="estatica-camada" viewBox="0 0 1440 900" aria-hidden="true"><rect x="1279" y="338.5" width="69" height="32" rx="8"/></svg></figure><ol class="legenda-estatica"><li>Desliga na hora</li></ol><p class="dica"><b>Dica:</b> Confira o nome da linha antes de clicar: como não há confirmação, um clique na linha errada desliga a integração errada.</p></div></section><section class="passo"><div class="passo-num" aria-hidden="true">02</div><div class="passo-corpo"><span class="rotulo-mono">Passo 2 de 3</span><h2>Depois de revogada</h2><p class="texto">A chave revogada continua na lista, com o selo &quot;Revogado&quot; e sem o botão &quot;Revogar&quot;. Ela fica ali como registro de que existiu. Revogada não volta a funcionar: se o sistema precisar de acesso de novo, crie outra chave.</p><figure class="tela"><img src="/curso/capturas/api-tokens--revogar-um-token--p2.jpg" alt="Tela do THOTH CRM: Depois de revogada" width="1440" height="900" loading="lazy"><svg class="estatica-camada" viewBox="0 0 1440 900" aria-hidden="true"><rect x="289" y="379" width="1102" height="42.5" rx="8"/></svg></figure><ol class="legenda-estatica"><li>Chave desligada</li></ol></div></section><section class="passo"><div class="passo-num" aria-hidden="true">03</div><div class="passo-corpo"><span class="rotulo-mono">Passo 3 de 3</span><h2>Trocar uma chave sem parar nada</h2><p class="texto">Para trocar a chave de um sistema, siga esta ordem: crie a chave nova em &quot;Criar token&quot;, cole a chave nova no outro sistema e só então revogue a antiga. Revogando primeiro, o sistema fica sem acesso no intervalo.</p><figure class="tela"><img src="/curso/capturas/api-tokens--revogar-um-token--p3.jpg" alt="Tela do THOTH CRM: Trocar uma chave sem parar nada" width="1440" height="900" loading="lazy"><svg class="estatica-camada" viewBox="0 0 1440 900" aria-hidden="true"><rect x="1290" y="180" width="102" height="36" rx="8"/><rect x="1279" y="338.5" width="69" height="32" rx="8"/></svg></figure><ol class="legenda-estatica"><li>Crie a nova</li><li>Depois revogue a antiga</li></ol><p class="dica"><b>Dica:</b> Cada empresa pode ter até 50 chaves ligadas ao mesmo tempo. Chaves revogadas ou vencidas não contam. Se aparecer o aviso de limite, revogue as que não usa mais.</p></div></section><div class="fim-licao coluna-texto"><h2 class="secao-titulo">Pronto para praticar?</h2><p class="subtitulo">Refaça esta lição no simulador: você clica nos lugares certos, como faria no sistema.</p><div class="acoes"><a class="botao botao-primario" href="/curso/#s.api-tokens.revogar-um-token">Treinar no simulador</a><a class="botao botao-secundario" href="/curso/api-tokens/">Voltar ao módulo</a></div></div>
+</div></main>
+<footer class="estatica-rodape">Material atualizado em 31/10/2026. As empresas e pessoas dos exemplos são fictícias.</footer>
+</body>
+</html>

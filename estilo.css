@@ -1,0 +1,119 @@
+/* Estilo novo no padrão Luminary: fontes, cores claras, partículas, granulado e brilho no texto.
+   Carrega depois dos outros estilos. Para voltar ao anterior: ferramentas/aplicar_estilo.py --tirar */
+@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url(./assets/fonts/instrument-serif.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url(./assets/fonts/instrument-serif-italic.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:300 700;font-display:swap;src:url(./assets/fonts/dm-sans.woff2) format("woff2")}
+
+:root{
+  --serifa:"Instrument Serif",Georgia,serif;
+  --display:"DM Sans",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,sans-serif;
+  --fundo:#f4f2ed;
+  --fundo-alt:#ece9e1;
+  --cartao:#f8f6f2;
+  --ink:#1a1812;
+  --texto2:#3f3b32;
+  --muted:#6a6458;
+  --line:rgba(28,24,14,.1);
+  --surface:#f8f6f2;
+  --dourado:#aa7800;
+  --dourado-claro:#c49010;
+  --dourado-brilho:#aa780029;
+  --dourado-leve:#aa780014;
+  --texto-botao:#fff;
+  --brilho-a:72%;
+  --brilho-b:85%;
+  --cabecalho:#f4f2edd6;
+  --brand-gold:#aa7800;
+  --brand-gold-deep:#8a6200;
+  --gold-text:#8a6200;
+  --purple:#8a6200;
+  --purple-soft:#ece9e1;
+  --blue-soft:#f4f2ed;
+  --brand-green:#8a6200;
+  --brand-green-dark:#1a1812;
+  --brand-green-deep:#0d0c0a;
+}
+
+html{background:var(--fundo);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{background:transparent;color:var(--ink);font-family:var(--body);font-synthesis-weight:none;transition:color .2s}
+::selection{background:var(--dourado-brilho);color:var(--ink)}
+:focus-visible{outline:2px solid var(--dourado);outline-offset:3px}
+
+/* partículas e granulado, atrás de todo o conteúdo */
+#ambientCanvas{position:fixed;inset:0;z-index:-1;width:100%;height:100%;opacity:.6;pointer-events:none}
+.noise{position:fixed;inset:0;z-index:-1;opacity:.025;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px}
+.hero,.pg-hero,.h2-sec,.plans-section,.final-cta,section,main{background:transparent!important}
+
+/* serifa só em letra grande; a fonte tem um peso só e o tamanho visual é corrigido em toda largura de tela */
+h1,h2{font-family:var(--serifa);font-weight:400;font-size-adjust:.5;letter-spacing:-.012em!important;line-height:1.06;text-wrap:balance}
+h1,h2,h1 *:not(.eyebrow,.eyebrow *),h2 *{font-family:var(--serifa)!important;font-weight:400!important}
+.h2-feat-copy h3,.plan-top h3,.h2-who-main h3,.pg-switch-copy h3,.impl-head h3,.ia-box-head h3,.price-main strong,.cw-step legend,.cx-block-n{font-family:var(--serifa)!important;font-weight:400;letter-spacing:-.005em!important}
+h3{letter-spacing:-.01em}
+h1 .brand-green{color:inherit}
+
+/* brilho que atravessa o texto, com os tempos da referência */
+@keyframes texto-brilho{0%{background-position:-100% 0}55%,100%{background-position:220% 0}}
+.hero-loss,h1 .brand-green,.pg-hero h1 .ef-palavra:nth-last-child(-n+2){font-family:var(--serifa)!important;font-style:italic;font-weight:400;letter-spacing:0!important;padding:0 .06em .1em 0;color:var(--brand-gold-deep);background:linear-gradient(108deg,var(--dourado) 20%,color-mix(in oklch,var(--dourado) var(--brilho-a),#fff) 40%,var(--dourado) 60%,color-mix(in oklch,var(--dourado) var(--brilho-b),#fff) 80%,var(--dourado) 100%) 100% 0/250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:texto-brilho 3.8s ease-in-out 1.8s infinite}
+@media (prefers-reduced-motion:reduce){.hero-loss,h1 .brand-green,.pg-hero h1 .ef-palavra:nth-last-child(-n+2){animation:none}}
+
+/* textos que ainda vinham em cinza frio */
+.nav-drop-btn,.nav>a:not(.button),.plan-card li{color:var(--texto2)}
+.plan-featured li{color:inherit}
+.footer-bottom{color:#b6b0a0}
+.hero-notes li{color:var(--muted)}
+
+/* dourado pequeno precisa ser o mais escuro para dar leitura sobre o creme */
+.h2-pain-a span,.h2-n,.h2-who-main small,.cx-block-n{color:var(--brand-gold-deep)}
+
+/* rótulo acima do título, com a faixa de luz que varre */
+@keyframes rotulo-varre{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+.eyebrow{font-family:var(--body);font-weight:700;letter-spacing:.14em;color:var(--brand-gold-deep)}
+.eyebrow:empty{display:none}
+.hero .eyebrow,.pg-hero .eyebrow{position:relative;display:inline-block;overflow:hidden;padding:.5rem 1.25rem;border:1.5px solid var(--dourado);border-radius:.625rem;line-height:1.35}
+/* os estilos antigos escondem e encolhem o que está dentro do rótulo; aqui estão as palavras do texto */
+.eyebrow>.ef-palavra{display:inline-block!important;width:auto!important;height:auto!important;background:none!important;border-radius:0}
+.hero .eyebrow::before,.pg-hero .eyebrow::before{content:"";display:block!important;position:absolute;inset:0;background:linear-gradient(90deg,var(--dourado-brilho) 0%,transparent 80%);transform:translateX(-100%);animation:rotulo-varre 2.4s ease-in-out infinite}
+.pg-hero h1 .eyebrow{display:block;width:fit-content;margin-bottom:1.1rem;font-size:.75rem;font-size-adjust:none;letter-spacing:.14em!important}
+.pg-hero .hero-actions{justify-content:flex-start}
+@media (prefers-reduced-motion:reduce){.hero .eyebrow::before,.pg-hero .eyebrow::before{animation:none}}
+
+/* fundos */
+.site-header{background:var(--cabecalho)}
+.nav-drop-panel,.h2-pain-card,.h2-step,.res-card,.plan-card,.fv-painel,.pg-mini,.pg-list>li,.bp-item,.cx-card,.cx-block,.bp-causes>article,.impl-list>li,.pg-cols>article,.pg-example,.cw,.h2-more-grid,.h2-who-list{background:var(--cartao)}
+.pg-pain-box,.pg-limit,.pg-note,.impl-box,.ia-box,.h2-who-main{background:var(--fundo-alt)}
+.plans-grid .plan-card:not(.plan-featured){border-color:var(--line)}
+
+/* chamadas de venda em dourado com texto branco; ao passar o mouse o dourado escurece para seguir legível */
+.button-primary,.button-dark,.plan-featured .button-primary,.plan-featured>.button-primary{background:var(--dourado);color:var(--texto-botao);transition:background-color .5s ease,color .5s ease,box-shadow .5s ease,transform .5s ease}
+.button-primary:hover,.button-dark:hover,.plan-featured .button-primary:hover,.plan-featured>.button-primary:hover,.plans-grid .plan-featured>.button-primary:hover{background:#8a6200;color:#fff;box-shadow:0 6px 24px var(--dourado-brilho)}
+
+/* partes escuras no preto quente da referência */
+.plans-grid .plan-featured,.plan-featured{background:linear-gradient(145deg,#1a1812,#0d0c0a);border-color:var(--dourado);box-shadow:0 22px 55px #0d0c0a38}
+.plans-grid .plan-featured:hover,.plan-featured:hover{box-shadow:0 26px 64px #0d0c0a47}
+.plan-featured,.plan-featured h3,.plan-featured .price-main strong{color:#f4f2ed}
+.plan-featured .plan-top p,.plan-featured .price small,.plans-grid .plan-featured .price-v2 .price-label{color:#cfc9b9}
+.plan-featured .plan-limits span{background:#aa78002e;color:#f3ecd1}
+.footer{background:linear-gradient(180deg,#1a1812,#0d0c0a)}
+.pg-brake-inner{background:linear-gradient(145deg,#1a1812,#0d0c0a);color:#f4f2ed}
+.pg-brake-tag{color:#1a1812}
+
+/* restos de verde fixos nos estilos antigos */
+.plan-card li:before,.plan-featured li:before{background:var(--dourado);border-color:var(--dourado)}
+.bp-thoth,.cw-chip:hover,.cw-opt input:checked+span,.cw-plan input:checked+span,.plan-card:not(.plan-featured) .plan-limits span,.billing-switch em,.bp-item .bp-who,.nav-drop-panel a:hover{background:var(--fundo-alt)}
+.pg-list strong{color:var(--ink)}
+.pg-list li>span,.bp-n,.video-sound,.video-sound span{color:var(--texto-botao)}
+.h2-who-main p{color:var(--texto2)}
+.fv-nota{color:var(--muted)}
+.fv-n{color:var(--brand-gold-deep)}
+.bp-item .bp-who,.h2-ticks li,.nav-drop-panel a{color:var(--texto2)}
+.nav-drop-panel a:hover{color:var(--brand-gold-deep)}
+.pg-table th,.cx-panel-head .bp-ok{color:var(--brand-gold-deep)}
+.cw-opt:hover>span{border-color:var(--dourado)}
+.cw-in input:focus{box-shadow:0 0 0 3px var(--dourado-brilho)}
+.fv-face,.fv-selo,.ia-box-note{border-color:#aa780055}
+.nav-drop-panel,.cx-panel,.cw,.cw-result{box-shadow:0 18px 44px #1a181214}
+.opportunity-lane small,.opportunity-lane li>span{color:var(--muted)}
+.opportunity-lane li>span{border-color:var(--line);background:var(--cartao)}
+.opportunity-lane li.is-active>span,.opportunity-lane li.is-complete>span,.opportunity-lane.is-finished li:last-child>span{color:var(--texto-botao);background:var(--brand-gold-deep);border-color:var(--brand-gold-deep);box-shadow:0 0 0 4px var(--dourado-leve)}
+.opportunity-lane.is-finished{border-color:#aa78006b;box-shadow:0 14px 35px #aa78001f}

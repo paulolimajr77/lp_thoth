@@ -1,0 +1,71 @@
+/* Movimento de entrada do site. Só vale com efeitos.js ligado (classe .ef no html). */
+:root{--ef-ease:cubic-bezier(.215,.61,.355,1);--ef-mola:cubic-bezier(.34,1.4,.64,1);--ef-toque:transform .45s var(--ef-ease),box-shadow .45s var(--ef-ease),border-color .45s var(--ef-ease),background-color .5s ease,color .5s ease}
+
+/* títulos: palavra por palavra */
+.ef .ef-palavra{display:inline-block;opacity:0;translate:0 45%;filter:blur(8px);transition:opacity .6s var(--ef-ease) var(--d,0s),translate .7s var(--ef-ease) var(--d,0s),filter .6s var(--ef-ease) var(--d,0s)}
+.ef .ef-titulo.in .ef-palavra{opacity:1;translate:0 0;filter:blur(0)}
+
+/* textos e blocos soltos */
+.ef .ef-entrada{opacity:0;translate:0 26px}
+.ef .ef-entrada.in{opacity:1;translate:0 0;transition:opacity .7s var(--ef-ease) var(--d,0s),translate .7s var(--ef-ease) var(--d,0s),scale .7s var(--ef-ease) var(--d,0s),var(--ef-toque)}
+
+/* cartões em grupo: um depois do outro, com mola */
+.ef .ef-grupo>.ef-entrada{translate:0 30px;scale:.97}
+.ef .ef-grupo>.ef-entrada.in{translate:0 0;scale:1;transition:opacity .7s var(--ef-ease) var(--d,0s),translate .8s var(--ef-mola) var(--d,0s),scale .8s var(--ef-mola) var(--d,0s),var(--ef-toque)}
+
+/* imagem principal do topo */
+.ef .ef-visual{opacity:0;scale:.96}
+.ef .ef-visual.in{opacity:1;scale:1;transition:opacity .9s var(--ef-ease) .2s,scale 1.1s var(--ef-ease) .2s}
+
+/* o script.js antigo não anima mais o que já entrou por aqui */
+.ef .motion-group>.motion-item{transform:none;transition-delay:0ms}
+.ef .motion-group>.motion-item:not(.ef-entrada){opacity:1}
+.ef .motion-group>.motion-item.ef-entrada:not(.in){opacity:0}
+/* o atraso da sequência vale só para a entrada; o hover responde na hora */
+.ef .motion-group>.motion-item.ef-entrada.in{opacity:1;transition-delay:var(--d,0s),var(--d,0s),var(--d,0s),0s,0s,0s,0s,0s}
+
+/* janelas */
+.ef dialog[open]{animation:ef-janela .45s var(--ef-mola)}
+.ef dialog[open]::backdrop{animation:ef-fundo .35s ease}
+@keyframes ef-janela{from{opacity:0;translate:0 14px;scale:.97}}
+@keyframes ef-fundo{from{opacity:0}}
+
+/* só com mouse: cartão sobe */
+@media (hover:hover) and (pointer:fine){
+  .ef .ef-cartao{position:relative;transition:var(--ef-toque)}
+  .ef .ef-cartao:hover{transform:translateY(-6px)}
+  /* mantém o mouse no cartão quando ele sobe, senão treme na borda de baixo */
+  .ef .ef-cartao:hover::after{content:"";position:absolute;left:0;right:0;top:100%;height:8px}
+}
+
+/* plano em destaque e botões escuros: dois arcos de luz dão a volta na borda, por dentro e por fora.
+   Passa sozinho a cada 6 s e fica ligado com o mouse em cima. */
+@property --ef-giro{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes ef-giro{to{--ef-giro:360deg}}
+/* a luz soma dois sinais: o pulso de tempos em tempos e o mouse em cima, que acende e apaga aos poucos */
+@property --ef-pulso{syntax:"<number>";inherits:false;initial-value:0}
+@property --ef-mouse{syntax:"<number>";inherits:false;initial-value:0}
+@keyframes ef-pulso{0%{--ef-pulso:0}3%,14%{--ef-pulso:1}20%,100%{--ef-pulso:0}}
+.ef .button-dark,.ef .button-primary{position:relative}
+.ef .ef-brilho{--fora:16px;position:absolute;inset:calc(var(--fora)*-1);border-radius:inherit;opacity:max(var(--ef-pulso),var(--ef-mouse));transition:--ef-mouse .5s ease;pointer-events:none;-webkit-mask-image:conic-gradient(from var(--ef-giro),transparent 0 20%,#000 36% 45%,transparent 50% 70%,#000 85% 95%,transparent 100%);mask-image:conic-gradient(from var(--ef-giro),transparent 0 20%,#000 36% 45%,transparent 50% 70%,#000 85% 95%,transparent 100%);animation:ef-giro 5s linear infinite paused,ef-pulso 18s linear infinite paused}
+.ef .ef-brilho::before,.ef .ef-brilho::after{content:"";position:absolute;inset:var(--fora);border-radius:inherit}
+.ef .ef-brilho::before{box-shadow:0 0 2px 1px #fff3c4,0 0 5px 2px #f0d97a,0 0 12px 2px #d9b94a}
+.ef .ef-brilho::after{box-shadow:inset 0 0 0 1px #fff8dc,inset 0 0 3px 1px #fff0b8,inset 0 0 7px 2px #f0d97a}
+/* a linha fica por cima da borda de 2 px do cartão */
+.ef .plan-featured>.ef-brilho{inset:calc(var(--fora)*-1 - 2px)}
+/* no celular o botão fica a 12 px da beirada: o brilho não pode passar disso */
+@media (max-width:480px){.ef .ef-brilho{--fora:12px}}
+.ef .ef-giro>.ef-brilho{animation-play-state:running}
+.ef .button-dark.ef-giro>.ef-brilho{animation-delay:0s,-9s}
+@media (hover:hover) and (pointer:fine){
+  .ef .ef-giro:hover>.ef-brilho{--ef-mouse:1}
+}
+
+/* topo das páginas com fundo liso, sem degradê nem mancha de luz */
+.hero,.pg-hero{background:#fff}
+.hero::before,.hero::after,.hero-glow{display:none}
+
+@media (prefers-reduced-motion:reduce){
+  .ef dialog[open],.ef dialog[open]::backdrop{animation:none}
+  .ef .ef-cartao:hover{transform:none}
+}

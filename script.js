@@ -262,11 +262,12 @@ const gradePlanos = document.querySelector('.plans-grid[data-periodo]');
 if (chavePeriodo && gradePlanos) {
   const semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const trocar = (el, texto) => {
+    clearTimeout(el._troca);
+    el.classList.remove('troca-sai');
     if (el.textContent === texto) return;
     if (semMovimento) { el.textContent = texto; return; }
     el.classList.remove('troca-entra');
     el.classList.add('troca-sai');
-    clearTimeout(el._troca);
     el._troca = setTimeout(() => {
       el.textContent = texto;
       el.classList.remove('troca-sai');
@@ -280,7 +281,7 @@ if (chavePeriodo && gradePlanos) {
     chavePeriodo.querySelectorAll('[data-billing]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.billing === periodo)));
     gradePlanos.querySelectorAll('[data-mensal]').forEach((el) => trocar(el, el.dataset[periodo]));
     gradePlanos.querySelectorAll('a[data-plano]').forEach((a) => {
-      const msg = `Tenho interesse no plano ${a.dataset.plano} da THOTH${periodo === 'anual' ? ' (pagamento anual)' : ''}`;
+      const msg = `Quero testar o plano ${a.dataset.plano} do THOTH${periodo === 'anual' ? ' (pagamento anual)' : ''}`;
       a.href = `https://wa.me/5515988263583?text=${encodeURIComponent(msg)}`;
     });
   };
@@ -291,4 +292,10 @@ if (chavePeriodo && gradePlanos) {
     aplicar(periodo);
     chavePeriodo.querySelector(`[data-billing="${periodo}"]`).focus();
   });
+}
+
+const guiaFab = document.querySelector('.guide-fab');
+const secaoTopo = document.querySelector('#topo');
+if (guiaFab && secaoTopo && 'IntersectionObserver' in window) {
+  new IntersectionObserver(([item]) => guiaFab.classList.toggle('is-no-topo', item.isIntersecting)).observe(secaoTopo);
 }
